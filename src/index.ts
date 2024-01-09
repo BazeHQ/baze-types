@@ -1,3 +1,1 @@
-export interface Baze {
-    name: string;
-}
+export * from './types';
