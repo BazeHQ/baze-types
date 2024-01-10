@@ -64,7 +64,7 @@ interface ICustomer extends IBase {
 
 interface ILoginPayload {
     email: string;
-    passPhrase: string;
+    password: string;
 }
 interface ILoginResponse {
     token: string;
