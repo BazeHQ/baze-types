@@ -45,6 +45,7 @@ jobs:
           git remote add publisher "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
           echo "Release version: ${{env.RELEASE_VERSION}}"
+          echo "Actor: ${GITHUB_ACTOR} ${GITHUB_TOKEN} ${GITHUB_REPOSITORY}"
 
           yarn config set version-git-tag false
           yarn version --new-version ${{env.RELEASE_VERSION}}
