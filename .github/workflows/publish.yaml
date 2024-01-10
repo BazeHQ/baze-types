@@ -30,7 +30,7 @@ jobs:
 
       - name: Create release branch 
         run: |
-          git checkout -b release/${{env.RELEASE_VERSION}}
+          git checkout -b release/${ GITHUB_REF }}
 
       - name: Install dependencies
         run: yarn && yarn install --ignore-engines
@@ -44,13 +44,13 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git remote add publisher "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-          echo "Release version: ${{env.RELEASE_VERSION}}"
+          echo "Release version: ${{ GITHUB_REF }}"
 
           yarn config set version-git-tag false
-          yarn version --new-version ${{env.RELEASE_VERSION}}
+          yarn version --new-version ${{ GITHUB_REF }}
 
-          git commit package.json -m "Updated package.json version to version released ${{env.RELEASE_VERSION}}"
-          git push publisher HEAD:release/v${{env.RELEASE_VERSION}}
+          git commit package.json -m "Updated package.json version to version released ${{ GITHUB_REF }}"
+          git push publisher HEAD:release/v${{ GITHUB_REF }}
 
       - name: Publish
         run: yarn publish
