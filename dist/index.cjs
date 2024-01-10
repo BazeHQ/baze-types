@@ -21,9 +21,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   CustomerAccountStatus: () => CustomerAccountStatus,
-  OtpContext: () => OtpContext,
-  TokenActions: () => TokenActions,
-  TokenExpiry: () => TokenExpiry
+  OtpContext: () => OtpContext
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -41,20 +39,9 @@ var CustomerAccountStatus = /* @__PURE__ */ ((CustomerAccountStatus2) => {
   CustomerAccountStatus2["Active"] = "active";
   return CustomerAccountStatus2;
 })(CustomerAccountStatus || {});
-var TokenActions = /* @__PURE__ */ ((TokenActions2) => {
-  TokenActions2["ReserveEmail"] = "reserve-email";
-  TokenActions2["PlatformAccess"] = "platform-access";
-  return TokenActions2;
-})(TokenActions || {});
-var TokenExpiry = {
-  "reserve-email": "1h",
-  "platform-access": "5d"
-};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   CustomerAccountStatus,
-  OtpContext,
-  TokenActions,
-  TokenExpiry
+  OtpContext
 });
 //# sourceMappingURL=index.cjs.map

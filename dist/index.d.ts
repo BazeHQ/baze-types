@@ -60,13 +60,6 @@ interface ICustomer extends IBase {
     passwords?: Array<IPassword>;
     phoneVerified: boolean;
 }
-declare enum TokenActions {
-    ReserveEmail = "reserve-email",
-    PlatformAccess = "platform-access"
-}
-declare const TokenExpiry: {
-    [key in TokenActions]: string;
-};
 
 interface ILoginPayload {
     email: string;
@@ -91,4 +84,4 @@ interface IReserveEmailResponse {
     token: string;
 }
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IReserveEmailPayload, type IReserveEmailResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, OtpContext, TokenActions, TokenExpiry };
+export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IReserveEmailPayload, type IReserveEmailResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, OtpContext };

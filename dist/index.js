@@ -12,19 +12,8 @@ var CustomerAccountStatus = /* @__PURE__ */ ((CustomerAccountStatus2) => {
   CustomerAccountStatus2["Active"] = "active";
   return CustomerAccountStatus2;
 })(CustomerAccountStatus || {});
-var TokenActions = /* @__PURE__ */ ((TokenActions2) => {
-  TokenActions2["ReserveEmail"] = "reserve-email";
-  TokenActions2["PlatformAccess"] = "platform-access";
-  return TokenActions2;
-})(TokenActions || {});
-var TokenExpiry = {
-  "reserve-email": "1h",
-  "platform-access": "5d"
-};
 export {
   CustomerAccountStatus,
-  OtpContext,
-  TokenActions,
-  TokenExpiry
+  OtpContext
 };
 //# sourceMappingURL=index.js.map
