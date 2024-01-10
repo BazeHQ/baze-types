@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "npx tsup --dts"
   },
   "keywords": [],
   "author": {
@@ -26,5 +26,12 @@
   },
   "dependencies": {
     "axios": "^1.6.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BazeHQ/baze-types.git"
+  },
+  "engines" : { 
+    "node" : ">=18.0.0"
   }
 }
