@@ -9,7 +9,8 @@ interface IVerifyOtpPayload {
 }
 interface IVerifyOtpResponse {
     status: boolean;
-    token?: string;
+    token: string;
+    refreshToken: string;
 }
 
 interface IBase {
@@ -67,6 +68,7 @@ interface ILoginPayload {
 }
 interface ILoginResponse {
     token: string;
+    refreshToken: string;
 }
 
 interface IFetchProfileResponse {
