@@ -15,7 +15,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "RELEASE_VERSION=$(gh release list --repo https://github.com/${{ github.repository }} --limit 3 | grep -o 'v.*' | sort -r )"
+          echo "RELEASE_VERSION=$(gh release list --repo https://github.com/${{ github.repository }} --limit 3 | grep -o 'v.*' )"
 
       # - name: Debug
       #   run: |
