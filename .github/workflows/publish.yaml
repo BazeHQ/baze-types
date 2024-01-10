@@ -15,12 +15,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "RELEASE_VERSION=${{ github.event.number }}" >> $GITHUB_ENV
+          echo "RELEASE_VERSION=${{ GITHUB_REF }}" >> $GITHUB_ENV
 
       - name: Debug
         run: |
           echo "Release version: ${{env.RELEASE_VERSION}}"
-          echo gh release list --repo https://github.com/${{ github.repository }} --limit 3
+          echo $(gh release list --repo https://github.com/${{ github.repository }} --limit 3)
 
       - name: Setup Node
         uses: actions/setup-node@v3
