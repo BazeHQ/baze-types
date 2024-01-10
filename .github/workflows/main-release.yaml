@@ -108,4 +108,4 @@ jobs:
         tag_name: ${{ steps.newtag.outputs.tag }}
         release_name: "[${{ steps.newtag.outputs.type }}] Release ${{ steps.newtag.outputs.tag }}"
         draft: true
-        prerelease: true
+        prerelease: false
