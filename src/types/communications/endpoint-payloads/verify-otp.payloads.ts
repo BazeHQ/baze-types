@@ -9,5 +9,6 @@ export interface IVerifyOtpPayload {
 
 export interface IVerifyOtpResponse {
     status: boolean;
-    token?: string;
+    token: string;
+    refreshToken: string;
 }

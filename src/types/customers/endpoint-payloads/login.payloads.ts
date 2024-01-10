@@ -5,4 +5,5 @@ export interface ILoginPayload {
 
 export interface ILoginResponse {
     token: string;
+    refreshToken: string;
 }
