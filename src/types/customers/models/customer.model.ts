@@ -21,15 +21,3 @@ export interface ICustomer extends IBase {
     passwords?: Array<IPassword>;
 	phoneVerified: boolean
 }
-
-export enum TokenActions {
-	ReserveEmail = 'reserve-email',
-	PlatformAccess = 'platform-access',
-}
-
-export const TokenExpiry: {
-	[key in TokenActions]: string
-} = {
-	'reserve-email': '1h',
-	'platform-access': '5d'
-};
