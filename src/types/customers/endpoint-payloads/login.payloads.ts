@@ -1,6 +1,6 @@
 export interface ILoginPayload {
     email: string;
-    passPhrase: string;
+    password: string;
 }
 
 export interface ILoginResponse {
