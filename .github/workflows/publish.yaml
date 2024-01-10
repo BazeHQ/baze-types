@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
           registry-url: 'https://npm.pkg.github.com'
           scope: '@vitoraguila'
 
@@ -33,7 +33,7 @@ jobs:
           git checkout -b release/${{env.RELEASE_VERSION}}
 
       - name: Install dependencies
-        run: yarn && yarn install --ignore-engines
+        run: yarn && yarn install
 
       - name: Build
         run: yarn build
