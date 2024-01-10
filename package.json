@@ -1,6 +1,6 @@
 {
   "name": "@joshuaben-seth/bazehq-types",
-  "version": "v1.22.20",
+  "version": "1.2.20",
   "description": "",
   "type": "module",
   "main": "./dist/index.cjs",
