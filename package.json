@@ -30,5 +30,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BazeHQ/baze-types.git"
+  },
+  "engines" : { 
+    "node" : ">=18.0.0"
   }
 }
