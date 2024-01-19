@@ -13,7 +13,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "npx tsup --dts"
+    "build": "npx tsup --dts",
+    "commit": "pnpm build && git add . && git commit -am "
   },
   "keywords": [],
   "author": {

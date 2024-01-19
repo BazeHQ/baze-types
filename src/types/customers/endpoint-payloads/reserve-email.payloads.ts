@@ -1,3 +1,5 @@
+import { HttpStatusCode } from "axios";
+import { BazeError, Endpoint, HttpMethods } from "../../generic";
 import { ICustomer } from "../models";
 
 export interface IReserveEmailPayload {
@@ -10,4 +12,51 @@ export interface IReserveEmailPayload {
 export interface IReserveEmailResponse {
     customer: ICustomer;
     token: string;
+}
+
+export type PhoneOrEmail = 'phone' | 'email';
+
+export const ReserveEmailErrors: {
+    compromisedPassword: ( changeDate: Date ) => BazeError;
+    duplicateCustomerDetected: ( d: PhoneOrEmail ) => BazeError;
+    invalidPhoneNumber: BazeError;
+} = {
+	invalidPhoneNumber: {
+		statusCode: HttpStatusCode.BadRequest,
+        code: 'INVALID_PHONE_NUMBER',
+		message: `Your phone number isn't quite what we're expecting`,
+		recommendedActions: [
+			`Ensure you're providing a proper mobile number`
+		]
+	},
+	duplicateCustomerDetected: ( d: PhoneOrEmail ) => {
+		return {
+			statusCode: HttpStatusCode.BadRequest,
+            code: 'DUPLICATE_CUSTOMER_DETECTED',
+			message: `The ${d} you provided is already taken please provide another one or retrieve your account`,
+			recommendedActions: [
+				`Confirm that your ${d} is correct`,
+				`If you're sure it's correct then that probably means you already have an account. Try using the account recovery tool`,
+				`Provide entirely different details`
+			]
+		};
+	},
+	compromisedPassword( changeDate: Date ) {
+		return {
+			statusCode: HttpStatusCode.BadRequest,
+            code: 'COMPROMISED_PASSWORD',
+			message: `This password is compromised. It was changed on ${changeDate.toDateString()}`,
+			recommendedActions: [
+				`Try using a totally different password`
+			],
+			description: `This happens when a admin tries to use a password they already changed for some reason in the past`
+		};
+	},
+};
+
+export const ReserveEmailEndpoint: Endpoint = {
+    path: '',
+    fullPath: '/customers',
+    parentModule: '/customers',
+    method: HttpMethods.Post
 }
