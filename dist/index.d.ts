@@ -43,7 +43,8 @@ interface Endpoint {
 }
 
 declare enum OtpContext {
-    VerifyPhoneNumber = "verify-phone-number"
+    VerifyPhoneNumber = "verify-phone-number",
+    ResetPassword = "reset-password"
 }
 interface IVerifyOtpPayload {
     context: OtpContext;

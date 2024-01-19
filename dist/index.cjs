@@ -51,6 +51,7 @@ var HttpMethods = /* @__PURE__ */ ((HttpMethods2) => {
 // src/types/communications/endpoint-payloads/verify-otp.payloads.ts
 var OtpContext = /* @__PURE__ */ ((OtpContext2) => {
   OtpContext2["VerifyPhoneNumber"] = "verify-phone-number";
+  OtpContext2["ResetPassword"] = "reset-password";
   return OtpContext2;
 })(OtpContext || {});
 var OtpVerificationErrors = {

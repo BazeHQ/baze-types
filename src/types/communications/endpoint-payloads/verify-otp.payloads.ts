@@ -2,7 +2,8 @@ import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
 
 export enum OtpContext {
-	VerifyPhoneNumber = 'verify-phone-number'
+	VerifyPhoneNumber = 'verify-phone-number',
+	ResetPassword = 'reset-password',
 }
 
 export interface IVerifyOtpPayload {
