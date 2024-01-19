@@ -40,6 +40,12 @@ var VerifyOtpEndpoint = {
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
+var VerifyOtpForPasswordResetEndpoint = {
+  path: "/otps/reset-password",
+  fullPath: "/communications/otps/reset-password",
+  parentModule: "/communications",
+  method: "PATCH" /* Patch */
+};
 
 // src/types/communications/endpoint-payloads/resend-otp.payloads.ts
 var ResendOtpForPhoneVerificationEndpoint = {
@@ -205,6 +211,7 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  VerifyOtpEndpoint
+  VerifyOtpEndpoint,
+  VerifyOtpForPasswordResetEndpoint
 };
 //# sourceMappingURL=index.js.map

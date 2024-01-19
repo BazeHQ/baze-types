@@ -65,6 +65,7 @@ declare const OtpVerificationErrors: {
     retriesUsedUp: BazeError;
 };
 declare const VerifyOtpEndpoint: Endpoint;
+declare const VerifyOtpForPasswordResetEndpoint: Endpoint;
 
 declare const ResendOtpForPhoneVerificationEndpoint: Endpoint;
 
@@ -144,4 +145,4 @@ declare const ResetPasswordErrors: {
 declare const ResetPasswordEndpoint: Endpoint;
 declare const ForgotPasswordEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, VerifyOtpEndpoint };
+export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, VerifyOtpEndpoint, VerifyOtpForPasswordResetEndpoint };

@@ -35,7 +35,8 @@ __export(src_exports, {
   ReserveEmailErrors: () => ReserveEmailErrors,
   ResetPasswordEndpoint: () => ResetPasswordEndpoint,
   ResetPasswordErrors: () => ResetPasswordErrors,
-  VerifyOtpEndpoint: () => VerifyOtpEndpoint
+  VerifyOtpEndpoint: () => VerifyOtpEndpoint,
+  VerifyOtpForPasswordResetEndpoint: () => VerifyOtpForPasswordResetEndpoint
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -78,6 +79,12 @@ var OtpVerificationErrors = {
 var VerifyOtpEndpoint = {
   path: "/otps",
   fullPath: "/communications/otps",
+  parentModule: "/communications",
+  method: "PATCH" /* Patch */
+};
+var VerifyOtpForPasswordResetEndpoint = {
+  path: "/otps/reset-password",
+  fullPath: "/communications/otps/reset-password",
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
@@ -247,6 +254,7 @@ var ForgotPasswordEndpoint = {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  VerifyOtpEndpoint
+  VerifyOtpEndpoint,
+  VerifyOtpForPasswordResetEndpoint
 });
 //# sourceMappingURL=index.cjs.map
