@@ -1,18 +1,5 @@
 import { HttpStatusCode } from 'axios';
 
-declare enum OtpContext {
-    VerifyPhoneNumber = "verify-phone-number"
-}
-interface IVerifyOtpPayload {
-    context: OtpContext;
-    token: string;
-}
-interface IVerifyOtpResponse {
-    status: boolean;
-    token: string;
-    refreshToken: string;
-}
-
 interface IBase {
     _id: string;
     _deletedAt: Date;
@@ -42,6 +29,39 @@ interface ApiResponse<T> {
     data: T;
 }
 
+declare enum HttpMethods {
+    Post = "POST",
+    Put = "PUT",
+    Get = "GET",
+    Patch = "PATCH"
+}
+interface Endpoint {
+    path: string;
+    fullPath?: string;
+    parentModule?: string;
+    method: HttpMethods;
+}
+
+declare enum OtpContext {
+    VerifyPhoneNumber = "verify-phone-number"
+}
+interface IVerifyOtpPayload {
+    context: OtpContext;
+    token: string;
+}
+interface IVerifyOtpResponse {
+    status: boolean;
+    token: string;
+    refreshToken: string;
+}
+declare const OtpVerificationErrors: {
+    invalidOtp: BazeError;
+    retriesUsedUp: BazeError;
+};
+declare const VerifyOtpEndpoint: Endpoint;
+
+declare const ResendOtpForPhoneVerificationEndpoint: Endpoint;
+
 interface IPassword extends IBase {
     token: string;
     hint: string;
@@ -70,10 +90,19 @@ interface ILoginResponse {
     token: string;
     refreshToken: string;
 }
+declare const LoginErrors: {
+    invalidEmailOrPassword: BazeError;
+    deactivatedAccount: BazeError;
+};
+declare const LoginEndpoint: Endpoint;
 
 interface IFetchProfileResponse {
     customer: ICustomer;
 }
+declare const FetchProfileErrors: {
+    invalidCustomer: BazeError;
+};
+declare const ProfileEndpoint: Endpoint;
 
 interface IReserveEmailPayload {
     email: string;
@@ -85,5 +114,14 @@ interface IReserveEmailResponse {
     customer: ICustomer;
     token: string;
 }
+type PhoneOrEmail = 'phone' | 'email';
+declare const ReserveEmailErrors: {
+    compromisedPassword: (changeDate: Date) => BazeError;
+    duplicateCustomerDetected: (d: PhoneOrEmail) => BazeError;
+    invalidPhoneNumber: BazeError;
+};
+declare const ReserveEmailEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IReserveEmailPayload, type IReserveEmailResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, OtpContext };
+declare const GetAccessTokenEndpoint: Endpoint;
+
+export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type Endpoint, FetchProfileErrors, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IReserveEmailPayload, type IReserveEmailResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, VerifyOtpEndpoint };
