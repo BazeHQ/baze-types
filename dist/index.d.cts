@@ -50,6 +50,11 @@ interface IVerifyOtpPayload {
     context: OtpContext;
     token: string;
 }
+interface IVerifyOtpWithoutAuthPayload {
+    context: OtpContext;
+    token: string;
+    phoneNumber: string;
+}
 interface IVerifyOtpResponse {
     status: boolean;
     token: string;
@@ -125,4 +130,4 @@ declare const ReserveEmailEndpoint: Endpoint;
 
 declare const GetAccessTokenEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type Endpoint, FetchProfileErrors, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IReserveEmailPayload, type IReserveEmailResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, VerifyOtpEndpoint };
+export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type Endpoint, FetchProfileErrors, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IReserveEmailPayload, type IReserveEmailResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, VerifyOtpEndpoint };

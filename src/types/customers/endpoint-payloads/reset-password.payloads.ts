@@ -35,3 +35,10 @@ export const ResetPasswordEndpoint: Endpoint = {
     parentModule: '/customers',
     method: HttpMethods.Patch
 }
+
+export const ForgotPasswordEndpoint: Endpoint = {
+    path: '/auth/passwords',
+    fullPath: '/customers/auth/passwords',
+    parentModule: '/customers',
+    method: HttpMethods.Post
+}

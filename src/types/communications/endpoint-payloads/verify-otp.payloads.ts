@@ -11,6 +11,12 @@ export interface IVerifyOtpPayload {
     token: string;
 }
 
+export interface IVerifyOtpWithoutAuthPayload {
+	context: OtpContext;
+	token: string;
+	phoneNumber: string;
+}
+
 export interface IVerifyOtpResponse {
     status: boolean;
     token: string;
