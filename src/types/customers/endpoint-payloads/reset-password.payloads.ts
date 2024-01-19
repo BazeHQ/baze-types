@@ -1,6 +1,9 @@
 import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
 
+export interface IRequestPasswordResetPayload {
+    phoneNumber: string;
+}
 export interface IResetPasswordPayload {
     password: string;
     confirmPassword: string;
