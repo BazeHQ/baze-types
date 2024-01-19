@@ -22,6 +22,7 @@ var src_exports = {};
 __export(src_exports, {
   CustomerAccountStatus: () => CustomerAccountStatus,
   FetchProfileErrors: () => FetchProfileErrors,
+  ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
   HttpMethods: () => HttpMethods,
   LoginEndpoint: () => LoginEndpoint,
@@ -32,6 +33,8 @@ __export(src_exports, {
   ResendOtpForPhoneVerificationEndpoint: () => ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint: () => ReserveEmailEndpoint,
   ReserveEmailErrors: () => ReserveEmailErrors,
+  ResetPasswordEndpoint: () => ResetPasswordEndpoint,
+  ResetPasswordErrors: () => ResetPasswordErrors,
   VerifyOtpEndpoint: () => VerifyOtpEndpoint
 });
 module.exports = __toCommonJS(src_exports);
@@ -193,10 +196,45 @@ var GetAccessTokenEndpoint = {
   parentModule: "/customers",
   method: "GET" /* Get */
 };
+
+// src/types/customers/endpoint-payloads/reset-password.payloads.ts
+var import_axios5 = require("axios");
+var ResetPasswordErrors = {
+  confirmPasswordMismatch: {
+    statusCode: import_axios5.HttpStatusCode.BadRequest,
+    code: "CONFIRM_PASSWORD_MISMATCH",
+    message: `Your password and confirm password don't match`,
+    recommendedActions: [
+      `Ensure both passwords you're providing match`
+    ]
+  },
+  lateResetRequest: {
+    statusCode: import_axios5.HttpStatusCode.ExpectationFailed,
+    code: "LATE_RESET_REQUEST",
+    message: `We couldn't find an otp verification to verify your password reset`,
+    recommendedActions: [
+      `Restart the process`,
+      `Make sure you reset your password within 5 minutes of verifying the otp you're sent`
+    ]
+  }
+};
+var ResetPasswordEndpoint = {
+  path: "/auth/passwords",
+  fullPath: "/customers/auth/passwords",
+  parentModule: "/customers",
+  method: "PATCH" /* Patch */
+};
+var ForgotPasswordEndpoint = {
+  path: "/auth/passwords",
+  fullPath: "/customers/auth/passwords",
+  parentModule: "/customers",
+  method: "POST" /* Post */
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   CustomerAccountStatus,
   FetchProfileErrors,
+  ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
   LoginEndpoint,
@@ -207,6 +245,8 @@ var GetAccessTokenEndpoint = {
   ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,
+  ResetPasswordEndpoint,
+  ResetPasswordErrors,
   VerifyOtpEndpoint
 });
 //# sourceMappingURL=index.cjs.map

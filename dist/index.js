@@ -155,9 +155,44 @@ var GetAccessTokenEndpoint = {
   parentModule: "/customers",
   method: "GET" /* Get */
 };
+
+// src/types/customers/endpoint-payloads/reset-password.payloads.ts
+import { HttpStatusCode as HttpStatusCode5 } from "axios";
+var ResetPasswordErrors = {
+  confirmPasswordMismatch: {
+    statusCode: HttpStatusCode5.BadRequest,
+    code: "CONFIRM_PASSWORD_MISMATCH",
+    message: `Your password and confirm password don't match`,
+    recommendedActions: [
+      `Ensure both passwords you're providing match`
+    ]
+  },
+  lateResetRequest: {
+    statusCode: HttpStatusCode5.ExpectationFailed,
+    code: "LATE_RESET_REQUEST",
+    message: `We couldn't find an otp verification to verify your password reset`,
+    recommendedActions: [
+      `Restart the process`,
+      `Make sure you reset your password within 5 minutes of verifying the otp you're sent`
+    ]
+  }
+};
+var ResetPasswordEndpoint = {
+  path: "/auth/passwords",
+  fullPath: "/customers/auth/passwords",
+  parentModule: "/customers",
+  method: "PATCH" /* Patch */
+};
+var ForgotPasswordEndpoint = {
+  path: "/auth/passwords",
+  fullPath: "/customers/auth/passwords",
+  parentModule: "/customers",
+  method: "POST" /* Post */
+};
 export {
   CustomerAccountStatus,
   FetchProfileErrors,
+  ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
   LoginEndpoint,
@@ -168,6 +203,8 @@ export {
   ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,
+  ResetPasswordEndpoint,
+  ResetPasswordErrors,
   VerifyOtpEndpoint
 };
 //# sourceMappingURL=index.js.map
