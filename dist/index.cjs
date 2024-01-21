@@ -35,8 +35,7 @@ __export(src_exports, {
   ReserveEmailErrors: () => ReserveEmailErrors,
   ResetPasswordEndpoint: () => ResetPasswordEndpoint,
   ResetPasswordErrors: () => ResetPasswordErrors,
-  VerifyOtpEndpoint: () => VerifyOtpEndpoint,
-  VerifyOtpForPasswordResetEndpoint: () => VerifyOtpForPasswordResetEndpoint
+  VerifyOtpEndpoint: () => VerifyOtpEndpoint
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -79,12 +78,6 @@ var OtpVerificationErrors = {
 var VerifyOtpEndpoint = {
   path: "/otps",
   fullPath: "/communications/otps",
-  parentModule: "/communications",
-  method: "PATCH" /* Patch */
-};
-var VerifyOtpForPasswordResetEndpoint = {
-  path: "/otps/reset-password",
-  fullPath: "/communications/otps/reset-password",
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
@@ -187,6 +180,14 @@ var ReserveEmailErrors = {
       ],
       description: `This happens when a admin tries to use a password they already changed for some reason in the past`
     };
+  },
+  couldNotSendOtp: {
+    statusCode: import_axios4.HttpStatusCode.FailedDependency,
+    code: "COULD_NOT_SEND_OTP_TO_RESERVE_EMAIL",
+    message: `Your account was created but we couldn't send you an OTP`,
+    recommendedActions: [
+      `Login and try again in a few minutes`
+    ]
   }
 };
 var ReserveEmailEndpoint = {
@@ -254,7 +255,6 @@ var ForgotPasswordEndpoint = {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  VerifyOtpEndpoint,
-  VerifyOtpForPasswordResetEndpoint
+  VerifyOtpEndpoint
 });
 //# sourceMappingURL=index.cjs.map

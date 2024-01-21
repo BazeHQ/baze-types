@@ -51,10 +51,3 @@ export const VerifyOtpEndpoint: Endpoint = {
     parentModule: '/communications',
     method: HttpMethods.Patch
 }
-
-export const VerifyOtpForPasswordResetEndpoint: Endpoint = {
-    path: '/otps/reset-password',
-    fullPath: '/communications/otps/reset-password',
-    parentModule: '/communications',
-    method: HttpMethods.Patch
-}

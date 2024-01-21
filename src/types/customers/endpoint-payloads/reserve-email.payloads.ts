@@ -20,6 +20,7 @@ export const ReserveEmailErrors: {
     compromisedPassword: ( changeDate: Date ) => BazeError;
     duplicateCustomerDetected: ( d: PhoneOrEmail ) => BazeError;
     invalidPhoneNumber: BazeError;
+	couldNotSendOtp: BazeError;
 } = {
 	invalidPhoneNumber: {
 		statusCode: HttpStatusCode.BadRequest,
@@ -52,6 +53,14 @@ export const ReserveEmailErrors: {
 			description: `This happens when a admin tries to use a password they already changed for some reason in the past`
 		};
 	},
+	couldNotSendOtp: {
+		statusCode: HttpStatusCode.FailedDependency,
+		code: 'COULD_NOT_SEND_OTP_TO_RESERVE_EMAIL',
+		message: `Your account was created but we couldn't send you an OTP`,
+		recommendedActions: [
+			`Login and try again in a few minutes`
+		]
+	}
 };
 
 export const ReserveEmailEndpoint: Endpoint = {
