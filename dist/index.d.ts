@@ -33,7 +33,8 @@ declare enum HttpMethods {
     Post = "POST",
     Put = "PUT",
     Get = "GET",
-    Patch = "PATCH"
+    Patch = "PATCH",
+    Delete = "DELETE"
 }
 interface Endpoint {
     path: string;

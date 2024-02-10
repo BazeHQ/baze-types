@@ -7,6 +7,7 @@ var HttpMethods = /* @__PURE__ */ ((HttpMethods2) => {
   HttpMethods2["Put"] = "PUT";
   HttpMethods2["Get"] = "GET";
   HttpMethods2["Patch"] = "PATCH";
+  HttpMethods2["Delete"] = "DELETE";
   return HttpMethods2;
 })(HttpMethods || {});
 
