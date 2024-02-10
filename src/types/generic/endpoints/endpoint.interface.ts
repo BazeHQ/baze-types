@@ -2,7 +2,8 @@ export enum HttpMethods {
 	Post = 'POST',
 	Put = 'PUT',
 	Get = 'GET',
-	Patch = 'PATCH'
+	Patch = 'PATCH',
+	Delete = 'DELETE'
 }
 
 export interface Endpoint {
