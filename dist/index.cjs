@@ -30,6 +30,7 @@ __export(src_exports, {
   OtpContext: () => OtpContext,
   OtpVerificationErrors: () => OtpVerificationErrors,
   ProfileEndpoint: () => ProfileEndpoint,
+  ResendOtpForPasswordResetEndpoint: () => ResendOtpForPasswordResetEndpoint,
   ResendOtpForPhoneVerificationEndpoint: () => ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint: () => ReserveEmailEndpoint,
   ReserveEmailErrors: () => ReserveEmailErrors,
@@ -87,6 +88,12 @@ var VerifyOtpEndpoint = {
 var ResendOtpForPhoneVerificationEndpoint = {
   path: "/otps/phone-verification",
   fullPath: "/communications/otps/phone-verification",
+  parentModule: "/communications",
+  method: "PATCH" /* Patch */
+};
+var ResendOtpForPasswordResetEndpoint = {
+  path: "/otps/password-reset",
+  fullPath: "/communications/otps/password-reset",
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
@@ -251,6 +258,7 @@ var ForgotPasswordEndpoint = {
   OtpContext,
   OtpVerificationErrors,
   ProfileEndpoint,
+  ResendOtpForPasswordResetEndpoint,
   ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,

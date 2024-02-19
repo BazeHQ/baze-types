@@ -6,3 +6,10 @@ export const ResendOtpForPhoneVerificationEndpoint: Endpoint = {
     parentModule: '/communications',
     method: HttpMethods.Patch
 }
+
+export const ResendOtpForPasswordResetEndpoint: Endpoint = {
+    path: '/otps/password-reset',
+    fullPath: '/communications/otps/password-reset',
+    parentModule: '/communications',
+    method: HttpMethods.Patch
+}

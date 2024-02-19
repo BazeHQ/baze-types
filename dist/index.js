@@ -49,6 +49,12 @@ var ResendOtpForPhoneVerificationEndpoint = {
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
+var ResendOtpForPasswordResetEndpoint = {
+  path: "/otps/password-reset",
+  fullPath: "/communications/otps/password-reset",
+  parentModule: "/communications",
+  method: "PATCH" /* Patch */
+};
 
 // src/types/customers/models/customer.model.ts
 var CustomerAccountStatus = /* @__PURE__ */ ((CustomerAccountStatus2) => {
@@ -209,6 +215,7 @@ export {
   OtpContext,
   OtpVerificationErrors,
   ProfileEndpoint,
+  ResendOtpForPasswordResetEndpoint,
   ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,
