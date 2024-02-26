@@ -88,6 +88,7 @@ interface ICustomer extends IBase {
     phoneNumber: string;
     passwords?: Array<IPassword>;
     phoneVerified: boolean;
+    hasCreatedStore: boolean;
 }
 
 interface ILoginPayload {

@@ -19,5 +19,6 @@ export interface ICustomer extends IBase {
     fullName: string;
     phoneNumber: string;
     passwords?: Array<IPassword>;
-	phoneVerified: boolean
+	phoneVerified: boolean;
+    hasCreatedStore: boolean;
 }
