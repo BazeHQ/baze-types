@@ -20,6 +20,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  CreateStoreEndpoint: () => CreateStoreEndpoint,
+  CreateStoreErrors: () => CreateStoreErrors,
   CustomerAccountStatus: () => CustomerAccountStatus,
   FetchProfileErrors: () => FetchProfileErrors,
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
@@ -246,8 +248,33 @@ var ForgotPasswordEndpoint = {
   parentModule: "/customers",
   method: "POST" /* Post */
 };
+
+// src/types/customers/endpoint-payloads/create-store.payloads.ts
+var import_axios6 = require("axios");
+var CreateStoreErrors = {
+  noSuchAttribute: {
+    statusCode: import_axios6.HttpStatusCode.BadRequest,
+    code: "NO_SUCH_ATTRIBUTE",
+    message: `This attribute does not exist`
+  },
+  attributeHasNoSuchOption: (attrName) => {
+    return {
+      statusCode: import_axios6.HttpStatusCode.BadRequest,
+      code: "ATTRIBUTE_HAS_NO_SUCH_OPTION",
+      message: `Attribute ${attrName} does not accommodate some options provided for it`
+    };
+  }
+};
+var CreateStoreEndpoint = {
+  path: "/stores",
+  fullPath: "/stores",
+  parentModule: "/stores",
+  method: "POST" /* Post */
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  CreateStoreEndpoint,
+  CreateStoreErrors,
   CustomerAccountStatus,
   FetchProfileErrors,
   ForgotPasswordEndpoint,

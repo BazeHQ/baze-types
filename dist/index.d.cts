@@ -91,6 +91,48 @@ interface ICustomer extends IBase {
     hasCreatedStore: boolean;
 }
 
+interface ICloudinaryImage {
+    assetId: string;
+    publicId: string;
+}
+
+interface IStoreAttribute extends IBase {
+    name: string;
+    slug: string;
+    isMandatoryForActivation: boolean;
+    isActive: boolean;
+}
+interface IStoreAttributeOption extends IBase {
+    attribute: string;
+    value: string;
+    isActive: boolean;
+}
+interface IStoreConfig extends IBase {
+    attribute: string;
+    options?: Array<string>;
+    rawChoices?: Array<unknown>;
+}
+interface IStore {
+    customerId: string;
+    name: string;
+    isLive: boolean;
+    contactEmails: Array<string>;
+    logo: ICloudinaryImage;
+    heroBg: ICloudinaryImage;
+    allowsMessaging: boolean;
+    heroSectionText: string;
+    contactNumbers: Array<string>;
+    policies: Array<{
+        name: string;
+        content: string;
+    }>;
+    addresses: Array<{
+        name: string;
+        location: unknown;
+    }>;
+    config: Array<IStoreConfig>;
+}
+
 interface ILoginPayload {
     email: string;
     password: string;
@@ -148,4 +190,26 @@ declare const ResetPasswordErrors: {
 declare const ResetPasswordEndpoint: Endpoint;
 declare const ForgotPasswordEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, VerifyOtpEndpoint };
+type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">;
+interface ICreateStorePayload {
+    name: string;
+    email: string;
+    contactNumber: string;
+    logo: string;
+    heroBg: string;
+    allowsMessaging: string;
+    heroSectionText: string;
+    shippingAndRefundPolicy: string;
+    address: string;
+    config: Array<IRawStoreConfig>;
+}
+interface ICreateStoreResponse {
+    store: IStore;
+}
+declare const CreateStoreErrors: {
+    noSuchAttribute: BazeError;
+    attributeHasNoSuchOption: (attrName: string) => BazeError;
+};
+declare const CreateStoreEndpoint: Endpoint;
+
+export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateStoreEndpoint, CreateStoreErrors, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICloudinaryImage, type ICreateStorePayload, type ICreateStoreResponse, type ICustomer, type IFetchProfileResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, VerifyOtpEndpoint };

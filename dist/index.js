@@ -204,7 +204,32 @@ var ForgotPasswordEndpoint = {
   parentModule: "/customers",
   method: "POST" /* Post */
 };
+
+// src/types/customers/endpoint-payloads/create-store.payloads.ts
+import { HttpStatusCode as HttpStatusCode6 } from "axios";
+var CreateStoreErrors = {
+  noSuchAttribute: {
+    statusCode: HttpStatusCode6.BadRequest,
+    code: "NO_SUCH_ATTRIBUTE",
+    message: `This attribute does not exist`
+  },
+  attributeHasNoSuchOption: (attrName) => {
+    return {
+      statusCode: HttpStatusCode6.BadRequest,
+      code: "ATTRIBUTE_HAS_NO_SUCH_OPTION",
+      message: `Attribute ${attrName} does not accommodate some options provided for it`
+    };
+  }
+};
+var CreateStoreEndpoint = {
+  path: "/stores",
+  fullPath: "/stores",
+  parentModule: "/stores",
+  method: "POST" /* Post */
+};
 export {
+  CreateStoreEndpoint,
+  CreateStoreErrors,
   CustomerAccountStatus,
   FetchProfileErrors,
   ForgotPasswordEndpoint,
