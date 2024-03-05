@@ -8,7 +8,7 @@ export interface IListStoreAttributesResponse {
 }
 
 export const ListStoreAttributesEndpoint: Endpoint = {
-    path: '/store-mgt',
+    path: '/active-attributes',
     fullPath: '/store-mgt/active-attributes',
     parentModule: '/stores',
     method: HttpMethods.Get

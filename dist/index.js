@@ -238,7 +238,7 @@ var CreateStoreEndpoint = {
 
 // src/types/customers/endpoint-payloads/list-store-attributes.payloads.ts
 var ListStoreAttributesEndpoint = {
-  path: "/store-mgt",
+  path: "/active-attributes",
   fullPath: "/store-mgt/active-attributes",
   parentModule: "/stores",
   method: "GET" /* Get */
