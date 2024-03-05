@@ -7,7 +7,7 @@ export interface IListStoreAttributesResponse {
     }>
 }
 
-export const ListStoreAttributesEndpoint: Endpoint = {
+export const IListStoreAttributesEndpoint: Endpoint = {
     path: '/store-mgt',
     fullPath: '/store-mgt/active-attributes',
     parentModule: '/stores',

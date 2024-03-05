@@ -27,7 +27,7 @@ __export(src_exports, {
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
   HttpMethods: () => HttpMethods,
-  ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
+  IListStoreAttributesEndpoint: () => IListStoreAttributesEndpoint,
   LoginEndpoint: () => LoginEndpoint,
   LoginErrors: () => LoginErrors,
   OtpContext: () => OtpContext,
@@ -282,7 +282,7 @@ var CreateStoreEndpoint = {
 };
 
 // src/types/customers/endpoint-payloads/list-store-attributes.payloads.ts
-var ListStoreAttributesEndpoint = {
+var IListStoreAttributesEndpoint = {
   path: "/store-mgt",
   fullPath: "/store-mgt/active-attributes",
   parentModule: "/stores",
@@ -297,7 +297,7 @@ var ListStoreAttributesEndpoint = {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
-  ListStoreAttributesEndpoint,
+  IListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
   OtpContext,
