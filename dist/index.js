@@ -235,6 +235,14 @@ var CreateStoreEndpoint = {
   parentModule: "/stores",
   method: "POST" /* Post */
 };
+
+// src/types/customers/endpoint-payloads/list-store-attributes.payloads.ts
+var ListStoreAttributesEndpoint = {
+  path: "/store-mgt",
+  fullPath: "/store-mgt/active-attributes",
+  parentModule: "/stores",
+  method: "GET" /* Get */
+};
 export {
   CreateStoreEndpoint,
   CreateStoreErrors,
@@ -243,6 +251,7 @@ export {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
+  ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
   OtpContext,

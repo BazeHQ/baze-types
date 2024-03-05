@@ -27,6 +27,7 @@ __export(src_exports, {
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
   HttpMethods: () => HttpMethods,
+  ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
   LoginEndpoint: () => LoginEndpoint,
   LoginErrors: () => LoginErrors,
   OtpContext: () => OtpContext,
@@ -279,6 +280,14 @@ var CreateStoreEndpoint = {
   parentModule: "/stores",
   method: "POST" /* Post */
 };
+
+// src/types/customers/endpoint-payloads/list-store-attributes.payloads.ts
+var ListStoreAttributesEndpoint = {
+  path: "/store-mgt",
+  fullPath: "/store-mgt/active-attributes",
+  parentModule: "/stores",
+  method: "GET" /* Get */
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   CreateStoreEndpoint,
@@ -288,6 +297,7 @@ var CreateStoreEndpoint = {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
+  ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
   OtpContext,
