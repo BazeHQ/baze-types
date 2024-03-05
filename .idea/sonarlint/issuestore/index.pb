@@ -29,3 +29,5 @@ n
 .src/types/customers/endpoint-payloads/index.ts,5/2/52393c46c727b2e26e5052199431534069ffcb77
 w
 Gsrc/types/customers/endpoint-payloads/list-store-attributes.payloads.ts,f/3/f306100a2e8611f606d858194c77698094208b04
+7
+docs.md,9/c/9c479e952e7e17ac26aae0cd0cfe4ab3aa4f9735
