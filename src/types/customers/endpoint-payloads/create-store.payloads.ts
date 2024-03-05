@@ -24,6 +24,7 @@ export interface ICreateStoreResponse {
 export const CreateStoreErrors: {
     noSuchAttribute: BazeError;
     attributeHasNoSuchOption: ( attrName: string ) => BazeError;
+    requiredAttributeNotProvided: BazeError;
 } = {
     noSuchAttribute: {
         statusCode: HttpStatusCode.BadRequest,
@@ -36,6 +37,14 @@ export const CreateStoreErrors: {
             code: "ATTRIBUTE_HAS_NO_SUCH_OPTION",
             message: `Attribute ${ attrName } does not accommodate some options provided for it`
         };
+    },
+    requiredAttributeNotProvided: {
+        statusCode: HttpStatusCode.BadRequest,
+        code: "REQUIRED_ATTRIBUTE_NOT_PROVIDED",
+        message: 'Required attribute(s) not provided',
+        recommendedActions: [
+            'Please provide all required attributes'
+        ]
     }
 };
 
