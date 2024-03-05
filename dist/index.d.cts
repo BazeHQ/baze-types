@@ -209,6 +209,7 @@ interface ICreateStoreResponse {
 declare const CreateStoreErrors: {
     noSuchAttribute: BazeError;
     attributeHasNoSuchOption: (attrName: string) => BazeError;
+    requiredAttributeNotProvided: BazeError;
 };
 declare const CreateStoreEndpoint: Endpoint;
 
