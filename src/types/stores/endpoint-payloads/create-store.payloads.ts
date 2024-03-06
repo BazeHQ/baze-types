@@ -1,6 +1,6 @@
-import {IStore, IStoreConfig} from "../models";
 import {BazeError, Endpoint, HttpMethods} from "../../generic";
 import {HttpStatusCode} from "axios";
+import { IStore, IStoreConfig } from "../models";
 
 export type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">
 

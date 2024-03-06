@@ -1,5 +1,5 @@
 import {IBase} from "../../generic";
-import {ICloudinaryImage} from "./generic";
+import {ICloudinaryImage} from "../../customers/models/generic";
 
 export interface IStoreAttribute extends IBase {
     name: string;

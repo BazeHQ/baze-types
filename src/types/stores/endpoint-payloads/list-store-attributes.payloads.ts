@@ -1,5 +1,5 @@
-import {IStoreAttribute, IStoreAttributeOption} from "../models";
 import {Endpoint, HttpMethods} from "../../generic";
+import { IStoreAttribute, IStoreAttributeOption } from "../models";
 
 export interface IListStoreAttributesResponse {
     attributes: Array<IStoreAttribute & {
