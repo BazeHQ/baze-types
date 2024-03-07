@@ -19,7 +19,7 @@ export interface IStoreConfig extends IBase {
     rawChoices?: Array<unknown>;
 }
 
-export interface IStore {
+export interface IStore extends IBase {
     customerId: string;
     name: string;
     isLive: boolean;

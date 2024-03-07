@@ -243,7 +243,24 @@ var CreateStoreEndpoint = {
   parentModule: "/stores",
   method: "POST" /* Post */
 };
+
+// src/types/stores/endpoint-payloads/product.payloads.ts
+import { HttpStatusCode as HttpStatusCode7 } from "axios";
+var CreateProductErrors = {
+  default: {
+    statusCode: HttpStatusCode7.BadRequest,
+    code: "DEFAULT_CREATE_PRODUCT_ERROR",
+    message: `This is an example error`
+  }
+};
+var createProductEndpoint = {
+  path: "/products",
+  fullPath: "/products",
+  parentModule: "/products",
+  method: "POST" /* Post */
+};
 export {
+  CreateProductErrors,
   CreateStoreEndpoint,
   CreateStoreErrors,
   CustomerAccountStatus,
@@ -263,6 +280,7 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  VerifyOtpEndpoint
+  VerifyOtpEndpoint,
+  createProductEndpoint
 };
 //# sourceMappingURL=index.js.map
