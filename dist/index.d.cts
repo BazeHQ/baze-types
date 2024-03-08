@@ -161,6 +161,7 @@ interface IStoreAttribute extends IBase {
 }
 interface IStoreAttributeOption extends IBase {
     attribute: string;
+    slug: string;
     value: string;
     isActive: boolean;
 }

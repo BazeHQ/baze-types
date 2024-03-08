@@ -9,6 +9,7 @@ export interface IStoreAttribute extends IBase {
 
 export interface IStoreAttributeOption extends IBase {
     attribute: string;
+    slug: string;
     value: string;
     isActive: boolean;
 }
