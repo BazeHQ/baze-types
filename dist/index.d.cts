@@ -209,7 +209,7 @@ interface ICreateStorePayload {
     contactNumber: string;
     logo: string;
     heroBg: string;
-    allowsMessaging: string;
+    allowsMessaging: boolean;
     heroSectionText: string;
     shippingAndRefundPolicy: string;
     address: string;
