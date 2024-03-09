@@ -1,9 +1,11 @@
 import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
 import { ICustomer } from "../models";
+import {IStore} from "../../stores";
 
 export interface IFetchProfileResponse {
-    customer: ICustomer
+    customer: ICustomer,
+	stores: Array<IStore>
 }
 
 export const FetchProfileErrors: {
