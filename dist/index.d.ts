@@ -207,8 +207,8 @@ interface ICreateStorePayload {
     name: string;
     email: string;
     contactNumber: string;
-    logo: string;
-    heroBg: string;
+    logo: ICloudinaryImage;
+    heroBg: ICloudinaryImage;
     allowsMessaging: boolean;
     heroSectionText: string;
     shippingAndRefundPolicy: string;
