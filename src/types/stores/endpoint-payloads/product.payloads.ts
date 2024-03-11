@@ -17,12 +17,26 @@ export interface ICreateProductPayload {
 }
 
 export interface ICreateProductResponse {
-    product: IProduct
+    product: IProduct;
 }
+
+export interface IUpdateProductPayload {
+    id: string;
+    store?: string;
+}
+
+export interface IUpdateProductResponse extends ICreateProductResponse {}
 
 export const createProductEndpoint: Endpoint = {
     path: '/products',
     fullPath: '/products',
     parentModule: '/products',
     method: HttpMethods.Post
+}
+
+export const UpdateProductEndpoint: Endpoint = {
+    path: '/products',
+    fullPath: '/products',
+    parentModule: '/products',
+    method: HttpMethods.Patch
 }
