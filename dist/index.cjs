@@ -40,6 +40,8 @@ __export(src_exports, {
   ReserveEmailErrors: () => ReserveEmailErrors,
   ResetPasswordEndpoint: () => ResetPasswordEndpoint,
   ResetPasswordErrors: () => ResetPasswordErrors,
+  UpdateProductEndpoint: () => UpdateProductEndpoint,
+  UpdateStoreEndpoint: () => UpdateStoreEndpoint,
   VerifyOtpEndpoint: () => VerifyOtpEndpoint,
   createProductEndpoint: () => createProductEndpoint
 });
@@ -306,6 +308,20 @@ var createProductEndpoint = {
   parentModule: "/products",
   method: "POST" /* Post */
 };
+var UpdateProductEndpoint = {
+  path: "/products",
+  fullPath: "/products",
+  parentModule: "/products",
+  method: "PATCH" /* Patch */
+};
+
+// src/types/stores/endpoint-payloads/update-store.payload.ts
+var UpdateStoreEndpoint = {
+  path: "/stores",
+  fullPath: "/stores",
+  parentModule: "/stores",
+  method: "PATCH" /* Patch */
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   CreateProductErrors,
@@ -328,6 +344,8 @@ var createProductEndpoint = {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
+  UpdateProductEndpoint,
+  UpdateStoreEndpoint,
   VerifyOtpEndpoint,
   createProductEndpoint
 });

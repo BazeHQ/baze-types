@@ -259,6 +259,20 @@ var createProductEndpoint = {
   parentModule: "/products",
   method: "POST" /* Post */
 };
+var UpdateProductEndpoint = {
+  path: "/products",
+  fullPath: "/products",
+  parentModule: "/products",
+  method: "PATCH" /* Patch */
+};
+
+// src/types/stores/endpoint-payloads/update-store.payload.ts
+var UpdateStoreEndpoint = {
+  path: "/stores",
+  fullPath: "/stores",
+  parentModule: "/stores",
+  method: "PATCH" /* Patch */
+};
 export {
   CreateProductErrors,
   CreateStoreEndpoint,
@@ -280,6 +294,8 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
+  UpdateProductEndpoint,
+  UpdateStoreEndpoint,
   VerifyOtpEndpoint,
   createProductEndpoint
 };
