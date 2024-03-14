@@ -30,6 +30,12 @@ export interface IStore extends IBase {
     allowsMessaging: boolean;
     heroSectionText: string;
     contactNumbers: Array<string>;
+    subdomains: [
+        {
+            name: string;
+            isActive: boolean;
+        }
+    ]
     policies: Array<{
         name: string;
         content: string;
