@@ -42,6 +42,7 @@ __export(src_exports, {
   ResetPasswordErrors: () => ResetPasswordErrors,
   UpdateProductEndpoint: () => UpdateProductEndpoint,
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
+
   VerifyOtpEndpoint: () => VerifyOtpEndpoint,
   createProductEndpoint: () => createProductEndpoint
 });
@@ -315,7 +316,6 @@ var UpdateProductEndpoint = {
   method: "PATCH" /* Patch */
 };
 
-// src/types/stores/endpoint-payloads/update-store.payload.ts
 var UpdateStoreEndpoint = {
   path: "/stores",
   fullPath: "/stores",
@@ -345,7 +345,7 @@ var UpdateStoreEndpoint = {
   ResetPasswordEndpoint,
   ResetPasswordErrors,
   UpdateProductEndpoint,
-  UpdateStoreEndpoint,
+
   VerifyOtpEndpoint,
   createProductEndpoint
 });

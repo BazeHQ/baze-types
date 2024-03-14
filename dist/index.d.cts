@@ -230,8 +230,7 @@ declare const createProductEndpoint: Endpoint;
 declare const UpdateProductEndpoint: Endpoint;
 
 interface IUpdateStorePayload extends Partial<ICreateStorePayload> {
-    id: string;
-}
+
 declare const UpdateStoreEndpoint: Endpoint;
 
 interface IFetchProfileResponse {
@@ -274,8 +273,4 @@ interface IResetPasswordPayload {
 declare const ResetPasswordErrors: {
     confirmPasswordMismatch: BazeError;
     lateResetRequest: BazeError;
-};
-declare const ResetPasswordEndpoint: Endpoint;
-declare const ForgotPasswordEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICloudinaryImage, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type ICustomer, type IFetchProfileResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariantConfig, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IUpdateProductPayload, type IUpdateProductResponse, type IUpdateStorePayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, UpdateProductEndpoint, UpdateStoreEndpoint, VerifyOtpEndpoint, createProductEndpoint };

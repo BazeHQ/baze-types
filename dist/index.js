@@ -265,8 +265,6 @@ var UpdateProductEndpoint = {
   parentModule: "/products",
   method: "PATCH" /* Patch */
 };
-
-// src/types/stores/endpoint-payloads/update-store.payload.ts
 var UpdateStoreEndpoint = {
   path: "/stores",
   fullPath: "/stores",
@@ -294,8 +292,7 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  UpdateProductEndpoint,
-  UpdateStoreEndpoint,
+
   VerifyOtpEndpoint,
   createProductEndpoint
 };
