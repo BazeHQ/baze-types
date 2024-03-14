@@ -110,8 +110,127 @@ declare const LoginErrors: {
 };
 declare const LoginEndpoint: Endpoint;
 
+interface IStoreAttribute extends IBase {
+    name: string;
+    slug: string;
+    isMandatoryForActivation: boolean;
+    isActive: boolean;
+}
+interface IStoreAttributeOption extends IBase {
+    attribute: string;
+    slug: string;
+    value: string;
+    isActive: boolean;
+}
+interface IStoreConfig extends IBase {
+    attribute: string;
+    options?: Array<string>;
+    rawChoices?: Array<unknown>;
+}
+interface IStore extends IBase {
+    customerId: string;
+    name: string;
+    isLive: boolean;
+    contactEmails: Array<string>;
+    logo: ICloudinaryImage;
+    heroBg: ICloudinaryImage;
+    allowsMessaging: boolean;
+    heroSectionText: string;
+    contactNumbers: Array<string>;
+    policies: Array<{
+        name: string;
+        content: string;
+    }>;
+    addresses: Array<{
+        name: string;
+        location: unknown;
+    }>;
+    config: Array<IStoreConfig>;
+}
+
+type IProductQuantityOption = IBase & {
+    variant: string;
+    option: string;
+};
+interface IProductQuantityConfig extends IBase {
+    options: Array<IProductQuantityOption>;
+    quantity: number;
+    price: number;
+}
+interface IProductVariantConfig extends IBase {
+    hasDifferentPrices: boolean;
+    config: Array<{
+        _id: string;
+        name: string;
+        options: Array<{
+            _id: string;
+            name: string;
+        }>;
+    }>;
+}
+interface IProduct extends IBase {
+    store: string;
+    name: string;
+    price: number;
+    images: Array<ICloudinaryImage>;
+    quantity: number;
+    description: string;
+    variantConfig: {
+        quantityAndPrice: Array<IProductQuantityConfig>;
+        variants: IProductVariantConfig;
+    };
+}
+
+type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">;
+interface ICreateStorePayload {
+    name: string;
+    email: string;
+    contactNumber: string;
+    logo: ICloudinaryImage;
+    heroBg: ICloudinaryImage;
+    allowsMessaging: boolean;
+    heroSectionText: string;
+    shippingAndRefundPolicy: string;
+    address: string;
+    config: Array<IRawStoreConfig>;
+}
+interface ICreateStoreResponse {
+    store: IStore;
+}
+declare const CreateStoreErrors: {
+    noSuchAttribute: BazeError;
+    attributeHasNoSuchOption: (attrName: string) => BazeError;
+    requiredAttributeNotProvided: BazeError;
+};
+declare const CreateStoreEndpoint: Endpoint;
+
+interface IListStoreAttributesResponse {
+    attributes: Array<IStoreAttribute & {
+        options: Array<IStoreAttributeOption>;
+    }>;
+}
+declare const ListStoreAttributesEndpoint: Endpoint;
+
+declare const CreateProductErrors: {
+    default: BazeError;
+};
+interface ICreateProductPayload {
+    store: string;
+}
+interface ICreateProductResponse {
+    product: IProduct;
+}
+interface IUpdateProductPayload {
+    id: string;
+    store?: string;
+}
+interface IUpdateProductResponse extends ICreateProductResponse {
+
+declare const UpdateStoreEndpoint: Endpoint;
+
 interface IFetchProfileResponse {
     customer: ICustomer;
+    stores: Array<IStore>;
 }
 declare const FetchProfileErrors: {
     invalidCustomer: BazeError;
@@ -153,104 +272,3 @@ declare const ResetPasswordErrors: {
 declare const ResetPasswordEndpoint: Endpoint;
 declare const ForgotPasswordEndpoint: Endpoint;
 
-interface IStoreAttribute extends IBase {
-    name: string;
-    slug: string;
-    isMandatoryForActivation: boolean;
-    isActive: boolean;
-}
-interface IStoreAttributeOption extends IBase {
-    attribute: string;
-    slug: string;
-    value: string;
-    isActive: boolean;
-}
-interface IStoreConfig extends IBase {
-    attribute: string;
-    options?: Array<string>;
-    rawChoices?: Array<unknown>;
-}
-interface IStore extends IBase {
-    customerId: string;
-    name: string;
-    isLive: boolean;
-    contactEmails: Array<string>;
-    logo: ICloudinaryImage;
-    heroBg: ICloudinaryImage;
-    allowsMessaging: boolean;
-    heroSectionText: string;
-    contactNumbers: Array<string>;
-    policies: Array<{
-        name: string;
-        content: string;
-    }>;
-    addresses: Array<{
-        name: string;
-        location: unknown;
-    }>;
-    config: Array<IStoreConfig>;
-}
-
-interface IProduct extends IBase {
-    store: string;
-}
-
-interface IListStoreAttributesResponse {
-    attributes: Array<IStoreAttribute & {
-        options: Array<IStoreAttributeOption>;
-    }>;
-}
-declare const ListStoreAttributesEndpoint: Endpoint;
-
-type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">;
-interface ICreateStorePayload {
-    name: string;
-    email: string;
-    contactNumber: string;
-    logo: string;
-    heroBg: string;
-    allowsMessaging: boolean;
-    heroSectionText: string;
-    shippingAndRefundPolicy: string;
-    address: string;
-    config: Array<IRawStoreConfig>;
-}
-interface ICreateStoreResponse {
-    store: IStore;
-}
-declare const CreateStoreErrors: {
-    noSuchAttribute: BazeError;
-    attributeHasNoSuchOption: (attrName: string) => BazeError;
-    requiredAttributeNotProvided: BazeError;
-};
-declare const CreateStoreEndpoint: Endpoint;
-
-declare const CreateProductErrors: {
-    default: BazeError;
-};
-interface ICreateProductPayload {
-    store: string;
-}
-interface ICreateProductResponse {
-    product: IProduct;
-}
-interface IUpdateProductPayload {
-    id: string;
-    store?: string;
-}
-interface IUpdateProductResponse extends ICreateProductResponse {
-}
-declare const createProductEndpoint: Endpoint;
-declare const UpdateProductEndpoint: Endpoint;
-
-interface IUpdateStorePayload extends Partial<ICreateStorePayload> {
-    id: string;
-}
-declare const UpdateStoreErrors: {
-    noSuchStore: BazeError;
-    noSuchAttribute: BazeError;
-    attributeHasNoSuchOption: (attrName: string) => BazeError;
-};
-declare const UpdateStoreEndpoint: Endpoint;
-
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICloudinaryImage, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type ICustomer, type IFetchProfileResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IProduct, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IUpdateProductPayload, type IUpdateProductResponse, type IUpdateStorePayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, UpdateProductEndpoint, UpdateStoreEndpoint, UpdateStoreErrors, VerifyOtpEndpoint, createProductEndpoint };

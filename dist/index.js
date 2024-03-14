@@ -265,18 +265,6 @@ var UpdateProductEndpoint = {
   parentModule: "/products",
   method: "PATCH" /* Patch */
 };
-
-// src/types/stores/endpoint-payloads/update-store.payload.ts
-import { HttpStatusCode as HttpStatusCode8 } from "axios";
-var UpdateStoreErrors = {
-  noSuchStore: {
-    statusCode: HttpStatusCode8.BadRequest,
-    code: "NO_SUCH_STORE",
-    message: `This store does not exist`
-  },
-  noSuchAttribute: CreateStoreErrors.noSuchAttribute,
-  attributeHasNoSuchOption: CreateStoreErrors.attributeHasNoSuchOption
-};
 var UpdateStoreEndpoint = {
   path: "/stores",
   fullPath: "/stores",
@@ -304,9 +292,7 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  UpdateProductEndpoint,
-  UpdateStoreEndpoint,
-  UpdateStoreErrors,
+
   VerifyOtpEndpoint,
   createProductEndpoint
 };

@@ -1,4 +1,4 @@
-import {BazeError, Endpoint, HttpMethods} from "../../generic";
+import {BazeError, Endpoint, HttpMethods, ICloudinaryImage} from "../../generic";
 import {HttpStatusCode} from "axios";
 import { IStore, IStoreConfig } from "../models";
 
@@ -8,8 +8,8 @@ export interface ICreateStorePayload {
     name: string;
     email: string;
     contactNumber: string;
-    logo: string;
-    heroBg: string;
+    logo: ICloudinaryImage;
+    heroBg: ICloudinaryImage;
     allowsMessaging: boolean;
     heroSectionText: string;
     shippingAndRefundPolicy: string;

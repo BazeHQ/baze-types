@@ -110,49 +110,6 @@ declare const LoginErrors: {
 };
 declare const LoginEndpoint: Endpoint;
 
-interface IFetchProfileResponse {
-    customer: ICustomer;
-}
-declare const FetchProfileErrors: {
-    invalidCustomer: BazeError;
-};
-declare const ProfileEndpoint: Endpoint;
-
-interface IReserveEmailPayload {
-    email: string;
-    phoneNumber: string;
-    password: string;
-    fullName: string;
-}
-interface IReserveEmailResponse {
-    customer: ICustomer;
-    token: string;
-}
-type PhoneOrEmail = 'phone' | 'email';
-declare const ReserveEmailErrors: {
-    compromisedPassword: (changeDate: Date) => BazeError;
-    duplicateCustomerDetected: (d: PhoneOrEmail) => BazeError;
-    invalidPhoneNumber: BazeError;
-    couldNotSendOtp: BazeError;
-};
-declare const ReserveEmailEndpoint: Endpoint;
-
-declare const GetAccessTokenEndpoint: Endpoint;
-
-interface IRequestPasswordResetPayload {
-    phoneNumber: string;
-}
-interface IResetPasswordPayload {
-    password: string;
-    confirmPassword: string;
-}
-declare const ResetPasswordErrors: {
-    confirmPasswordMismatch: BazeError;
-    lateResetRequest: BazeError;
-};
-declare const ResetPasswordEndpoint: Endpoint;
-declare const ForgotPasswordEndpoint: Endpoint;
-
 interface IStoreAttribute extends IBase {
     name: string;
     slug: string;
@@ -191,24 +148,46 @@ interface IStore extends IBase {
     config: Array<IStoreConfig>;
 }
 
-interface IProduct extends IBase {
-    store: string;
+type IProductQuantityOption = IBase & {
+    variant: string;
+    option: string;
+};
+interface IProductQuantityConfig extends IBase {
+    options: Array<IProductQuantityOption>;
+    quantity: number;
+    price: number;
 }
-
-interface IListStoreAttributesResponse {
-    attributes: Array<IStoreAttribute & {
-        options: Array<IStoreAttributeOption>;
+interface IProductVariantConfig extends IBase {
+    hasDifferentPrices: boolean;
+    config: Array<{
+        _id: string;
+        name: string;
+        options: Array<{
+            _id: string;
+            name: string;
+        }>;
     }>;
 }
-declare const ListStoreAttributesEndpoint: Endpoint;
+interface IProduct extends IBase {
+    store: string;
+    name: string;
+    price: number;
+    images: Array<ICloudinaryImage>;
+    quantity: number;
+    description: string;
+    variantConfig: {
+        quantityAndPrice: Array<IProductQuantityConfig>;
+        variants: IProductVariantConfig;
+    };
+}
 
 type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">;
 interface ICreateStorePayload {
     name: string;
     email: string;
     contactNumber: string;
-    logo: string;
-    heroBg: string;
+    logo: ICloudinaryImage;
+    heroBg: ICloudinaryImage;
     allowsMessaging: boolean;
     heroSectionText: string;
     shippingAndRefundPolicy: string;
@@ -224,6 +203,13 @@ declare const CreateStoreErrors: {
     requiredAttributeNotProvided: BazeError;
 };
 declare const CreateStoreEndpoint: Endpoint;
+
+interface IListStoreAttributesResponse {
+    attributes: Array<IStoreAttribute & {
+        options: Array<IStoreAttributeOption>;
+    }>;
+}
+declare const ListStoreAttributesEndpoint: Endpoint;
 
 declare const CreateProductErrors: {
     default: BazeError;
@@ -244,13 +230,47 @@ declare const createProductEndpoint: Endpoint;
 declare const UpdateProductEndpoint: Endpoint;
 
 interface IUpdateStorePayload extends Partial<ICreateStorePayload> {
-    id: string;
-}
-declare const UpdateStoreErrors: {
-    noSuchStore: BazeError;
-    noSuchAttribute: BazeError;
-    attributeHasNoSuchOption: (attrName: string) => BazeError;
-};
+
 declare const UpdateStoreEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICloudinaryImage, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type ICustomer, type IFetchProfileResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IProduct, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IUpdateProductPayload, type IUpdateProductResponse, type IUpdateStorePayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, UpdateProductEndpoint, UpdateStoreEndpoint, UpdateStoreErrors, VerifyOtpEndpoint, createProductEndpoint };
+interface IFetchProfileResponse {
+    customer: ICustomer;
+    stores: Array<IStore>;
+}
+declare const FetchProfileErrors: {
+    invalidCustomer: BazeError;
+};
+declare const ProfileEndpoint: Endpoint;
+
+interface IReserveEmailPayload {
+    email: string;
+    phoneNumber: string;
+    password: string;
+    fullName: string;
+}
+interface IReserveEmailResponse {
+    customer: ICustomer;
+    token: string;
+}
+type PhoneOrEmail = 'phone' | 'email';
+declare const ReserveEmailErrors: {
+    compromisedPassword: (changeDate: Date) => BazeError;
+    duplicateCustomerDetected: (d: PhoneOrEmail) => BazeError;
+    invalidPhoneNumber: BazeError;
+    couldNotSendOtp: BazeError;
+};
+declare const ReserveEmailEndpoint: Endpoint;
+
+declare const GetAccessTokenEndpoint: Endpoint;
+
+interface IRequestPasswordResetPayload {
+    phoneNumber: string;
+}
+interface IResetPasswordPayload {
+    password: string;
+    confirmPassword: string;
+}
+declare const ResetPasswordErrors: {
+    confirmPasswordMismatch: BazeError;
+    lateResetRequest: BazeError;
+
