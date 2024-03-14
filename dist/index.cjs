@@ -42,7 +42,7 @@ __export(src_exports, {
   ResetPasswordErrors: () => ResetPasswordErrors,
   UpdateProductEndpoint: () => UpdateProductEndpoint,
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
-
+  UpdateStoreErrors: () => UpdateStoreErrors,
   VerifyOtpEndpoint: () => VerifyOtpEndpoint,
   createProductEndpoint: () => createProductEndpoint
 });
@@ -316,6 +316,17 @@ var UpdateProductEndpoint = {
   method: "PATCH" /* Patch */
 };
 
+// src/types/stores/endpoint-payloads/update-store.payload.ts
+var import_axios8 = require("axios");
+var UpdateStoreErrors = {
+  noSuchStore: {
+    statusCode: import_axios8.HttpStatusCode.BadRequest,
+    code: "NO_SUCH_STORE",
+    message: `This store does not exist`
+  },
+  noSuchAttribute: CreateStoreErrors.noSuchAttribute,
+  attributeHasNoSuchOption: CreateStoreErrors.attributeHasNoSuchOption
+};
 var UpdateStoreEndpoint = {
   path: "/stores",
   fullPath: "/stores",
@@ -345,7 +356,8 @@ var UpdateStoreEndpoint = {
   ResetPasswordEndpoint,
   ResetPasswordErrors,
   UpdateProductEndpoint,
-
+  UpdateStoreEndpoint,
+  UpdateStoreErrors,
   VerifyOtpEndpoint,
   createProductEndpoint
 });
