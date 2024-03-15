@@ -45,7 +45,7 @@ export const PublishStoreEndpoint: Endpoint = {
     method: HttpMethods.Patch
 }
 
-export const SuggestStoreSubdomains: Endpoint = {
+export const SuggestStoreSubdomainsEndpoint: Endpoint = {
     path: '/subdomain-suggestions',
     fullPath: '/stores/subdomain-suggestions',
     parentModule: '/stores',

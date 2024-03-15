@@ -43,7 +43,7 @@ __export(src_exports, {
   ReserveEmailErrors: () => ReserveEmailErrors,
   ResetPasswordEndpoint: () => ResetPasswordEndpoint,
   ResetPasswordErrors: () => ResetPasswordErrors,
-  SuggestStoreSubdomains: () => SuggestStoreSubdomains,
+  SuggestStoreSubdomainsEndpoint: () => SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint: () => UpdateProductEndpoint,
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
   UpdateStoreErrors: () => UpdateStoreErrors,
@@ -361,7 +361,7 @@ var PublishStoreEndpoint = {
   parentModule: "/stores",
   method: "PATCH" /* Patch */
 };
-var SuggestStoreSubdomains = {
+var SuggestStoreSubdomainsEndpoint = {
   path: "/subdomain-suggestions",
   fullPath: "/stores/subdomain-suggestions",
   parentModule: "/stores",
@@ -400,7 +400,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  SuggestStoreSubdomains,
+  SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint,
   UpdateStoreEndpoint,
   UpdateStoreErrors,

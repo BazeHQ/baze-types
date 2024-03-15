@@ -307,7 +307,7 @@ var PublishStoreEndpoint = {
   parentModule: "/stores",
   method: "PATCH" /* Patch */
 };
-var SuggestStoreSubdomains = {
+var SuggestStoreSubdomainsEndpoint = {
   path: "/subdomain-suggestions",
   fullPath: "/stores/subdomain-suggestions",
   parentModule: "/stores",
@@ -345,7 +345,7 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
-  SuggestStoreSubdomains,
+  SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint,
   UpdateStoreEndpoint,
   UpdateStoreErrors,
