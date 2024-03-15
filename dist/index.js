@@ -283,6 +283,44 @@ var UpdateStoreEndpoint = {
   parentModule: "/stores",
   method: "PATCH" /* Patch */
 };
+
+// src/types/stores/endpoint-payloads/publish-store.payloads.ts
+import { HttpStatusCode as HttpStatusCode9 } from "axios";
+var PublishStoreErrors = {
+  usedSubdomain: {
+    statusCode: HttpStatusCode9.BadRequest,
+    message: "This subdomain is already in use by another store",
+    code: "USED_SUBDOMAIN",
+    recommendedActions: [
+      `Try setting another subdomain`
+    ]
+  },
+  storeAlreadyPublished: {
+    statusCode: HttpStatusCode9.BadRequest,
+    message: `This store is already published`,
+    code: "STORE_ALREADY_PUBLISHED"
+  }
+};
+var PublishStoreEndpoint = {
+  path: "/publish",
+  fullPath: "/stores/publish",
+  parentModule: "/stores",
+  method: "PATCH" /* Patch */
+};
+var SuggestStoreSubdomains = {
+  path: "/subdomain-suggestions",
+  fullPath: "/stores/subdomain-suggestions",
+  parentModule: "/stores",
+  method: "GET" /* Get */
+};
+
+// src/types/stores/models/product.model.ts
+var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
+  ProductStatus2["published"] = "published";
+  ProductStatus2["drafted"] = "drafted";
+  ProductStatus2["shelved"] = "shelved";
+  return ProductStatus2;
+})(ProductStatus || {});
 export {
   CreateProductErrors,
   CreateStoreEndpoint,
@@ -297,13 +335,17 @@ export {
   LoginErrors,
   OtpContext,
   OtpVerificationErrors,
+  ProductStatus,
   ProfileEndpoint,
+  PublishStoreEndpoint,
+  PublishStoreErrors,
   ResendOtpForPasswordResetEndpoint,
   ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
+  SuggestStoreSubdomains,
   UpdateProductEndpoint,
   UpdateStoreEndpoint,
   UpdateStoreErrors,

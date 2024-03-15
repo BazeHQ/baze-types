@@ -48,6 +48,10 @@ interface Endpoint {
     method: HttpMethods;
 }
 
+interface IHasQueryPayload {
+    id: string;
+}
+
 declare enum OtpContext {
     VerifyPhoneNumber = "verify-phone-number",
     ResetPassword = "reset-password"
@@ -154,9 +158,17 @@ interface IStore extends IBase {
     config: Array<IStoreConfig>;
 }
 
+declare enum ProductStatus {
+    published = "published",
+    drafted = "drafted",
+    shelved = "shelved"
+}
 type IProductQuantityOption = IBase & {
     variant: string;
     option: string;
+};
+type IProductVariantOption = IBase & {
+    name: string;
 };
 interface IProductQuantityConfig extends IBase {
     options: Array<IProductQuantityOption>;
@@ -164,26 +176,24 @@ interface IProductQuantityConfig extends IBase {
     price: number;
 }
 interface IProductVariantConfig extends IBase {
+    name: string;
+    options: Array<IProductVariantOption>;
+}
+interface IProductVariant extends IBase {
     hasDifferentPrices: boolean;
-    config: Array<{
-        _id: string;
-        name: string;
-        options: Array<{
-            _id: string;
-            name: string;
-        }>;
-    }>;
+    config: Array<IProductVariantConfig>;
 }
 interface IProduct extends IBase {
     store: string;
     name: string;
     price: number;
+    status: ProductStatus;
     images: Array<ICloudinaryImage>;
     quantity: number;
     description: string;
     variantConfig: {
         quantityAndPrice: Array<IProductQuantityConfig>;
-        variants: IProductVariantConfig;
+        variants: IProductVariant;
     };
 }
 
@@ -235,15 +245,31 @@ interface IUpdateProductResponse extends ICreateProductResponse {
 declare const createProductEndpoint: Endpoint;
 declare const UpdateProductEndpoint: Endpoint;
 
-interface IUpdateStorePayload extends Partial<ICreateStorePayload> {
-    id: string;
-}
 declare const UpdateStoreErrors: {
     noSuchStore: BazeError;
     noSuchAttribute: BazeError;
     attributeHasNoSuchOption: (attrName: string) => BazeError;
 };
 declare const UpdateStoreEndpoint: Endpoint;
+
+interface IPublishStorePayload {
+    subdomain: string;
+}
+interface IFetchStoreSubdomainSuggestionPayload {
+    store: string;
+}
+interface IFetchStoreSubdomainSuggestionRes {
+    suggestedSubdomain: string;
+}
+interface IPublishStoreRes {
+    store: IStore;
+}
+declare const PublishStoreErrors: {
+    usedSubdomain: BazeError;
+    storeAlreadyPublished: BazeError;
+};
+declare const PublishStoreEndpoint: Endpoint;
+declare const SuggestStoreSubdomains: Endpoint;
 
 interface IFetchProfileResponse {
     customer: ICustomer;
@@ -289,4 +315,4 @@ declare const ResetPasswordErrors: {
 declare const ResetPasswordEndpoint: Endpoint;
 declare const ForgotPasswordEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICloudinaryImage, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type ICustomer, type IFetchProfileResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariantConfig, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IUpdateProductPayload, type IUpdateProductResponse, type IUpdateStorePayload, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProfileEndpoint, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, UpdateProductEndpoint, UpdateStoreEndpoint, UpdateStoreErrors, VerifyOtpEndpoint, createProductEndpoint };
+export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, CustomerAccountStatus, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICloudinaryImage, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type ICustomer, type IFetchProfileResponse, type IFetchStoreSubdomainSuggestionPayload, type IFetchStoreSubdomainSuggestionRes, type IHasQueryPayload, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariant, type IProductVariantConfig, type IProductVariantOption, type IPublishStorePayload, type IPublishStoreRes, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IUpdateProductPayload, type IUpdateProductResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProductStatus, ProfileEndpoint, PublishStoreEndpoint, PublishStoreErrors, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, SuggestStoreSubdomains, UpdateProductEndpoint, UpdateStoreEndpoint, UpdateStoreErrors, VerifyOtpEndpoint, createProductEndpoint };
