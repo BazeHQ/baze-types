@@ -2,10 +2,6 @@ import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
 import { ICreateStorePayload, CreateStoreErrors } from "./create-store.payloads";
 
-export interface IUpdateStorePayload extends Partial<ICreateStorePayload> {
-  id: string;
-}
-
 export const UpdateStoreErrors: {
   noSuchStore: BazeError;
   noSuchAttribute: BazeError;

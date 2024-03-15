@@ -44,16 +44,18 @@ The table below lists the actions that can be taken on the communications resour
 
 The table below lists the actions that can be taken on the stores resources on the Baze API service.
 
-> | Action                         | Endpoint                      | Headers (Authorization)  | Body                  | Param | Query | Response                       | Errors|
-  > |--------------------------------|-------------------------------|----------|-----------------------|-------|-------|--------------------------------|-------|
-> | List Active Store Attributes   | *ListStoreAttributesEndpoint* | N/A | N/A                   | N/A | N/A | *IListStoreAttributesResponse* | N/A |
-> | Create Store                   | *CreateStoreEndpoint*         | Bearer {{jwt_token}} | *ICreateStorePayload* | N/A | N/A | *ICreateStoreResponse*         | N/A |
-> | Create Store Attributes        | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | Edit Store Attributes          | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | Delete Store Attributes        | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | Fetch Store Attributes         | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | List Store Attribute Options   | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | Create Store Attribute Options | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | Edit Store Attribute Options   | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
-> | Delete Store Attribute Options | N/A                           | N/A | N/A                   | N/A | N/A | N/A                            | N/A |
+> | Action                         | Endpoint                      | Headers (Authorization)  | Body                  | Param | Query          | Response                       | Errors|
+  > |------------------------------|-------------------------------|----------|---------------|---------------|-------|--------------------------------|-------|
+> | List Active Store Attributes   | *ListStoreAttributesEndpoint* | N/A | N/A                | N/A                   | N/A   | *IListStoreAttributesResponse* | N/A |
+> | Create Store                   | *CreateStoreEndpoint*         | Bearer {{jwt_token}}     | *ICreateStorePayload* | N/A   | N/A | *ICreateStoreResponse*         | N/A |
+> | Suggest Store Subdomain        | *SuggestStoreSubdomains*      | Bearer {{jwt_token}}     | N/A                   | N/A   | *IHasQueryPayload* | *IFetchStoreSubdomainSuggestionRes*         | N/A |
+> | Publish Store                  | *PublishStoreEndpoint*         | Bearer {{jwt_token}}     | *IPublishStorePayload* | N/A   | *IHasQueryPayload* | *IPublishStoreRes*         | N/A |
+> | Create Store Attributes        | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | Edit Store Attributes          | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | Delete Store Attributes        | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | Fetch Store Attributes         | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | List Store Attribute Options   | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | Create Store Attribute Options | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | Edit Store Attribute Options   | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
+> | Delete Store Attribute Options | N/A                           | N/A | N/A                | N/A                   | N/A   | N/A                            | N/A |
 </details>
