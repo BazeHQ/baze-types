@@ -1,29 +1,48 @@
-import {IProduct} from "../models";
-import {BazeError, Endpoint, HttpMethods} from "../../generic";
+import {IProduct, IProductQuantityConfig, IProductVariant, ProductStatus} from "../models";
+import {BazeError, Endpoint, HttpMethods, ICloudinaryImage} from "../../generic";
 import {HttpStatusCode} from "axios";
 
 export const CreateProductErrors: {
-    default: BazeError
+    noSuchStoreForCustomer: BazeError,
 } = {
-    default: {
+    noSuchStoreForCustomer: {
         statusCode: HttpStatusCode.BadRequest,
-        code: "DEFAULT_CREATE_PRODUCT_ERROR",
-        message: `This is an example error`
+        code: "NO_SUCH_STORE_FOR_CUSTOMER",
+        message: "This store does not exist for this customer"
+    }
+}
+
+export const UpdateProductErrors: {
+    noSuchStoreForCustomer: BazeError,
+    noSuchProductInStore: BazeError
+} = {
+    ...CreateProductErrors,
+    noSuchProductInStore: {
+        statusCode: HttpStatusCode.BadRequest,
+        code: "NO_SUCH_PRODUCT_IN_STORE",
+        message: "This product does not exist in this store"
     }
 }
 
 export interface ICreateProductPayload {
     store: string;
+    name: string;
+    price: number;
+    status: ProductStatus;
+    images?: Array<ICloudinaryImage>;
+    quantity: number;
+    description: string;
+    variantConfig?: {
+        quantityAndPrice: Array<IProductQuantityConfig>;
+        variants: IProductVariant
+    }
 }
 
 export interface ICreateProductResponse {
     product: IProduct;
 }
 
-export interface IUpdateProductPayload {
-    id: string;
-    store?: string;
-}
+export interface IUpdateProductPayload extends Partial<ICreateProductPayload> { }
 
 export interface IUpdateProductResponse extends ICreateProductResponse {}
 
