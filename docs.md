@@ -47,7 +47,7 @@ The table below lists the actions that can be taken on the stores resources on t
 > | Action                         | Endpoint                         | Headers (Authorization)  | Body                    | Param | Query               | Response                            | Errors|
   > |------------------------------|----------------------------------|--------------------------|-------------------------|-------|---------------------|-------------------------------------|----------------
 > | Create Product                 | *CreateProductEndpoint*          | Bearer {{jwt_token}}     | *ICreateProductPayload* | N/A   | N/A                 | *ICreateProductResponse*            | N/A |
-> | Edit Product                   | *UpdateProductEndpoint*          | Bearer {{jwt_token}}     | *IUpdateProductPayload* | N/A   | N/A                 | *ICreateProductResponse*            | N/A |
+> | Edit Product                   | *UpdateProductEndpoint*          | Bearer {{jwt_token}}     | *IUpdateProductPayload* | N/A   | *IHasQueryPayload*  | *ICreateProductResponse*            | N/A |
 > | List Products                  | *ListProductsForStoreEndpoint*   | Bearer {{jwt_token}}     | N/A                     | N/A   | *IHasQueryPayload*  | *IListProductsResponse*             | N/A |
 > | View One Product               | *ViewOneProductEndpoint*         | Bearer {{jwt_token}}     | N/A                     | N/A   | *IHasQueryPayload*  | *IViewOneProductResponse*              | N/A |
 > | List Active Store Attributes   | *ListStoreAttributesEndpoint*    | N/A                      | N/A                     | N/A   | N/A                 | *IListStoreAttributesResponse*      | N/A |
