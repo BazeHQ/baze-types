@@ -1,8 +1,25 @@
 "use strict";
 var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
@@ -20,6 +37,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  CreateProductEndpoint: () => CreateProductEndpoint,
   CreateProductErrors: () => CreateProductErrors,
   CreateStoreEndpoint: () => CreateStoreEndpoint,
   CreateStoreErrors: () => CreateStoreErrors,
@@ -28,6 +46,7 @@ __export(src_exports, {
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
   HttpMethods: () => HttpMethods,
+  ListProductsForStoreEndpoint: () => ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
   LoginEndpoint: () => LoginEndpoint,
   LoginErrors: () => LoginErrors,
@@ -45,10 +64,11 @@ __export(src_exports, {
   ResetPasswordErrors: () => ResetPasswordErrors,
   SuggestStoreSubdomainsEndpoint: () => SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint: () => UpdateProductEndpoint,
+  UpdateProductErrors: () => UpdateProductErrors,
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
   UpdateStoreErrors: () => UpdateStoreErrors,
   VerifyOtpEndpoint: () => VerifyOtpEndpoint,
-  createProductEndpoint: () => createProductEndpoint
+  ViewOneProductEndpoint: () => ViewOneProductEndpoint
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -301,17 +321,36 @@ var CreateStoreEndpoint = {
 // src/types/stores/endpoint-payloads/product.payloads.ts
 var import_axios7 = require("axios");
 var CreateProductErrors = {
-  default: {
+  noSuchStoreForCustomer: {
     statusCode: import_axios7.HttpStatusCode.BadRequest,
-    code: "DEFAULT_CREATE_PRODUCT_ERROR",
-    message: `This is an example error`
+    code: "NO_SUCH_STORE_FOR_CUSTOMER",
+    message: "This store does not exist for this customer"
   }
 };
-var createProductEndpoint = {
+var UpdateProductErrors = __spreadProps(__spreadValues({}, CreateProductErrors), {
+  noSuchProductInStore: {
+    statusCode: import_axios7.HttpStatusCode.BadRequest,
+    code: "NO_SUCH_PRODUCT_IN_STORE",
+    message: "This product does not exist in this store"
+  }
+});
+var CreateProductEndpoint = {
   path: "/products",
   fullPath: "/products",
   parentModule: "/products",
   method: "POST" /* Post */
+};
+var ListProductsForStoreEndpoint = {
+  path: "/products/list-for-store",
+  fullPath: "/products/list-for-store",
+  parentModule: "/products",
+  method: "GET" /* Get */
+};
+var ViewOneProductEndpoint = {
+  path: "/products/view-one",
+  fullPath: "/products/view-one",
+  parentModule: "/products",
+  method: "GET" /* Get */
 };
 var UpdateProductEndpoint = {
   path: "/products",
@@ -377,6 +416,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
 })(ProductStatus || {});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  CreateProductEndpoint,
   CreateProductErrors,
   CreateStoreEndpoint,
   CreateStoreErrors,
@@ -385,6 +425,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
+  ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
@@ -402,9 +443,10 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ResetPasswordErrors,
   SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint,
+  UpdateProductErrors,
   UpdateStoreEndpoint,
   UpdateStoreErrors,
   VerifyOtpEndpoint,
-  createProductEndpoint
+  ViewOneProductEndpoint
 });
 //# sourceMappingURL=index.cjs.map

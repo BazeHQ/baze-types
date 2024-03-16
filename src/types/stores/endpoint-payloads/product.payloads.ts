@@ -42,15 +42,34 @@ export interface ICreateProductResponse {
     product: IProduct;
 }
 
+export interface IListProductsResponse {
+    products: Array<IProduct>;
+}
+
 export interface IUpdateProductPayload extends Partial<ICreateProductPayload> { }
+export interface IViewOneProductPayload extends Partial<ICreateProductPayload> { }
 
 export interface IUpdateProductResponse extends ICreateProductResponse {}
 
-export const createProductEndpoint: Endpoint = {
+export const CreateProductEndpoint: Endpoint = {
     path: '/products',
     fullPath: '/products',
     parentModule: '/products',
     method: HttpMethods.Post
+}
+
+export const ListProductsForStoreEndpoint: Endpoint = {
+    path: '/products/list-for-store',
+    fullPath: '/products/list-for-store',
+    parentModule: '/products',
+    method: HttpMethods.Get
+}
+
+export const ViewOneProductEndpoint: Endpoint = {
+    path: '/products/view-one',
+    fullPath: '/products/view-one',
+    parentModule: '/products',
+    method: HttpMethods.Get
 }
 
 export const UpdateProductEndpoint: Endpoint = {
