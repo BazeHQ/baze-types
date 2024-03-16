@@ -13,15 +13,18 @@ export type IProductQuantityOption = IBase & {
 
 export type IProductVariantOption = IBase & {
     name: string;
+    uuid: string;
 }
 
 export interface IProductQuantityConfig extends IBase {
     options: Array<IProductQuantityOption>
     quantity: number;
     price: number;
+    uuid: string;
 }
 
 export interface IProductVariantConfig extends IBase {
+    uuid: string;
     name: string;
     options: Array<IProductVariantOption>
 }
