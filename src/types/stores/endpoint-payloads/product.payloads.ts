@@ -50,6 +50,7 @@ export interface IUpdateProductPayload extends Partial<ICreateProductPayload> { 
 export interface IViewOneProductPayload extends Partial<ICreateProductPayload> { }
 
 export interface IUpdateProductResponse extends ICreateProductResponse {}
+export interface IViewOneProductResponse extends ICreateProductResponse {}
 
 export const CreateProductEndpoint: Endpoint = {
     path: '/products',
