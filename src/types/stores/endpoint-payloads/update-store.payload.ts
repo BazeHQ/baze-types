@@ -1,6 +1,6 @@
 import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
-import { ICreateStorePayload, CreateStoreErrors } from "./create-store.payloads";
+import { CreateStoreErrors } from "./create-store.payloads";
 
 export const UpdateStoreErrors: {
   noSuchStore: BazeError;
