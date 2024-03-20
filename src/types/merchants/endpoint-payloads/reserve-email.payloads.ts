@@ -1,6 +1,6 @@
 import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
-import { ICustomer } from "../models";
+import { IMerchant } from "../models";
 
 export interface IReserveEmailPayload {
     email: string;
@@ -10,7 +10,7 @@ export interface IReserveEmailPayload {
 }
 
 export interface IReserveEmailResponse {
-    customer: ICustomer;
+    merchant: IMerchant;
     token: string;
 }
 
@@ -18,7 +18,7 @@ export type PhoneOrEmail = 'phone' | 'email';
 
 export const ReserveEmailErrors: {
     compromisedPassword: ( changeDate: Date ) => BazeError;
-    duplicateCustomerDetected: ( d: PhoneOrEmail ) => BazeError;
+    duplicateMerchantDetected: ( d: PhoneOrEmail ) => BazeError;
     invalidPhoneNumber: BazeError;
 	couldNotSendOtp: BazeError;
 } = {
@@ -30,10 +30,10 @@ export const ReserveEmailErrors: {
 			`Ensure you're providing a proper mobile number`
 		]
 	},
-	duplicateCustomerDetected: ( d: PhoneOrEmail ) => {
+	duplicateMerchantDetected: ( d: PhoneOrEmail ) => {
 		return {
 			statusCode: HttpStatusCode.BadRequest,
-            code: 'DUPLICATE_CUSTOMER_DETECTED',
+            code: 'DUPLICATE_MERCHANT_DETECTED',
 			message: `The ${d} you provided is already taken please provide another one or retrieve your account`,
 			recommendedActions: [
 				`Confirm that your ${d} is correct`,
@@ -65,7 +65,7 @@ export const ReserveEmailErrors: {
 
 export const ReserveEmailEndpoint: Endpoint = {
     path: '',
-    fullPath: '/customers',
-    parentModule: '/customers',
+    fullPath: '/merchants',
+    parentModule: '/merchants',
     method: HttpMethods.Post
 }

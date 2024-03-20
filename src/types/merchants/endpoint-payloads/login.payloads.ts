@@ -36,7 +36,7 @@ export const LoginErrors: {
 
 export const LoginEndpoint: Endpoint = {
     path: '/auth',
-    fullPath: '/customers/auth',
-    parentModule: '/customers',
+    fullPath: '/merchants/auth',
+    parentModule: '/merchants',
     method: HttpMethods.Patch
 }

@@ -3,17 +3,17 @@ import {BazeError, Endpoint, HttpMethods, ICloudinaryImage} from "../../generic"
 import {HttpStatusCode} from "axios";
 
 export const CreateProductErrors: {
-    noSuchStoreForCustomer: BazeError,
+    noSuchStoreForMerchant: BazeError,
 } = {
-    noSuchStoreForCustomer: {
+    noSuchStoreForMerchant: {
         statusCode: HttpStatusCode.BadRequest,
-        code: "NO_SUCH_STORE_FOR_CUSTOMER",
-        message: "This store does not exist for this customer"
+        code: "NO_SUCH_STORE_FOR_MERCHANT",
+        message: "This store does not exist for this merchant"
     }
 }
 
 export const UpdateProductErrors: {
-    noSuchStoreForCustomer: BazeError,
+    noSuchStoreForMerchant: BazeError,
     noSuchProductInStore: BazeError
 } = {
     ...CreateProductErrors,
