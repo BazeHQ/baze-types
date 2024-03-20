@@ -76,16 +76,16 @@ var ResendOtpForPasswordResetEndpoint = {
   method: "PATCH" /* Patch */
 };
 
-// src/types/customers/models/customer.model.ts
-var CustomerAccountStatus = /* @__PURE__ */ ((CustomerAccountStatus2) => {
-  CustomerAccountStatus2["EmailReserved"] = "email-reserved";
-  CustomerAccountStatus2["Inactive"] = "inactive";
-  CustomerAccountStatus2["Deactivated"] = "deactivated";
-  CustomerAccountStatus2["Active"] = "active";
-  return CustomerAccountStatus2;
-})(CustomerAccountStatus || {});
+// src/types/merchants/models/merchant.model.ts
+var MerchantAccountStatus = /* @__PURE__ */ ((MerchantAccountStatus2) => {
+  MerchantAccountStatus2["EmailReserved"] = "email-reserved";
+  MerchantAccountStatus2["Inactive"] = "inactive";
+  MerchantAccountStatus2["Deactivated"] = "deactivated";
+  MerchantAccountStatus2["Active"] = "active";
+  return MerchantAccountStatus2;
+})(MerchantAccountStatus || {});
 
-// src/types/customers/endpoint-payloads/login.payloads.ts
+// src/types/merchants/endpoint-payloads/login.payloads.ts
 import { HttpStatusCode as HttpStatusCode2 } from "axios";
 var LoginErrors = {
   invalidEmailOrPassword: {
@@ -108,19 +108,19 @@ var LoginErrors = {
 };
 var LoginEndpoint = {
   path: "/auth",
-  fullPath: "/customers/auth",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth",
+  parentModule: "/merchants",
   method: "PATCH" /* Patch */
 };
 
-// src/types/customers/endpoint-payloads/fetch-profile.payloads.ts
+// src/types/merchants/endpoint-payloads/fetch-profile.payloads.ts
 import { HttpStatusCode as HttpStatusCode3 } from "axios";
 var FetchProfileErrors = {
-  invalidCustomer: {
+  invalidMerchant: {
     statusCode: HttpStatusCode3.BadRequest,
-    code: "INVALID_CUSTOMER",
+    code: "INVALID_MERCHANT",
     data: null,
-    message: `Invalid customer requested`,
+    message: `Invalid merchant requested`,
     recommendedActions: [
       `Contact support`
     ]
@@ -128,12 +128,12 @@ var FetchProfileErrors = {
 };
 var ProfileEndpoint = {
   path: "/profile",
-  fullPath: "/customers/profile",
-  parentModule: "/customers",
+  fullPath: "/merchants/profile",
+  parentModule: "/merchants",
   method: "PATCH" /* Patch */
 };
 
-// src/types/customers/endpoint-payloads/reserve-email.payloads.ts
+// src/types/merchants/endpoint-payloads/reserve-email.payloads.ts
 import { HttpStatusCode as HttpStatusCode4 } from "axios";
 var ReserveEmailErrors = {
   invalidPhoneNumber: {
@@ -144,10 +144,10 @@ var ReserveEmailErrors = {
       `Ensure you're providing a proper mobile number`
     ]
   },
-  duplicateCustomerDetected: (d) => {
+  duplicateMerchantDetected: (d) => {
     return {
       statusCode: HttpStatusCode4.BadRequest,
-      code: "DUPLICATE_CUSTOMER_DETECTED",
+      code: "DUPLICATE_MERCHANT_DETECTED",
       message: `The ${d} you provided is already taken please provide another one or retrieve your account`,
       recommendedActions: [
         `Confirm that your ${d} is correct`,
@@ -178,20 +178,20 @@ var ReserveEmailErrors = {
 };
 var ReserveEmailEndpoint = {
   path: "",
-  fullPath: "/customers",
-  parentModule: "/customers",
+  fullPath: "/merchants",
+  parentModule: "/merchants",
   method: "POST" /* Post */
 };
 
-// src/types/customers/endpoint-payloads/get-access-token.payloads.ts
+// src/types/merchants/endpoint-payloads/get-access-token.payloads.ts
 var GetAccessTokenEndpoint = {
   path: "/auth/token",
-  fullPath: "/customers/auth/token",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth/token",
+  parentModule: "/merchants",
   method: "GET" /* Get */
 };
 
-// src/types/customers/endpoint-payloads/reset-password.payloads.ts
+// src/types/merchants/endpoint-payloads/reset-password.payloads.ts
 import { HttpStatusCode as HttpStatusCode5 } from "axios";
 var ResetPasswordErrors = {
   confirmPasswordMismatch: {
@@ -214,14 +214,14 @@ var ResetPasswordErrors = {
 };
 var ResetPasswordEndpoint = {
   path: "/auth/passwords",
-  fullPath: "/customers/auth/passwords",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth/passwords",
+  parentModule: "/merchants",
   method: "PATCH" /* Patch */
 };
 var ForgotPasswordEndpoint = {
   path: "/auth/passwords",
-  fullPath: "/customers/auth/passwords",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth/passwords",
+  parentModule: "/merchants",
   method: "POST" /* Post */
 };
 
@@ -267,10 +267,10 @@ var CreateStoreEndpoint = {
 // src/types/stores/endpoint-payloads/product.payloads.ts
 import { HttpStatusCode as HttpStatusCode7 } from "axios";
 var CreateProductErrors = {
-  noSuchStoreForCustomer: {
+  noSuchStoreForMerchant: {
     statusCode: HttpStatusCode7.BadRequest,
-    code: "NO_SUCH_STORE_FOR_CUSTOMER",
-    message: "This store does not exist for this customer"
+    code: "NO_SUCH_STORE_FOR_MERCHANT",
+    message: "This store does not exist for this merchant"
   }
 };
 var UpdateProductErrors = __spreadProps(__spreadValues({}, CreateProductErrors), {
@@ -365,7 +365,6 @@ export {
   CreateProductErrors,
   CreateStoreEndpoint,
   CreateStoreErrors,
-  CustomerAccountStatus,
   FetchProfileErrors,
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
@@ -374,6 +373,7 @@ export {
   ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
+  MerchantAccountStatus,
   OtpContext,
   OtpVerificationErrors,
   ProductStatus,
