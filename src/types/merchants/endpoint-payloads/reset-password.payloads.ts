@@ -34,14 +34,14 @@ export const ResetPasswordErrors: {
 
 export const ResetPasswordEndpoint: Endpoint = {
     path: '/auth/passwords',
-    fullPath: '/customers/auth/passwords',
-    parentModule: '/customers',
+    fullPath: '/merchants/auth/passwords',
+    parentModule: '/merchants',
     method: HttpMethods.Patch
 }
 
 export const ForgotPasswordEndpoint: Endpoint = {
     path: '/auth/passwords',
-    fullPath: '/customers/auth/passwords',
-    parentModule: '/customers',
+    fullPath: '/merchants/auth/passwords',
+    parentModule: '/merchants',
     method: HttpMethods.Post
 }

@@ -8,19 +8,19 @@ the [bazehq/types](https://github.com) package.*
 
 <details>
   <summary>
-    <code>CUSTOMERS</code>
+    <code>MERCHANTS</code>
   </summary>
 
-The table below lists the actions that can be taken on the customer resources on the Baze API service.
+The table below lists the actions that can be taken on the merchant resources on the Baze API service.
 
 > | Action |  Endpoint | Headers (Authorization)  | Body | Param | Query | Response | Errors|
   > |--------|-----------|----------|------|-------|-------|----------|-------|
-> | Reserve Customer Email | *ReserveEmailEndpoint* | N/A | *IReserveEmailPayload* | N/A | N/A | *IReserveEmailResponse* | *ReserveEmailErrors* |
-> | Login Customer | *LoginEndpoint* | N/A | *ILoginPayload* | N/A | N/A | *ILoginResponse* | *LoginErrors* |
+> | Reserve Merchant Email | *ReserveEmailEndpoint* | N/A | *IReserveEmailPayload* | N/A | N/A | *IReserveEmailResponse* | *ReserveEmailErrors* |
+> | Login Merchant | *LoginEndpoint* | N/A | *ILoginPayload* | N/A | N/A | *ILoginResponse* | *LoginErrors* |
 > | Create Access Token From Refresh Token | *GetAccessTokenEndpoint* | Bearer {{refresh_token}} | N/A | N/A | N/A | *ILoginResponse* | *LoginErrors* |
-> | Fetch A Customer Profile | *ProfileEndpoint* | Bearer {{jwt_token}} | N/A | N/A | N/A | *IFetchProfileResponse* | *FetchProfileErrors* |
+> | Fetch A Merchant Profile | *ProfileEndpoint* | Bearer {{jwt_token}} | N/A | N/A | N/A | *IFetchProfileResponse* | *FetchProfileErrors* |
 > | Request Password Reset (Forgot Password) | *ForgotPasswordEndpoint* | N/A | *IRequestPasswordResetPayload* | N/A | N/A | N/A | N/A |
-> | Reset Customer Password | *ResetPasswordEndpoint* | N/A | *IResetPasswordPayload* | N/A | N/A | N/A | *ResetPasswordErrors* |
+> | Reset Merchant Password | *ResetPasswordEndpoint* | N/A | *IResetPasswordPayload* | N/A | N/A | N/A | *ResetPasswordErrors* |
 </details>
 <br/>
 <details>
