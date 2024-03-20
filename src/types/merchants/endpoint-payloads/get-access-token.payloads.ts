@@ -2,7 +2,7 @@ import { Endpoint, HttpMethods } from "../../generic";
 
 export const GetAccessTokenEndpoint: Endpoint = {
     path: '/auth/token',
-    fullPath: '/customers/auth/token',
-    parentModule: '/customers',
+    fullPath: '/merchants/auth/token',
+    parentModule: '/merchants',
     method: HttpMethods.Get
 }

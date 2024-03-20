@@ -6,15 +6,15 @@ export interface IPassword extends IBase {
 	isActive: boolean
 }
 
-export enum CustomerAccountStatus {
+export enum MerchantAccountStatus {
     EmailReserved = 'email-reserved',
     Inactive = 'inactive',
     Deactivated = 'deactivated',
     Active = 'active'
 }
 
-export interface ICustomer extends IBase {
-	status: CustomerAccountStatus;
+export interface IMerchant extends IBase {
+	status: MerchantAccountStatus;
     email: string;
     fullName: string;
     phoneNumber: string;

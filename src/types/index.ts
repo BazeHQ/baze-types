@@ -1,4 +1,4 @@
 export * from './communications';
-export * from './customers';
+export * from './merchants';
 export * from './stores';
 export * from './generic';
