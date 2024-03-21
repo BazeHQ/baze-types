@@ -213,6 +213,7 @@ interface ITransaction {
 }
 
 interface ICollection extends IBase {
+    store: string | IStore;
     name: string;
     products: Array<string> | Array<IProduct>;
 }
