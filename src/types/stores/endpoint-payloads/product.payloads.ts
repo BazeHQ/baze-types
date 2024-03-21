@@ -47,7 +47,6 @@ export interface IListProductsResponse {
 }
 
 export interface IUpdateProductPayload extends Partial<ICreateProductPayload> { }
-export interface IViewOneProductPayload extends Partial<ICreateProductPayload> { }
 
 export interface IUpdateProductResponse extends ICreateProductResponse {}
 export interface IViewOneProductResponse extends ICreateProductResponse {}
@@ -60,14 +59,14 @@ export const CreateProductEndpoint: Endpoint = {
 }
 
 export const ListProductsForStoreEndpoint: Endpoint = {
-    path: '/products/list-for-store',
+    path: '/list-for-store',
     fullPath: '/products/list-for-store',
     parentModule: '/products',
     method: HttpMethods.Get
 }
 
 export const ViewOneProductEndpoint: Endpoint = {
-    path: '/products/view-one',
+    path: '/view-one',
     fullPath: '/products/view-one',
     parentModule: '/products',
     method: HttpMethods.Get

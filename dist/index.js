@@ -287,13 +287,13 @@ var CreateProductEndpoint = {
   method: "POST" /* Post */
 };
 var ListProductsForStoreEndpoint = {
-  path: "/products/list-for-store",
+  path: "/list-for-store",
   fullPath: "/products/list-for-store",
   parentModule: "/products",
   method: "GET" /* Get */
 };
 var ViewOneProductEndpoint = {
-  path: "/products/view-one",
+  path: "/view-one",
   fullPath: "/products/view-one",
   parentModule: "/products",
   method: "GET" /* Get */
