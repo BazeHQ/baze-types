@@ -37,10 +37,14 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  AddOrRemove: () => AddOrRemove,
+  CreateCollectionEndpoint: () => CreateCollectionEndpoint,
   CreateProductEndpoint: () => CreateProductEndpoint,
   CreateProductErrors: () => CreateProductErrors,
   CreateStoreEndpoint: () => CreateStoreEndpoint,
   CreateStoreErrors: () => CreateStoreErrors,
+  DeleteCollectionEndpoint: () => DeleteCollectionEndpoint,
+  EditCollectionEndpoint: () => EditCollectionEndpoint,
   FetchProfileErrors: () => FetchProfileErrors,
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
@@ -49,6 +53,7 @@ __export(src_exports, {
   ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
   LoginEndpoint: () => LoginEndpoint,
   LoginErrors: () => LoginErrors,
+  ManageCollectionEndpoint: () => ManageCollectionEndpoint,
   MerchantAccountStatus: () => MerchantAccountStatus,
   OtpContext: () => OtpContext,
   OtpVerificationErrors: () => OtpVerificationErrors,
@@ -407,6 +412,33 @@ var SuggestStoreSubdomainsEndpoint = {
   method: "GET" /* Get */
 };
 
+// src/types/stores/endpoint-payloads/manage-collection.payloads.ts
+var AddOrRemove = /* @__PURE__ */ ((AddOrRemove2) => {
+  AddOrRemove2["add"] = "add";
+  AddOrRemove2["remove"] = "remove";
+  return AddOrRemove2;
+})(AddOrRemove || {});
+var CreateCollectionEndpoint = {
+  path: "/collections",
+  fullPath: "/stores/collections",
+  method: "POST" /* Post */
+};
+var EditCollectionEndpoint = {
+  path: "/collections",
+  fullPath: "/stores/collections",
+  method: "PATCH" /* Patch */
+};
+var DeleteCollectionEndpoint = {
+  path: "/collections",
+  fullPath: "/stores/collections",
+  method: "DELETE" /* Delete */
+};
+var ManageCollectionEndpoint = {
+  path: "/collections/products",
+  fullPath: "/stores/collections/products",
+  method: "PATCH" /* Patch */
+};
+
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["published"] = "published";
@@ -416,10 +448,14 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
 })(ProductStatus || {});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  AddOrRemove,
+  CreateCollectionEndpoint,
   CreateProductEndpoint,
   CreateProductErrors,
   CreateStoreEndpoint,
   CreateStoreErrors,
+  DeleteCollectionEndpoint,
+  EditCollectionEndpoint,
   FetchProfileErrors,
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
@@ -428,6 +464,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
+  ManageCollectionEndpoint,
   MerchantAccountStatus,
   OtpContext,
   OtpVerificationErrors,

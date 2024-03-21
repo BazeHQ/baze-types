@@ -212,6 +212,11 @@ interface ITransaction {
     cart: string;
 }
 
+interface ICollection extends IBase {
+    name: string;
+    products: Array<string> | Array<IProduct>;
+}
+
 type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">;
 interface ICreateStorePayload {
     name: string;
@@ -305,6 +310,28 @@ declare const PublishStoreErrors: {
 declare const PublishStoreEndpoint: Endpoint;
 declare const SuggestStoreSubdomainsEndpoint: Endpoint;
 
+declare enum AddOrRemove {
+    add = "add",
+    remove = "remove"
+}
+interface ICreateCollectionPayload {
+    name: string;
+}
+interface IEditCollectionPayload {
+    name: string;
+}
+interface IManageCollectionProducts {
+    action: AddOrRemove;
+    products: Array<string>;
+}
+interface ICollectionResponse {
+    collection: ICollection;
+}
+declare const CreateCollectionEndpoint: Endpoint;
+declare const EditCollectionEndpoint: Endpoint;
+declare const DeleteCollectionEndpoint: Endpoint;
+declare const ManageCollectionEndpoint: Endpoint;
+
 interface IFetchProfileResponse {
     merchant: IMerchant;
     stores: Array<IStore>;
@@ -349,4 +376,4 @@ declare const ResetPasswordErrors: {
 declare const ResetPasswordEndpoint: Endpoint;
 declare const ForgotPasswordEndpoint: Endpoint;
 
-export { type ApiResponse, type BazeError, type BazeSuccessResponse, CreateProductEndpoint, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICart, type ICloudinaryImage, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type IFetchProfileResponse, type IFetchStoreSubdomainSuggestionPayload, type IFetchStoreSubdomainSuggestionRes, type IHasQueryPayload, type IListProductsResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IMerchant, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariant, type IProductVariantConfig, type IProductVariantOption, type IPublishStorePayload, type IPublishStoreRes, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type ITransaction, type IUpdateProductPayload, type IUpdateProductResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, type IViewOneProductResponse, ListProductsForStoreEndpoint, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, MerchantAccountStatus, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProductStatus, ProfileEndpoint, PublishStoreEndpoint, PublishStoreErrors, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, SuggestStoreSubdomainsEndpoint, UpdateProductEndpoint, UpdateProductErrors, UpdateStoreEndpoint, UpdateStoreErrors, VerifyOtpEndpoint, ViewOneProductEndpoint };
+export { AddOrRemove, type ApiResponse, type BazeError, type BazeSuccessResponse, CreateCollectionEndpoint, CreateProductEndpoint, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, DeleteCollectionEndpoint, EditCollectionEndpoint, type Endpoint, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IBase, type ICart, type ICloudinaryImage, type ICollection, type ICollectionResponse, type ICreateCollectionPayload, type ICreateProductPayload, type ICreateProductResponse, type ICreateStorePayload, type ICreateStoreResponse, type IEditCollectionPayload, type IFetchProfileResponse, type IFetchStoreSubdomainSuggestionPayload, type IFetchStoreSubdomainSuggestionRes, type IHasQueryPayload, type IListProductsResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IManageCollectionProducts, type IMerchant, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariant, type IProductVariantConfig, type IProductVariantOption, type IPublishStorePayload, type IPublishStoreRes, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type ITransaction, type IUpdateProductPayload, type IUpdateProductResponse, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, type IViewOneProductResponse, ListProductsForStoreEndpoint, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, ManageCollectionEndpoint, MerchantAccountStatus, OtpContext, OtpVerificationErrors, type PhoneOrEmail, ProductStatus, ProfileEndpoint, PublishStoreEndpoint, PublishStoreErrors, ResendOtpForPasswordResetEndpoint, ResendOtpForPhoneVerificationEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, SuggestStoreSubdomainsEndpoint, UpdateProductEndpoint, UpdateProductErrors, UpdateStoreEndpoint, UpdateStoreErrors, VerifyOtpEndpoint, ViewOneProductEndpoint };
