@@ -44,22 +44,29 @@ The table below lists the actions that can be taken on the communications resour
 
 The table below lists the actions that can be taken on the stores resources on the Baze API service.
 
-> | Action                         | Endpoint                         | Headers (Authorization)  | Body                    | Param | Query               | Response                            | Errors|
-  > |------------------------------|----------------------------------|--------------------------|-------------------------|-------|---------------------|-------------------------------------|----------------
-> | Create Product                 | *CreateProductEndpoint*          | Bearer {{jwt_token}}     | *ICreateProductPayload* | N/A   | N/A                 | *ICreateProductResponse*            | N/A |
-> | Edit Product                   | *UpdateProductEndpoint*          | Bearer {{jwt_token}}     | *IUpdateProductPayload* | N/A   | *IHasQueryPayload*  | *ICreateProductResponse*            | N/A |
-> | List Products                  | *ListProductsForStoreEndpoint*   | Bearer {{jwt_token}}     | N/A                     | N/A   | *IHasQueryPayload*  | *IListProductsResponse*             | N/A |
-> | View One Product               | *ViewOneProductEndpoint*         | Bearer {{jwt_token}}     | N/A                     | N/A   | *IHasQueryPayload*  | *IViewOneProductResponse*              | N/A |
-> | List Active Store Attributes   | *ListStoreAttributesEndpoint*    | N/A                      | N/A                     | N/A   | N/A                 | *IListStoreAttributesResponse*      | N/A |
-> | Create Store                   | *CreateStoreEndpoint*            | Bearer {{jwt_token}}     | *ICreateStorePayload*   | N/A   | N/A                 | *ICreateStoreResponse*              | N/A |
-> | Suggest Store Subdomain        | *SuggestStoreSubdomainsEndpoint* | Bearer {{jwt_token}}     | N/A                     | N/A   | *IHasQueryPayload*  | *IFetchStoreSubdomainSuggestionRes* | N/A |
-> | Publish Store                  | *PublishStoreEndpoint*           | Bearer {{jwt_token}}     | *IPublishStorePayload*  | N/A   | *IHasQueryPayload*  | *IPublishStoreRes*                  | N/A |
-> | Create Store Attributes        | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | Edit Store Attributes          | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | Delete Store Attributes        | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | Fetch Store Attributes         | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | List Store Attribute Options   | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | Create Store Attribute Options | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | Edit Store Attribute Options   | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
-> | Delete Store Attribute Options | N/A                              | N/A | N/A                | N/A                     | N/A   | N/A                 | N/A                                 | N/A |
+> | Action                                       | Endpoint                           | Headers (Authorization) | Body                               | Param | Query              | Response                            | Errors |
+  > |----------------------------------------------|------------------------------------|-------------------------|------------------------------------|-------|--------------------|-------------------------------------|--------
+> | Create Collection                            | *CreateCollectionEndpoint*         | Bearer {{jwt_token}}    | *ICreateCollectionPayload*         | N/A   | *IHasQueryPayload* | *ICollectionResponse*               | N/A    |
+> | Edit Collection                              | *EditCollectionEndpoint*           | Bearer {{jwt_token}}    | *IEditCollectionPayload*           | N/A   | *IHasQueryPayload* | *ICollectionResponse*               | N/A    |
+> | Add To Or Remove Products In Collection      | *ManageCollectionEndpoint*         | Bearer {{jwt_token}}    | *IManageCollectionProductsPayload* | N/A   | *IHasQueryPayload* | *ICollectionResponse*               | N/A    |
+> | List Collections For Store                   | *ListCollectionsEndpoint*          | Bearer {{jwt_token}}    | N/A                                | N/A   | *IHasQueryPayload* | *IListCollectionsResponse*          | N/A    |
+> | View One Collection                          | *ViewOneCollectionEndpoint*        | Bearer {{jwt_token}}    | N/A                                | N/A   | *IHasQueryPayload* | *ICollectionResponse*               | N/A    |
+> | Change Entire List Of Products In Collection | *ChangeCollectionProductsEndpoint* | Bearer {{jwt_token}}    | *IChangeCollectionProductsPayload* | N/A   | *IHasQueryPayload* | *ICollectionResponse*               | N/A    |
+> | Delete Collection                            | *DeleteCollectionEndpoint*         | Bearer {{jwt_token}}    | N/A                                | N/A   | *IHasQueryPayload* | N/A                                 | N/A    |
+> | Create Product                               | *CreateProductEndpoint*            | Bearer {{jwt_token}}    | *ICreateProductPayload*            | N/A   | N/A                | *ICreateProductResponse*            | N/A    |
+> | Edit Product                                 | *UpdateProductEndpoint*            | Bearer {{jwt_token}}    | *IUpdateProductPayload*            | N/A   | *IHasQueryPayload* | *ICreateProductResponse*            | N/A    |
+> | List Products                                | *ListProductsForStoreEndpoint*     | Bearer {{jwt_token}}    | N/A                                | N/A   | *IHasQueryPayload* | *IListProductsResponse*             | N/A    |
+> | View One Product                             | *ViewOneProductEndpoint*           | Bearer {{jwt_token}}    | N/A                                | N/A   | *IHasQueryPayload* | *IViewOneProductResponse*           | N/A    |
+> | List Active Store Attributes                 | *ListStoreAttributesEndpoint*      | N/A                     | N/A                                | N/A   | N/A                | *IListStoreAttributesResponse*      | N/A    |
+> | Create Store                                 | *CreateStoreEndpoint*              | Bearer {{jwt_token}}    | *ICreateStorePayload*              | N/A   | N/A                | *ICreateStoreResponse*              | N/A    |
+> | Suggest Store Subdomain                      | *SuggestStoreSubdomainsEndpoint*   | Bearer {{jwt_token}}    | N/A                                | N/A   | *IHasQueryPayload* | *IFetchStoreSubdomainSuggestionRes* | N/A    |
+> | Publish Store                                | *PublishStoreEndpoint*             | Bearer {{jwt_token}}    | *IPublishStorePayload*             | N/A   | *IHasQueryPayload* | *IPublishStoreRes*                  | N/A    |
+> | Create Store Attributes                      | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | Edit Store Attributes                        | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | Delete Store Attributes                      | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | Fetch Store Attributes                       | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | List Store Attribute Options                 | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | Create Store Attribute Options               | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | Edit Store Attribute Options                 | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
+> | Delete Store Attribute Options               | N/A                                | N/A                     | N/A                                | N/A   | N/A                | N/A                                 | N/A    | N/A |
 </details>
