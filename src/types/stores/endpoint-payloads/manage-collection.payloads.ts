@@ -63,3 +63,9 @@ export const ManageCollectionEndpoint: Endpoint = {
     method: HttpMethods.Patch
 }
 
+export const ChangeCollectionProductsEndpoint: Endpoint = {
+    path: '/collections/mutations',
+    fullPath: '/stores/collections/mutations',
+    method: HttpMethods.Patch
+}
+

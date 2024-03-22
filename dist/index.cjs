@@ -38,6 +38,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   AddOrRemove: () => AddOrRemove,
+  ChangeCollectionProductsEndpoint: () => ChangeCollectionProductsEndpoint,
   CreateCollectionEndpoint: () => CreateCollectionEndpoint,
   CreateProductEndpoint: () => CreateProductEndpoint,
   CreateProductErrors: () => CreateProductErrors,
@@ -450,6 +451,11 @@ var ManageCollectionEndpoint = {
   fullPath: "/stores/collections/products",
   method: "PATCH" /* Patch */
 };
+var ChangeCollectionProductsEndpoint = {
+  path: "/collections/mutations",
+  fullPath: "/stores/collections/mutations",
+  method: "PATCH" /* Patch */
+};
 
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
@@ -461,6 +467,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AddOrRemove,
+  ChangeCollectionProductsEndpoint,
   CreateCollectionEndpoint,
   CreateProductEndpoint,
   CreateProductErrors,

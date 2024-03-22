@@ -389,6 +389,11 @@ var ManageCollectionEndpoint = {
   fullPath: "/stores/collections/products",
   method: "PATCH" /* Patch */
 };
+var ChangeCollectionProductsEndpoint = {
+  path: "/collections/mutations",
+  fullPath: "/stores/collections/mutations",
+  method: "PATCH" /* Patch */
+};
 
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
@@ -399,6 +404,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
 })(ProductStatus || {});
 export {
   AddOrRemove,
+  ChangeCollectionProductsEndpoint,
   CreateCollectionEndpoint,
   CreateProductEndpoint,
   CreateProductErrors,
