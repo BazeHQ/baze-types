@@ -49,7 +49,7 @@ __export(src_exports, {
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
   HttpMethods: () => HttpMethods,
-  ListCollections: () => ListCollections,
+  ListCollectionsEndpoint: () => ListCollectionsEndpoint,
   ListProductsForStoreEndpoint: () => ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
   LoginEndpoint: () => LoginEndpoint,
@@ -74,7 +74,7 @@ __export(src_exports, {
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
   UpdateStoreErrors: () => UpdateStoreErrors,
   VerifyOtpEndpoint: () => VerifyOtpEndpoint,
-  ViewOneCollection: () => ViewOneCollection,
+  ViewOneCollectionEndpoint: () => ViewOneCollectionEndpoint,
   ViewOneProductEndpoint: () => ViewOneProductEndpoint
 });
 module.exports = __toCommonJS(src_exports);
@@ -430,12 +430,12 @@ var EditCollectionEndpoint = {
   fullPath: "/stores/collections",
   method: "PATCH" /* Patch */
 };
-var ListCollections = {
+var ListCollectionsEndpoint = {
   path: "/collections/list-for-store",
   fullPath: "/stores/collections/list-for-store",
   method: "GET" /* Get */
 };
-var ViewOneCollection = {
+var ViewOneCollectionEndpoint = {
   path: "/collections/view-one",
   fullPath: "/stores/collections/view-one",
   method: "GET" /* Get */
@@ -472,7 +472,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
-  ListCollections,
+  ListCollectionsEndpoint,
   ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint,
   LoginEndpoint,
@@ -497,7 +497,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   UpdateStoreEndpoint,
   UpdateStoreErrors,
   VerifyOtpEndpoint,
-  ViewOneCollection,
+  ViewOneCollectionEndpoint,
   ViewOneProductEndpoint
 });
 //# sourceMappingURL=index.cjs.map

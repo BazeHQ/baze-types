@@ -369,12 +369,12 @@ var EditCollectionEndpoint = {
   fullPath: "/stores/collections",
   method: "PATCH" /* Patch */
 };
-var ListCollections = {
+var ListCollectionsEndpoint = {
   path: "/collections/list-for-store",
   fullPath: "/stores/collections/list-for-store",
   method: "GET" /* Get */
 };
-var ViewOneCollection = {
+var ViewOneCollectionEndpoint = {
   path: "/collections/view-one",
   fullPath: "/stores/collections/view-one",
   method: "GET" /* Get */
@@ -410,7 +410,7 @@ export {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
-  ListCollections,
+  ListCollectionsEndpoint,
   ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint,
   LoginEndpoint,
@@ -435,7 +435,7 @@ export {
   UpdateStoreEndpoint,
   UpdateStoreErrors,
   VerifyOtpEndpoint,
-  ViewOneCollection,
+  ViewOneCollectionEndpoint,
   ViewOneProductEndpoint
 };
 //# sourceMappingURL=index.js.map

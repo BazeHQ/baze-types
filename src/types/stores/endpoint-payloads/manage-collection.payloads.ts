@@ -39,13 +39,13 @@ export const EditCollectionEndpoint: Endpoint = {
     method: HttpMethods.Patch
 }
 
-export const ListCollections: Endpoint = {
+export const ListCollectionsEndpoint: Endpoint = {
     path: '/collections/list-for-store',
     fullPath: '/stores/collections/list-for-store',
     method: HttpMethods.Get
 }
 
-export const ViewOneCollection: Endpoint = {
+export const ViewOneCollectionEndpoint: Endpoint = {
     path: '/collections/view-one',
     fullPath: '/stores/collections/view-one',
     method: HttpMethods.Get
