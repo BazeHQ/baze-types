@@ -23,6 +23,10 @@ export interface ICollectionResponse {
     collection: ICollection
 }
 
+export interface IListCollectionsResponse {
+    collections: Array<ICollection>
+}
+
 export const CreateCollectionEndpoint: Endpoint = {
     path: '/collections',
     fullPath: '/stores/collections',
@@ -33,6 +37,18 @@ export const EditCollectionEndpoint: Endpoint = {
     path: '/collections',
     fullPath: '/stores/collections',
     method: HttpMethods.Patch
+}
+
+export const ListCollections: Endpoint = {
+    path: '/collections/list-for-store',
+    fullPath: '/stores/collections/list-for-store',
+    method: HttpMethods.Get
+}
+
+export const ViewOneCollection: Endpoint = {
+    path: '/collections/view-one',
+    fullPath: '/stores/collections/view-one',
+    method: HttpMethods.Get
 }
 
 export const DeleteCollectionEndpoint: Endpoint = {
