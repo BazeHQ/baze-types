@@ -19,6 +19,10 @@ export interface IManageCollectionProducts {
     products: Array<string>
 }
 
+export interface IChangeCollectionProducts {
+    products: Array<string>
+}
+
 export interface ICollectionResponse {
     collection: ICollection
 }
