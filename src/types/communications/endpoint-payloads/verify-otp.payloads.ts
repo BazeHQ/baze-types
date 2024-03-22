@@ -3,6 +3,7 @@ import { BazeError, Endpoint, HttpMethods } from "../../generic";
 
 export enum OtpContext {
 	VerifyPhoneNumber = 'verify-phone-number',
+	VerifyEmail = 'verify-email',
 	ResetPassword = 'reset-password',
 }
 
@@ -14,7 +15,7 @@ export interface IVerifyOtpPayload {
 export interface IVerifyOtpWithoutAuthPayload {
 	context: OtpContext;
 	token: string;
-	phoneNumber: string;
+	recipient: string;
 }
 
 export interface IVerifyOtpResponse {

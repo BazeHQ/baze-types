@@ -54,6 +54,7 @@ interface IHasQueryPayload {
 
 declare enum OtpContext {
     VerifyPhoneNumber = "verify-phone-number",
+    VerifyEmail = "verify-email",
     ResetPassword = "reset-password"
 }
 interface IVerifyOtpPayload {
@@ -63,7 +64,7 @@ interface IVerifyOtpPayload {
 interface IVerifyOtpWithoutAuthPayload {
     context: OtpContext;
     token: string;
-    phoneNumber: string;
+    recipient: string;
 }
 interface IVerifyOtpResponse {
     status: boolean;
@@ -385,7 +386,7 @@ declare const ReserveEmailEndpoint: Endpoint;
 declare const GetAccessTokenEndpoint: Endpoint;
 
 interface IRequestPasswordResetPayload {
-    phoneNumber: string;
+    email: string;
 }
 interface IResetPasswordPayload {
     password: string;
