@@ -14,12 +14,12 @@ export interface IEditCollectionPayload {
     name: string
 }
 
-export interface IManageCollectionProducts {
+export interface IManageCollectionProductsPayload {
     action: AddOrRemove,
     products: Array<string>
 }
 
-export interface IChangeCollectionProducts {
+export interface IChangeCollectionProductsPayload {
     products: Array<string>
 }
 
