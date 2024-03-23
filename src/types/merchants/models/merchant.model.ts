@@ -20,5 +20,6 @@ export interface IMerchant extends IBase {
     phoneNumber: string;
     passwords?: Array<IPassword>;
 	phoneVerified: boolean;
-    hasCreatedStore: boolean;
+  emailVerified: boolean;
+  hasCreatedStore: boolean;
 }

@@ -64,9 +64,9 @@ var VerifyOtpEndpoint = {
 };
 
 // src/types/communications/endpoint-payloads/resend-otp.payloads.ts
-var ResendOtpForPhoneVerificationEndpoint = {
-  path: "/otps/phone-verification",
-  fullPath: "/communications/otps/phone-verification",
+var ResendOtpForEmailVerificationEndpoint = {
+  path: "/otps/email-verification",
+  fullPath: "/communications/otps/email-verification",
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
@@ -430,8 +430,8 @@ export {
   ProfileEndpoint,
   PublishStoreEndpoint,
   PublishStoreErrors,
+  ResendOtpForEmailVerificationEndpoint,
   ResendOtpForPasswordResetEndpoint,
-  ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,
   ResetPasswordEndpoint,

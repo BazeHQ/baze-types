@@ -1,8 +1,8 @@
 import { Endpoint, HttpMethods } from "../../generic";
 
-export const ResendOtpForPhoneVerificationEndpoint: Endpoint = {
-    path: '/otps/phone-verification',
-    fullPath: '/communications/otps/phone-verification',
+export const ResendOtpForEmailVerificationEndpoint: Endpoint = {
+    path: '/otps/email-verification',
+    fullPath: '/communications/otps/email-verification',
     parentModule: '/communications',
     method: HttpMethods.Patch
 }

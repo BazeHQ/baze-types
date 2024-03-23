@@ -63,8 +63,8 @@ __export(src_exports, {
   ProfileEndpoint: () => ProfileEndpoint,
   PublishStoreEndpoint: () => PublishStoreEndpoint,
   PublishStoreErrors: () => PublishStoreErrors,
+  ResendOtpForEmailVerificationEndpoint: () => ResendOtpForEmailVerificationEndpoint,
   ResendOtpForPasswordResetEndpoint: () => ResendOtpForPasswordResetEndpoint,
-  ResendOtpForPhoneVerificationEndpoint: () => ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint: () => ReserveEmailEndpoint,
   ReserveEmailErrors: () => ReserveEmailErrors,
   ResetPasswordEndpoint: () => ResetPasswordEndpoint,
@@ -126,9 +126,9 @@ var VerifyOtpEndpoint = {
 };
 
 // src/types/communications/endpoint-payloads/resend-otp.payloads.ts
-var ResendOtpForPhoneVerificationEndpoint = {
-  path: "/otps/phone-verification",
-  fullPath: "/communications/otps/phone-verification",
+var ResendOtpForEmailVerificationEndpoint = {
+  path: "/otps/email-verification",
+  fullPath: "/communications/otps/email-verification",
   parentModule: "/communications",
   method: "PATCH" /* Patch */
 };
@@ -493,8 +493,8 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProfileEndpoint,
   PublishStoreEndpoint,
   PublishStoreErrors,
+  ResendOtpForEmailVerificationEndpoint,
   ResendOtpForPasswordResetEndpoint,
-  ResendOtpForPhoneVerificationEndpoint,
   ReserveEmailEndpoint,
   ReserveEmailErrors,
   ResetPasswordEndpoint,
