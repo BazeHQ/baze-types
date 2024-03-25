@@ -10,6 +10,11 @@ export interface ICreateCollectionPayload {
     name: string
 }
 
+export interface ICreateCollectionWithProducts {
+    name: string;
+    products: Array<string>;
+}
+
 export interface IEditCollectionPayload {
     name: string
 }

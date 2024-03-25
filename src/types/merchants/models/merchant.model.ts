@@ -1,4 +1,5 @@
 import { IBase } from "../../generic";
+import {OtpContext} from "../../communications";
 
 export interface IPassword extends IBase {
     token: string;
@@ -22,4 +23,8 @@ export interface IMerchant extends IBase {
 	phoneVerified: boolean;
   emailVerified: boolean;
   hasCreatedStore: boolean;
+  lastOtpVerification: {
+    context: OtpContext;
+    time: Date;
+  }
 }

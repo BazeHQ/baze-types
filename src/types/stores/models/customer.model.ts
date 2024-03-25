@@ -9,6 +9,9 @@ export interface ICustomer extends IBase {
     store: string;
     phoneNumber: string;
     email: string;
-    address: string;
-    notes: Array<ICustomerNote>
+    address: {
+        state: string;
+        address: string;
+    };
+    notes: Array<ICustomerNote>;
 }
