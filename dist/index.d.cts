@@ -230,6 +230,7 @@ interface ICustomerNote extends IBase {
 }
 interface ICustomer extends IBase {
     store: string;
+    name: string;
     phoneNumber: string;
     email: string;
     address: {

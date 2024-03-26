@@ -7,6 +7,7 @@ export interface ICustomerNote extends IBase {
 
 export interface ICustomer extends IBase {
     store: string;
+    name: string;
     phoneNumber: string;
     email: string;
     address: {
