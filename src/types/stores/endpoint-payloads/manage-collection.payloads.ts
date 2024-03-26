@@ -10,7 +10,7 @@ export interface ICreateCollectionPayload {
     name: string
 }
 
-export interface ICreateCollectionWithProducts {
+export interface ICreateCollectionWithProductsPayload {
     name: string;
     products: Array<string>;
 }
