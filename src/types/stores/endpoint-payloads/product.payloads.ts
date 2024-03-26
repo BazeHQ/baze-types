@@ -1,4 +1,4 @@
-import {IProduct, IProductQuantityConfig, IProductVariant, ProductStatus} from "../models";
+import {ICollection, IProduct, IProductQuantityConfig, IProductVariant, ProductStatus} from "../models";
 import {BazeError, Endpoint, HttpMethods, ICloudinaryImage} from "../../generic";
 import {HttpStatusCode} from "axios";
 
@@ -49,7 +49,9 @@ export interface IListProductsResponse {
 export interface IUpdateProductPayload extends Partial<ICreateProductPayload> { }
 
 export interface IUpdateProductResponse extends ICreateProductResponse {}
-export interface IViewOneProductResponse extends ICreateProductResponse {}
+export interface IViewOneProductResponse extends ICreateProductResponse {
+    collections: Array<ICollection>
+}
 
 export const CreateProductEndpoint: Endpoint = {
     path: '/products',

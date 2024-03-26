@@ -301,6 +301,7 @@ interface IUpdateProductPayload extends Partial<ICreateProductPayload> {
 interface IUpdateProductResponse extends ICreateProductResponse {
 }
 interface IViewOneProductResponse extends ICreateProductResponse {
+    collections: Array<ICollection>;
 }
 declare const CreateProductEndpoint: Endpoint;
 declare const ListProductsForStoreEndpoint: Endpoint;
