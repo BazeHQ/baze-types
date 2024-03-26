@@ -10,7 +10,19 @@ export interface ICreateCustomerPayload {
     };
 }
 
-export type IEditCustomerPayload = Partial<ICreateCustomerPayload>
+export interface IAddCustomerNotePayload {
+    note: string;
+}
+
+export type IEditCustomerPayload = Partial<ICreateCustomerPayload>;
+
+export interface IListCustomersResponse {
+    customers: Array<ICustomer>
+}
+
+export interface ICustomerResponse {
+    customer: ICustomer
+}
 
 export interface ICreateCustomerResponse {
     customer: ICustomer;
