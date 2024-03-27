@@ -53,6 +53,10 @@ export interface IViewOneProductResponse extends ICreateProductResponse {
     collections: Array<ICollection>
 }
 
+export interface IChangeCollectionsForProductPayload {
+    collections: Array<string>
+}
+
 export const CreateProductEndpoint: Endpoint = {
     path: '/products',
     fullPath: '/products',

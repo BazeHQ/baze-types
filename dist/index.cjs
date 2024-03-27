@@ -327,7 +327,7 @@ var CreateStoreEndpoint = {
   method: "POST" /* Post */
 };
 
-// src/types/stores/endpoint-payloads/product.payloads.ts
+// src/types/stores/endpoint-payloads/manage-product.payloads.ts
 var import_axios7 = require("axios");
 var CreateProductErrors = {
   noSuchStoreForMerchant: {

@@ -265,7 +265,7 @@ var CreateStoreEndpoint = {
   method: "POST" /* Post */
 };
 
-// src/types/stores/endpoint-payloads/product.payloads.ts
+// src/types/stores/endpoint-payloads/manage-product.payloads.ts
 import { HttpStatusCode as HttpStatusCode7 } from "axios";
 var CreateProductErrors = {
   noSuchStoreForMerchant: {
