@@ -50,6 +50,9 @@ __export(src_exports, {
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
   HttpMethods: () => HttpMethods,
+  JobClientType: () => JobClientType,
+  JobStatus: () => JobStatus,
+  JobType: () => JobType,
   ListCollectionsEndpoint: () => ListCollectionsEndpoint,
   ListProductsForStoreEndpoint: () => ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
@@ -465,6 +468,28 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["shelved"] = "shelved";
   return ProductStatus2;
 })(ProductStatus || {});
+
+// src/types/utils/models/job.model.ts
+var JobStatus = /* @__PURE__ */ ((JobStatus2) => {
+  JobStatus2["initiated"] = "initiated";
+  JobStatus2["pending"] = "pending";
+  JobStatus2["completed"] = "completed";
+  JobStatus2["failed"] = "failed";
+  return JobStatus2;
+})(JobStatus || {});
+var JobType = /* @__PURE__ */ ((JobType2) => {
+  JobType2["bulkCustomerUpload"] = "bulk-customer-upload";
+  JobType2["bulkProductUpload"] = "bulk-product-upload";
+  return JobType2;
+})(JobType || {});
+var JobClientType = /* @__PURE__ */ ((JobClientType2) => {
+  JobClientType2["merchant"] = "merchant";
+  JobClientType2["customer"] = "customer";
+  JobClientType2["store"] = "store";
+  JobClientType2["admin"] = "admin";
+  JobClientType2["system"] = "system";
+  return JobClientType2;
+})(JobClientType || {});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AddOrRemove,
@@ -480,6 +505,9 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
   HttpMethods,
+  JobClientType,
+  JobStatus,
+  JobType,
   ListCollectionsEndpoint,
   ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint,

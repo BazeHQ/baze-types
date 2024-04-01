@@ -1,21 +1,9 @@
-import { IBase } from "../../generic";
+import {IJob} from "../models";
 
-export enum JobStatus {
-    initiated = 'initiated',
-    pending = 'pending',
-    completed = 'completed',
-    failed = 'failed'
+export interface IViewJobPayload {
+  jobId: string;
 }
 
-export enum JobType {
-    bulkCustomerUpload = 'bulk-customer-upload',
-    bulkProductUpload = 'bulk-product-upload'
-}
-
-export interface IJobResponse<T = unknown> extends IBase {
-    status: JobStatus;
-    reports: Array<string>;
-    description: string;
-    type: JobType;
-    metadata: T;
+export interface IJobResponse {
+  job: IJob
 }
