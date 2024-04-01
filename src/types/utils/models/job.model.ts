@@ -7,7 +7,7 @@ export enum JobStatus {
   failed = 'failed'
 }
 
-export enum JobType {
+export enum JobTask {
   bulkCustomerUpload = 'bulk-customer-upload',
   bulkProductUpload = 'bulk-product-upload'
 }
@@ -28,6 +28,6 @@ export interface IJob<T = unknown> extends IBase {
   }
   reports: Array<string>;
   description: string;
-  type: JobType;
+  task: JobTask;
   metadata: T;
 }

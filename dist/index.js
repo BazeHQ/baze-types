@@ -412,11 +412,11 @@ var JobStatus = /* @__PURE__ */ ((JobStatus2) => {
   JobStatus2["failed"] = "failed";
   return JobStatus2;
 })(JobStatus || {});
-var JobType = /* @__PURE__ */ ((JobType2) => {
-  JobType2["bulkCustomerUpload"] = "bulk-customer-upload";
-  JobType2["bulkProductUpload"] = "bulk-product-upload";
-  return JobType2;
-})(JobType || {});
+var JobTask = /* @__PURE__ */ ((JobTask2) => {
+  JobTask2["bulkCustomerUpload"] = "bulk-customer-upload";
+  JobTask2["bulkProductUpload"] = "bulk-product-upload";
+  return JobTask2;
+})(JobTask || {});
 var JobClientType = /* @__PURE__ */ ((JobClientType2) => {
   JobClientType2["merchant"] = "merchant";
   JobClientType2["customer"] = "customer";
@@ -441,7 +441,7 @@ export {
   HttpMethods,
   JobClientType,
   JobStatus,
-  JobType,
+  JobTask,
   ListCollectionsEndpoint,
   ListProductsForStoreEndpoint,
   ListStoreAttributesEndpoint,
