@@ -10,6 +10,10 @@ export interface ICreateCustomerPayload {
     };
 }
 
+export interface IUploadCustomerCsvPayload {
+    url: string;
+}
+
 export interface IAddCustomerNotePayload {
     note: string;
 }

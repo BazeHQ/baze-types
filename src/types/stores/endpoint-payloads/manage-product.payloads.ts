@@ -1,6 +1,6 @@
-import {ICollection, IProduct, IProductQuantityConfig, IProductVariant, ProductStatus} from "../models";
-import {BazeError, Endpoint, HttpMethods, ICloudinaryImage} from "../../generic";
-import {HttpStatusCode} from "axios";
+import { ICollection, IProduct, IProductQuantityConfig, IProductVariant, ProductStatus } from "../models";
+import { BazeError, Endpoint, HttpMethods, ICloudinaryImage } from "../../generic";
+import { HttpStatusCode } from "axios";
 
 export const CreateProductErrors: {
     noSuchStoreForMerchant: BazeError,
@@ -55,6 +55,10 @@ export interface IViewOneProductResponse extends ICreateProductResponse {
 
 export interface IChangeCollectionsForProductPayload {
     collections: Array<string>
+}
+
+export interface IUploadProductCsvPayload {
+    url: string;
 }
 
 export const CreateProductEndpoint: Endpoint = {
