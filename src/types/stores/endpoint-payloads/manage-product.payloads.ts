@@ -5,24 +5,24 @@ import { HttpStatusCode } from "axios";
 export const CreateProductErrors: {
     noSuchStoreForMerchant: BazeError,
 } = {
-    noSuchStoreForMerchant: {
-        statusCode: HttpStatusCode.BadRequest,
-        code: "NO_SUCH_STORE_FOR_MERCHANT",
-        message: "This store does not exist for this merchant"
-    }
-}
+	noSuchStoreForMerchant: {
+		statusCode: HttpStatusCode.BadRequest,
+		code: "NO_SUCH_STORE_FOR_MERCHANT",
+		message: "This store does not exist for this merchant"
+	}
+};
 
 export const UpdateProductErrors: {
     noSuchStoreForMerchant: BazeError,
     noSuchProductInStore: BazeError
 } = {
-    ...CreateProductErrors,
-    noSuchProductInStore: {
-        statusCode: HttpStatusCode.BadRequest,
-        code: "NO_SUCH_PRODUCT_IN_STORE",
-        message: "This product does not exist in this store"
-    }
-}
+	...CreateProductErrors,
+	noSuchProductInStore: {
+		statusCode: HttpStatusCode.BadRequest,
+		code: "NO_SUCH_PRODUCT_IN_STORE",
+		message: "This product does not exist in this store"
+	}
+};
 
 export interface ICreateProductPayload {
     store: string;
@@ -62,29 +62,29 @@ export interface IUploadProductCsvPayload {
 }
 
 export const CreateProductEndpoint: Endpoint = {
-    path: '/products',
-    fullPath: '/products',
-    parentModule: '/products',
-    method: HttpMethods.Post
-}
+	path: '/products',
+	fullPath: '/products',
+	parentModule: '/products',
+	method: HttpMethods.Post
+};
 
 export const ListProductsForStoreEndpoint: Endpoint = {
-    path: '/list-for-store',
-    fullPath: '/products/list-for-store',
-    parentModule: '/products',
-    method: HttpMethods.Get
-}
+	path: '/list-for-store',
+	fullPath: '/products/list-for-store',
+	parentModule: '/products',
+	method: HttpMethods.Get
+};
 
 export const ViewOneProductEndpoint: Endpoint = {
-    path: '/view-one',
-    fullPath: '/products/view-one',
-    parentModule: '/products',
-    method: HttpMethods.Get
-}
+	path: '/view-one',
+	fullPath: '/products/view-one',
+	parentModule: '/products',
+	method: HttpMethods.Get
+};
 
 export const UpdateProductEndpoint: Endpoint = {
-    path: '/products',
-    fullPath: '/products',
-    parentModule: '/products',
-    method: HttpMethods.Patch
-}
+	path: '/products',
+	fullPath: '/products',
+	parentModule: '/products',
+	method: HttpMethods.Patch
+};

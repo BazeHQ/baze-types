@@ -7,18 +7,18 @@ export const UpdateStoreErrors: {
   noSuchAttribute: BazeError;
   attributeHasNoSuchOption: ( attrName: string ) => BazeError;
 } = {
-  noSuchStore: {
-    statusCode: HttpStatusCode.BadRequest,
-    code: "NO_SUCH_STORE",
-    message: `This store does not exist`
-  },
-  noSuchAttribute: CreateStoreErrors.noSuchAttribute,
-  attributeHasNoSuchOption: CreateStoreErrors.attributeHasNoSuchOption
+	noSuchStore: {
+		statusCode: HttpStatusCode.BadRequest,
+		code: "NO_SUCH_STORE",
+		message: `This store does not exist`
+	},
+	noSuchAttribute: CreateStoreErrors.noSuchAttribute,
+	attributeHasNoSuchOption: CreateStoreErrors.attributeHasNoSuchOption
 };
 
 export const UpdateStoreEndpoint: Endpoint = {
-  path: '/stores',
-  fullPath: '/stores',
-  parentModule: '/stores',
-  method: HttpMethods.Patch
-}
+	path: '/stores',
+	fullPath: '/stores',
+	parentModule: '/stores',
+	method: HttpMethods.Patch
+};

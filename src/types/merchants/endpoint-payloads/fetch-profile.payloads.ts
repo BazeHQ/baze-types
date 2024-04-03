@@ -13,7 +13,7 @@ export const FetchProfileErrors: {
 } = {
 	invalidMerchant: {
 		statusCode: HttpStatusCode.BadRequest,
-        code: 'INVALID_MERCHANT',
+		code: 'INVALID_MERCHANT',
 		data: null,
 		message: `Invalid merchant requested`,
 		recommendedActions: [
@@ -23,8 +23,8 @@ export const FetchProfileErrors: {
 };
 
 export const ProfileEndpoint: Endpoint = {
-    path: '/profile',
-    fullPath: '/merchants/profile',
-    parentModule: '/merchants',
-    method: HttpMethods.Patch
-}
+	path: '/profile',
+	fullPath: '/merchants/profile',
+	parentModule: '/merchants',
+	method: HttpMethods.Patch
+};

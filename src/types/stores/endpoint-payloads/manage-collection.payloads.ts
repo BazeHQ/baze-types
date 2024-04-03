@@ -1,5 +1,5 @@
-import { Endpoint, HttpMethods } from "../../generic"
-import { ICollection } from "../models"
+import { Endpoint, HttpMethods } from "../../generic";
+import { ICollection } from "../models";
 
 export enum AddOrRemove {
     add = 'add',
@@ -37,44 +37,44 @@ export interface IListCollectionsResponse {
 }
 
 export const CreateCollectionEndpoint: Endpoint = {
-    path: '/collections',
-    fullPath: '/stores/collections',
-    method: HttpMethods.Post
-}
+	path: '/collections',
+	fullPath: '/stores/collections',
+	method: HttpMethods.Post
+};
 
 export const EditCollectionEndpoint: Endpoint = {
-    path: '/collections',
-    fullPath: '/stores/collections',
-    method: HttpMethods.Patch
-}
+	path: '/collections',
+	fullPath: '/stores/collections',
+	method: HttpMethods.Patch
+};
 
 export const ListCollectionsEndpoint: Endpoint = {
-    path: '/collections/list-for-store',
-    fullPath: '/stores/collections/list-for-store',
-    method: HttpMethods.Get
-}
+	path: '/collections/list-for-store',
+	fullPath: '/stores/collections/list-for-store',
+	method: HttpMethods.Get
+};
 
 export const ViewOneCollectionEndpoint: Endpoint = {
-    path: '/collections/view-one',
-    fullPath: '/stores/collections/view-one',
-    method: HttpMethods.Get
-}
+	path: '/collections/view-one',
+	fullPath: '/stores/collections/view-one',
+	method: HttpMethods.Get
+};
 
 export const DeleteCollectionEndpoint: Endpoint = {
-    path: '/collections',
-    fullPath: '/stores/collections',
-    method: HttpMethods.Delete
-}
+	path: '/collections',
+	fullPath: '/stores/collections',
+	method: HttpMethods.Delete
+};
 
 export const ManageCollectionEndpoint: Endpoint = {
-    path: '/collections/products',
-    fullPath: '/stores/collections/products',
-    method: HttpMethods.Patch
-}
+	path: '/collections/products',
+	fullPath: '/stores/collections/products',
+	method: HttpMethods.Patch
+};
 
 export const ChangeCollectionProductsEndpoint: Endpoint = {
-    path: '/collections/mutations',
-    fullPath: '/stores/collections/mutations',
-    method: HttpMethods.Patch
-}
+	path: '/collections/mutations',
+	fullPath: '/stores/collections/mutations',
+	method: HttpMethods.Patch
+};
 

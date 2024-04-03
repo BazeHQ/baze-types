@@ -30,7 +30,7 @@ export const OtpVerificationErrors: {
 } = {
 	invalidOtp: {
 		statusCode: HttpStatusCode.BadRequest,
-        code: 'INVALID_OTP',
+		code: 'INVALID_OTP',
 		message: `This transaction is either invalid or expired`,
 		recommendedActions: [
 			`Request a new OTP`
@@ -38,7 +38,7 @@ export const OtpVerificationErrors: {
 	},
 	retriesUsedUp: {
 		statusCode: HttpStatusCode.TooManyRequests,
-        code: 'RETRIES_USED_UP',
+		code: 'RETRIES_USED_UP',
 		message: `You've tried too many times. Please request a new OTP`,
 		recommendedActions: [
 			`Request a new OTP`
@@ -47,8 +47,8 @@ export const OtpVerificationErrors: {
 };
 
 export const VerifyOtpEndpoint: Endpoint = {
-    path: '/otps',
-    fullPath: '/communications/otps',
-    parentModule: '/communications',
-    method: HttpMethods.Patch
-}
+	path: '/otps',
+	fullPath: '/communications/otps',
+	parentModule: '/communications',
+	method: HttpMethods.Patch
+};

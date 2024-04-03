@@ -17,7 +17,7 @@ export const LoginErrors: {
 } = {
 	invalidEmailOrPassword: {
 		statusCode: HttpStatusCode.Unauthorized,
-        code: 'INVALID_EMAIL_OR_PASSWORD',
+		code: 'INVALID_EMAIL_OR_PASSWORD',
 		message: `The email or password you provided is invalid`,
 		recommendedActions: [
 			`Ensure that all your credentials are correct.`,
@@ -26,7 +26,7 @@ export const LoginErrors: {
 	},
 	deactivatedAccount: {
 		statusCode: HttpStatusCode.Unauthorized,
-        code: 'DEACTIVATED_ACCOUNT',
+		code: 'DEACTIVATED_ACCOUNT',
 		message: `Your account has been deactivated`,
 		recommendedActions: [
 			`Reach out to support to find out why it was deactivated`
@@ -35,8 +35,8 @@ export const LoginErrors: {
 };
 
 export const LoginEndpoint: Endpoint = {
-    path: '/auth',
-    fullPath: '/merchants/auth',
-    parentModule: '/merchants',
-    method: HttpMethods.Patch
-}
+	path: '/auth',
+	fullPath: '/merchants/auth',
+	parentModule: '/merchants',
+	method: HttpMethods.Patch
+};

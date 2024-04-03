@@ -39,15 +39,15 @@ export const PublishStoreErrors: {
 };
 
 export const PublishStoreEndpoint: Endpoint = {
-    path: '/publish',
-    fullPath: '/stores/publish',
-    parentModule: '/stores',
-    method: HttpMethods.Patch
-}
+	path: '/publish',
+	fullPath: '/stores/publish',
+	parentModule: '/stores',
+	method: HttpMethods.Patch
+};
 
 export const SuggestStoreSubdomainsEndpoint: Endpoint = {
-    path: '/subdomain-suggestions',
-    fullPath: '/stores/subdomain-suggestions',
-    parentModule: '/stores',
-    method: HttpMethods.Get
-}
+	path: '/subdomain-suggestions',
+	fullPath: '/stores/subdomain-suggestions',
+	parentModule: '/stores',
+	method: HttpMethods.Get
+};

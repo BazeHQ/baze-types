@@ -24,7 +24,7 @@ export const ReserveEmailErrors: {
 } = {
 	invalidPhoneNumber: {
 		statusCode: HttpStatusCode.BadRequest,
-        code: 'INVALID_PHONE_NUMBER',
+		code: 'INVALID_PHONE_NUMBER',
 		message: `Your phone number isn't quite what we're expecting`,
 		recommendedActions: [
 			`Ensure you're providing a proper mobile number`
@@ -33,7 +33,7 @@ export const ReserveEmailErrors: {
 	duplicateMerchantDetected: ( d: PhoneOrEmail ) => {
 		return {
 			statusCode: HttpStatusCode.BadRequest,
-            code: 'DUPLICATE_MERCHANT_DETECTED',
+			code: 'DUPLICATE_MERCHANT_DETECTED',
 			message: `The ${d} you provided is already taken please provide another one or retrieve your account`,
 			recommendedActions: [
 				`Confirm that your ${d} is correct`,
@@ -45,7 +45,7 @@ export const ReserveEmailErrors: {
 	compromisedPassword( changeDate: Date ) {
 		return {
 			statusCode: HttpStatusCode.BadRequest,
-            code: 'COMPROMISED_PASSWORD',
+			code: 'COMPROMISED_PASSWORD',
 			message: `This password is compromised. It was changed on ${changeDate.toDateString()}`,
 			recommendedActions: [
 				`Try using a totally different password`
@@ -64,8 +64,8 @@ export const ReserveEmailErrors: {
 };
 
 export const ReserveEmailEndpoint: Endpoint = {
-    path: '',
-    fullPath: '/merchants',
-    parentModule: '/merchants',
-    method: HttpMethods.Post
-}
+	path: '',
+	fullPath: '/merchants',
+	parentModule: '/merchants',
+	method: HttpMethods.Post
+};
