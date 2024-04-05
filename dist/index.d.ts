@@ -194,6 +194,7 @@ interface IProductVariant extends IBase {
 }
 interface IProduct extends IBase {
     store: string;
+    slug: string;
     name: string;
     price: number;
     status: ProductStatus;
@@ -221,6 +222,7 @@ interface ITransaction {
 interface ICollection extends IBase {
     store: string | IStore;
     name: string;
+    slug: string;
     products: Array<string> | Array<IProduct>;
 }
 

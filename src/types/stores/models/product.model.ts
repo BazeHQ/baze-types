@@ -36,6 +36,7 @@ export interface IProductVariant extends IBase {
 
 export interface IProduct extends IBase {
     store: string;
+    slug: string;
     name: string;
     price: number;
     status: ProductStatus;
