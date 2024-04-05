@@ -197,6 +197,7 @@ interface IProduct extends IBase {
     slug: string;
     name: string;
     price: number;
+    copiesSold: number;
     status: ProductStatus;
     images: Array<ICloudinaryImage>;
     quantity: number;
