@@ -4,9 +4,9 @@ export interface IPagination {
     hasPrevious: boolean;
     current: number;
     next: number;
-    prev: number;
+    previous: number;
     total: number;
-    counter: number;
+    firstRecordIndex: number;
   };
   size: number;
   total: number;
