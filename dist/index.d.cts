@@ -200,6 +200,7 @@ interface IProduct extends IBase {
     copiesSold: number;
     status: ProductStatus;
     images: Array<ICloudinaryImage>;
+    collections: Array<string>;
     quantity: number;
     description: string;
     variantConfig: {
