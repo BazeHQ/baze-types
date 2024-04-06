@@ -78,6 +78,15 @@ var ResendOtpForPasswordResetEndpoint = {
 };
 
 // src/types/merchants/models/merchant.model.ts
+var VerificationProvider = /* @__PURE__ */ ((VerificationProvider2) => {
+  VerificationProvider2["identityPass"] = "identity-pass";
+  return VerificationProvider2;
+})(VerificationProvider || {});
+var VerificationStatus = /* @__PURE__ */ ((VerificationStatus2) => {
+  VerificationStatus2["passed"] = "passed";
+  VerificationStatus2["failed"] = "failed";
+  return VerificationStatus2;
+})(VerificationStatus || {});
 var MerchantAccountStatus = /* @__PURE__ */ ((MerchantAccountStatus2) => {
   MerchantAccountStatus2["EmailReserved"] = "email-reserved";
   MerchantAccountStatus2["Inactive"] = "inactive";
@@ -466,6 +475,8 @@ export {
   UpdateProductErrors,
   UpdateStoreEndpoint,
   UpdateStoreErrors,
+  VerificationProvider,
+  VerificationStatus,
   VerifyOtpEndpoint,
   ViewOneCollectionEndpoint,
   ViewOneProductEndpoint

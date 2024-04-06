@@ -77,6 +77,8 @@ __export(src_exports, {
   UpdateProductErrors: () => UpdateProductErrors,
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
   UpdateStoreErrors: () => UpdateStoreErrors,
+  VerificationProvider: () => VerificationProvider,
+  VerificationStatus: () => VerificationStatus,
   VerifyOtpEndpoint: () => VerifyOtpEndpoint,
   ViewOneCollectionEndpoint: () => ViewOneCollectionEndpoint,
   ViewOneProductEndpoint: () => ViewOneProductEndpoint
@@ -143,6 +145,15 @@ var ResendOtpForPasswordResetEndpoint = {
 };
 
 // src/types/merchants/models/merchant.model.ts
+var VerificationProvider = /* @__PURE__ */ ((VerificationProvider2) => {
+  VerificationProvider2["identityPass"] = "identity-pass";
+  return VerificationProvider2;
+})(VerificationProvider || {});
+var VerificationStatus = /* @__PURE__ */ ((VerificationStatus2) => {
+  VerificationStatus2["passed"] = "passed";
+  VerificationStatus2["failed"] = "failed";
+  return VerificationStatus2;
+})(VerificationStatus || {});
 var MerchantAccountStatus = /* @__PURE__ */ ((MerchantAccountStatus2) => {
   MerchantAccountStatus2["EmailReserved"] = "email-reserved";
   MerchantAccountStatus2["Inactive"] = "inactive";
@@ -532,6 +543,8 @@ var JobClientType = /* @__PURE__ */ ((JobClientType2) => {
   UpdateProductErrors,
   UpdateStoreEndpoint,
   UpdateStoreErrors,
+  VerificationProvider,
+  VerificationStatus,
   VerifyOtpEndpoint,
   ViewOneCollectionEndpoint,
   ViewOneProductEndpoint
