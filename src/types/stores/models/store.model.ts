@@ -20,6 +20,12 @@ export interface IStoreConfig extends IBase {
     rawChoices?: Array<unknown>;
 }
 
+export interface IWebstoreConfig extends IBase {
+    attribute: IStoreAttribute;
+    options?: Array<IStoreAttributeOption>;
+    rawChoices?: Array<unknown>;
+}
+
 export interface IStore extends IBase {
     merchantId: string;
     name: string;
@@ -45,4 +51,8 @@ export interface IStore extends IBase {
         location: unknown;
     }>;
     config: Array<IStoreConfig>;
+}
+
+export interface IWebStore extends Omit<IStore, 'config'> {
+    config: Array<IWebstoreConfig>;
 }
