@@ -22,7 +22,7 @@ export interface IStoreConfig extends IBase {
 
 export interface IWebstoreConfig extends IBase {
     attribute: IStoreAttribute;
-    option: IStoreAttributeOption;
+    options?: Array<IStoreAttributeOption>;
     rawChoices?: Array<unknown>;
 }
 

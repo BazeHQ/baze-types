@@ -153,7 +153,7 @@ interface IStoreConfig extends IBase {
 }
 interface IWebstoreConfig extends IBase {
     attribute: IStoreAttribute;
-    option: IStoreAttributeOption;
+    options?: Array<IStoreAttributeOption>;
     rawChoices?: Array<unknown>;
 }
 interface IStore extends IBase {
