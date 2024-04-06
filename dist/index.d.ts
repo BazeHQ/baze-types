@@ -256,6 +256,7 @@ interface ICustomer extends IBase {
         address: string;
     };
     notes: Array<ICustomerNote>;
+    otherContacts?: Array<string>;
 }
 
 type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">;

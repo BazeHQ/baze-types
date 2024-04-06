@@ -15,4 +15,5 @@ export interface ICustomer extends IBase {
         address: string;
     };
     notes: Array<ICustomerNote>;
+    otherContacts?: Array<string>;
 }
