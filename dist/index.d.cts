@@ -101,11 +101,11 @@ declare enum VerificationStatus {
     passed = "passed",
     failed = "failed"
 }
-type Verification = {
+interface Verification extends IBase {
     status: VerificationStatus;
     description?: string;
     metadata: unknown;
-};
+}
 interface IPassword extends IBase {
     token: string;
     hint: string;

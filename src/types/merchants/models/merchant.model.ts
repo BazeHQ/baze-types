@@ -10,7 +10,7 @@ export enum VerificationStatus {
   failed = 'failed'
 }
 
-export type Verification = {
+export interface Verification extends IBase {
   status: VerificationStatus;
   description?: string;
   metadata: unknown;
