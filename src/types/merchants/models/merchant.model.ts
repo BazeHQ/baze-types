@@ -11,9 +11,9 @@ export enum VerificationStatus {
 }
 
 export type Verification = {
-  jobId: string;
-  provider: VerificationProvider,
-  status: VerificationStatus
+  status: VerificationStatus;
+  description?: string;
+  metadata: unknown;
 }
 
 export interface IPassword extends IBase {

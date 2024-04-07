@@ -102,9 +102,9 @@ declare enum VerificationStatus {
     failed = "failed"
 }
 type Verification = {
-    jobId: string;
-    provider: VerificationProvider;
     status: VerificationStatus;
+    description?: string;
+    metadata: unknown;
 };
 interface IPassword extends IBase {
     token: string;
