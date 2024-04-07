@@ -17,7 +17,7 @@ export type Verification = {
 }
 
 export interface IPassword extends IBase {
-    token: string;
+  token: string;
 	hint: string;
 	isActive: boolean
 }
@@ -40,9 +40,13 @@ export interface IMerchant extends IBase {
   identityVerified: boolean;
   hasCreatedStore: boolean;
   hasAddedBankAccount: boolean;
+  thirdPartyIds: {
+    paystackCustomerCode: string;
+  }
   lastOtpVerification: {
     context: OtpContext;
     time: Date;
   },
   verificationAttempts: Array<Verification>;
+  bankAccounts: Array<string>
 }
