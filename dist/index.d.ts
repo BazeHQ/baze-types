@@ -266,10 +266,12 @@ interface ICartItem extends IBase {
     product: string;
     quantity: number;
     variantOption?: IProductQuantityConfig;
-    name?: string;
-    isVariantProduct?: boolean;
-    price?: string;
-    productImages: ICloudinaryImage;
+    metadata?: {
+        name?: string;
+        isVariantProduct?: boolean;
+        price?: string;
+        productImages?: ICloudinaryImage;
+    };
 }
 interface ICart extends IBase {
     store?: string;

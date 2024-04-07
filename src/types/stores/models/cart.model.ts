@@ -6,11 +6,12 @@ export interface ICartItem extends IBase {
     quantity: number;
     variantOption?: IProductQuantityConfig;
 
-    // FE Metadata
-    name?: string;
-    isVariantProduct?: boolean;
-    price?: string;
-    productImages: ICloudinaryImage
+    metadata?: {
+        name?: string;
+        isVariantProduct?: boolean;
+        price?: string;
+        productImages?: ICloudinaryImage
+    }
 }
 
 export interface ICart extends IBase {
