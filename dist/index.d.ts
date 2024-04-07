@@ -143,7 +143,7 @@ interface IBankAccount extends IBase {
     codes: {
         paystack: string;
     };
-    customer: string;
+    merchant: string;
     number: string;
     metadata?: {
         bankName: string;
