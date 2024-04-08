@@ -11,6 +11,13 @@ export type IProductQuantityOption = IBase & {
     option: string;
 }
 
+export type IWebstoreProductQuantityOption = IBase & {
+    variant: string;
+    variantName: string;
+    option: string;
+    optionName: string;
+}
+
 export type IProductVariantOption = IBase & {
     name: string;
     uuid: string;
@@ -18,6 +25,12 @@ export type IProductVariantOption = IBase & {
 
 export interface IProductQuantityConfig extends IBase {
     options: Array<IProductQuantityOption>
+    quantity: number;
+    price: number;
+    uuid: string;
+}
+export interface IWebstoreProductQuantityConfig extends Omit<IProductQuantityConfig, 'options'>{
+    options: Array<IWebstoreProductQuantityOption>
     quantity: number;
     price: number;
     uuid: string;
@@ -50,3 +63,4 @@ export interface IProduct extends IBase {
         variants: IProductVariant
     }
 }
+
