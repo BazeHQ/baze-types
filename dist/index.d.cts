@@ -277,7 +277,8 @@ interface IProduct extends IBase {
 interface ICartItem extends IBase {
     product: string;
     quantity: number;
-    variantOption?: IProductQuantityConfig;
+    quantityInStock: number;
+    variantOption?: IWebstoreProductQuantityConfig;
     metadata?: {
         name?: string;
         isVariantProduct?: boolean;
