@@ -282,7 +282,7 @@ interface ICartItem extends IBase {
     metadata?: {
         name?: string;
         isVariantProduct?: boolean;
-        price?: string;
+        price?: number;
         productImages?: ICloudinaryImage;
     };
 }
