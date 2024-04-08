@@ -1,5 +1,5 @@
 import { IBase, ICloudinaryImage } from "../../generic";
-import {  IWebstoreProductQuantityConfig } from "./product.model";
+import { IWebstoreProductQuantityConfig } from "./product.model";
 
 export interface ICartItem extends IBase {
     product: string;
