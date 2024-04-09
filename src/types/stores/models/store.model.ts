@@ -26,6 +26,23 @@ export interface IWebstoreConfig extends IBase {
     rawChoices?: Array<unknown>;
 }
 
+export interface IStoreShippingFee extends IBase {
+    name: string;
+    description: string;
+    amount: number;
+}
+
+export enum FeeType {
+    fixed = 'fixed',
+    percentage = 'percentage'
+}
+
+export interface IStoreFee extends IBase {
+    name: string;
+    type: FeeType;
+    amount: number;
+}
+
 export interface IStore extends IBase {
     merchantId: string;
     name: string;
@@ -51,6 +68,8 @@ export interface IStore extends IBase {
         location: unknown;
     }>;
     config: Array<IStoreConfig>;
+    shippingFees: Array<IStoreShippingFee>;
+    fees: Array<IStoreFee>;
 }
 
 export interface IWebStore extends Omit<IStore, 'config'> {
