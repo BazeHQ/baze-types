@@ -405,6 +405,13 @@ var ChangeCollectionProductsEndpoint = {
   method: "PATCH" /* Patch */
 };
 
+// src/types/stores/models/store.model.ts
+var FeeType = /* @__PURE__ */ ((FeeType2) => {
+  FeeType2["fixed"] = "fixed";
+  FeeType2["percentage"] = "percentage";
+  return FeeType2;
+})(FeeType || {});
+
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["published"] = "published";
@@ -444,6 +451,7 @@ export {
   CreateStoreErrors,
   DeleteCollectionEndpoint,
   EditCollectionEndpoint,
+  FeeType,
   FetchProfileErrors,
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,

@@ -46,6 +46,7 @@ __export(src_exports, {
   CreateStoreErrors: () => CreateStoreErrors,
   DeleteCollectionEndpoint: () => DeleteCollectionEndpoint,
   EditCollectionEndpoint: () => EditCollectionEndpoint,
+  FeeType: () => FeeType,
   FetchProfileErrors: () => FetchProfileErrors,
   ForgotPasswordEndpoint: () => ForgotPasswordEndpoint,
   GetAccessTokenEndpoint: () => GetAccessTokenEndpoint,
@@ -472,6 +473,13 @@ var ChangeCollectionProductsEndpoint = {
   method: "PATCH" /* Patch */
 };
 
+// src/types/stores/models/store.model.ts
+var FeeType = /* @__PURE__ */ ((FeeType2) => {
+  FeeType2["fixed"] = "fixed";
+  FeeType2["percentage"] = "percentage";
+  return FeeType2;
+})(FeeType || {});
+
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["published"] = "published";
@@ -512,6 +520,7 @@ var JobClientType = /* @__PURE__ */ ((JobClientType2) => {
   CreateStoreErrors,
   DeleteCollectionEndpoint,
   EditCollectionEndpoint,
+  FeeType,
   FetchProfileErrors,
   ForgotPasswordEndpoint,
   GetAccessTokenEndpoint,
