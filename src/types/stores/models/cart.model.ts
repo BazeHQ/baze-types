@@ -41,7 +41,7 @@ export interface ICartItem extends IBase {
     product: string;
     quantity: number;
     variants: Array<IVariantAndOption>;
-    netadata: {
+    metadata: {
         snapshots: {
             price?: number;
             productVariant?: IProductVariantConfig;
