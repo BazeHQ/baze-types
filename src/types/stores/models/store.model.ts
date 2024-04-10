@@ -38,10 +38,16 @@ export interface IStoreFee extends IBase {
     amount: number;
 }
 
+export enum StoreStatus {
+    live = 'live',
+    maintenance = 'maintenance'
+}
+
 export interface IStore extends IBase {
     merchantId: string;
     name: string;
     isLive: boolean;
+    status: StoreStatus;
     contactEmails: Array<string>;
     logo: ICloudinaryImage;
     heroBg: ICloudinaryImage;
