@@ -1,4 +1,4 @@
-import {IBase, ICloudinaryImage} from "../../generic";
+import {FeeType, IBase, ICloudinaryImage} from "../../generic";
 
 export interface IStoreAttribute extends IBase {
     name: string;
@@ -30,11 +30,6 @@ export interface IStoreShippingFee extends IBase {
     name: string;
     description: string;
     amount: number;
-}
-
-export enum FeeType {
-    fixed = 'fixed',
-    percentage = 'percentage'
 }
 
 export interface IStoreFee extends IBase {

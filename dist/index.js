@@ -21,6 +21,23 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 // src/types/communications/endpoint-payloads/verify-otp.payloads.ts
 import { HttpStatusCode } from "axios";
 
+// src/types/generic/models/event.model.ts
+var BazeEventSource = /* @__PURE__ */ ((BazeEventSource2) => {
+  BazeEventSource2["cart"] = "cart";
+  BazeEventSource2["merchant"] = "merchant";
+  BazeEventSource2["order"] = "order";
+  BazeEventSource2["customer"] = "customer";
+  BazeEventSource2["system"] = "system";
+  return BazeEventSource2;
+})(BazeEventSource || {});
+
+// src/types/generic/models/fee.enum.ts
+var FeeType = /* @__PURE__ */ ((FeeType2) => {
+  FeeType2["fixed"] = "fixed";
+  FeeType2["percentage"] = "percentage";
+  return FeeType2;
+})(FeeType || {});
+
 // src/types/generic/endpoints/endpoint.interface.ts
 var HttpMethods = /* @__PURE__ */ ((HttpMethods2) => {
   HttpMethods2["Post"] = "POST";
@@ -405,13 +422,6 @@ var ChangeCollectionProductsEndpoint = {
   method: "PATCH" /* Patch */
 };
 
-// src/types/stores/models/store.model.ts
-var FeeType = /* @__PURE__ */ ((FeeType2) => {
-  FeeType2["fixed"] = "fixed";
-  FeeType2["percentage"] = "percentage";
-  return FeeType2;
-})(FeeType || {});
-
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["published"] = "published";
@@ -419,6 +429,48 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["shelved"] = "shelved";
   return ProductStatus2;
 })(ProductStatus || {});
+
+// src/types/stores/models/cart.model.ts
+var CartStatus = /* @__PURE__ */ ((CartStatus2) => {
+  CartStatus2["shopping"] = "shopping";
+  CartStatus2["addedCustomer"] = "added-customer";
+  CartStatus2["addedDeliveryDetails"] = "added-delivery-details";
+  CartStatus2["initiatedPayment"] = "initiated-payment";
+  CartStatus2["abandoned"] = "abandoned";
+  CartStatus2["checkedOut"] = "checked-out";
+  return CartStatus2;
+})(CartStatus || {});
+
+// src/types/stores/models/order.model.ts
+var OrderStatus = /* @__PURE__ */ ((OrderStatus2) => {
+  OrderStatus2["awaitingPayment"] = "awaiting-payment";
+  OrderStatus2["pendingDispatch"] = "pending-dispatch";
+  OrderStatus2["dispatched"] = "dispatched";
+  OrderStatus2["cancelled"] = "cancelled";
+  OrderStatus2["cancelledWithRefund"] = "cancelled-with-refund";
+  return OrderStatus2;
+})(OrderStatus || {});
+var PaymentMethod = /* @__PURE__ */ ((PaymentMethod2) => {
+  PaymentMethod2["offlineTransfer"] = "offline-transfer";
+  PaymentMethod2["physicalCash"] = "physical-cash";
+  PaymentMethod2["bazeWebstore"] = "baze-webstore";
+  PaymentMethod2["paymentLink"] = "payment-link";
+  return PaymentMethod2;
+})(PaymentMethod || {});
+var PaymentGateway = /* @__PURE__ */ ((PaymentGateway2) => {
+  PaymentGateway2["paystack"] = "paystack";
+  return PaymentGateway2;
+})(PaymentGateway || {});
+var SalesChannel = /* @__PURE__ */ ((SalesChannel2) => {
+  SalesChannel2["baze"] = "baze";
+  SalesChannel2["whatsapp"] = "whatsapp";
+  SalesChannel2["instagram"] = "instagram";
+  SalesChannel2["twitter"] = "twitter";
+  SalesChannel2["physicalStore"] = "physical-store";
+  SalesChannel2["phone"] = "phone";
+  SalesChannel2["other"] = "other";
+  return SalesChannel2;
+})(SalesChannel || {});
 
 // src/types/utils/models/job.model.ts
 var JobStatus = /* @__PURE__ */ ((JobStatus2) => {
@@ -441,8 +493,20 @@ var JobClientType = /* @__PURE__ */ ((JobClientType2) => {
   JobClientType2["system"] = "system";
   return JobClientType2;
 })(JobClientType || {});
+
+// src/types/utils/models/revenue.model.ts
+var RevenueSource = /* @__PURE__ */ ((RevenueSource2) => {
+  RevenueSource2["order"] = "order";
+  return RevenueSource2;
+})(RevenueSource || {});
+var Partner = /* @__PURE__ */ ((Partner2) => {
+  Partner2["paystack"] = "paystack";
+  return Partner2;
+})(Partner || {});
 export {
   AddOrRemove,
+  BazeEventSource,
+  CartStatus,
   ChangeCollectionProductsEndpoint,
   CreateCollectionEndpoint,
   CreateProductEndpoint,
@@ -466,8 +530,12 @@ export {
   LoginErrors,
   ManageCollectionEndpoint,
   MerchantAccountStatus,
+  OrderStatus,
   OtpContext,
   OtpVerificationErrors,
+  Partner,
+  PaymentGateway,
+  PaymentMethod,
   ProductStatus,
   ProfileEndpoint,
   PublishStoreEndpoint,
@@ -478,6 +546,8 @@ export {
   ReserveEmailErrors,
   ResetPasswordEndpoint,
   ResetPasswordErrors,
+  RevenueSource,
+  SalesChannel,
   SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint,
   UpdateProductErrors,

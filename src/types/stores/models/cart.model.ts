@@ -1,7 +1,17 @@
-import { IBase, ICloudinaryImage } from "../../generic";
-import { IWebstoreProductQuantityConfig } from "./product.model";
+import { IBase, IBazeEvent, ICloudinaryImage } from "../../generic";
+import { IProductQuantityConfig, IProductVariantConfig, IWebstoreProductQuantityConfig } from "./product.model";
+import { IStoreFee, IStoreShippingFee } from "./store.model";
 
-export interface ICartItem extends IBase {
+export enum CartStatus {
+    shopping = 'shopping',
+    addedCustomer = 'added-customer',
+    addedDeliveryDetails = 'added-delivery-details',
+    initiatedPayment = 'initiated-payment',
+    abandoned = 'abandoned',
+    checkedOut = 'checked-out'
+}
+
+export interface IWebstoreCartItem extends IBase {
     product: string;
     quantity: number;
     quantityInStock: number;
@@ -16,8 +26,39 @@ export interface ICartItem extends IBase {
     }
 }
 
-export interface ICart extends IBase {
+export interface IWebstoreCart extends IBase {
     store?: string;
     customer?: string;
-    items: Array<ICartItem>
+    items: Array<IWebstoreCartItem>
+}
+
+export interface IVariantAndOption {
+    variant: string;
+    option: string;
+}
+
+export interface ICartItem extends IBase {
+    product: string;
+    quantity: string;
+    variants: Array<IVariantAndOption>;
+    netadata: {
+        snapshots: {
+            price?: number;
+            productVariant?: IProductVariantConfig;
+            productQuantityConfig?: IProductQuantityConfig;
+        }
+    }
+}
+
+export interface ICart extends IBase {
+    store: string;
+    customer?: string;
+    items: ICartItem;
+    shippingFee?: IStoreShippingFee;
+    fees?: Array<IStoreFee>;
+    status: CartStatus;
+    metadata: {
+        totalAmount: number;
+        events: Array<IBazeEvent>;
+    }
 }
