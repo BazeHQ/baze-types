@@ -39,7 +39,7 @@ export interface IVariantAndOption {
 
 export interface ICartItem extends IBase {
     product: string;
-    quantity: string;
+    quantity: number;
     variants: Array<IVariantAndOption>;
     netadata: {
         snapshots: {

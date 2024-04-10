@@ -81,6 +81,7 @@ __export(src_exports, {
   ResetPasswordErrors: () => ResetPasswordErrors,
   RevenueSource: () => RevenueSource,
   SalesChannel: () => SalesChannel,
+  StoreStatus: () => StoreStatus,
   SuggestStoreSubdomainsEndpoint: () => SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint: () => UpdateProductEndpoint,
   UpdateProductErrors: () => UpdateProductErrors,
@@ -498,6 +499,13 @@ var ChangeCollectionProductsEndpoint = {
   method: "PATCH" /* Patch */
 };
 
+// src/types/stores/models/store.model.ts
+var StoreStatus = /* @__PURE__ */ ((StoreStatus2) => {
+  StoreStatus2["live"] = "live";
+  StoreStatus2["maintenance"] = "maintenance";
+  return StoreStatus2;
+})(StoreStatus || {});
+
 // src/types/stores/models/product.model.ts
 var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["published"] = "published";
@@ -625,6 +633,7 @@ var Partner = /* @__PURE__ */ ((Partner2) => {
   ResetPasswordErrors,
   RevenueSource,
   SalesChannel,
+  StoreStatus,
   SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint,
   UpdateProductErrors,
