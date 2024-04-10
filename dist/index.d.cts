@@ -24,7 +24,7 @@ interface IBazeEvent extends IBase {
     description: string;
     source: {
         id?: string;
-        ooption: BazeEventSource;
+        option: BazeEventSource;
     };
 }
 
