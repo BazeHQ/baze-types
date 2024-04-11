@@ -14,9 +14,9 @@ export enum CartStatus {
 export interface IWebstoreCartItem extends IBase {
     product: string;
     quantity: number;
+    price: number;
     quantityInStock: number;
     variantOption?: IWebstoreProductQuantityConfig;
-
 
     metadata?: {
         name?: string;

@@ -282,9 +282,6 @@ interface IProductQuantityConfig extends IBase {
 }
 interface IWebstoreProductQuantityConfig extends Omit<IProductQuantityConfig, 'options' | 'uuid'> {
     options: Array<IWebstoreProductQuantityOption>;
-    quantity: number;
-    price: number;
-    uuid?: string;
 }
 interface IProductVariantConfig extends IBase {
     uuid: string;
@@ -323,6 +320,7 @@ declare enum CartStatus {
 interface IWebstoreCartItem extends IBase {
     product: string;
     quantity: number;
+    price: number;
     quantityInStock: number;
     variantOption?: IWebstoreProductQuantityConfig;
     metadata?: {
