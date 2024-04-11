@@ -29,7 +29,7 @@ export interface IProductQuantityConfig extends IBase {
     price: number;
     uuid: string;
 }
-export interface IWebstoreProductQuantityConfig extends Omit<IProductQuantityConfig, 'options' | 'uuid'>{
+export interface IWebstoreProductQuantityConfig {
     options: Array<IWebstoreProductQuantityOption>;
 }
 
