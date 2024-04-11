@@ -348,8 +348,8 @@ interface ICartItem extends IBase {
     metadata: {
         snapshots: {
             price?: number;
-            productVariant?: Array<IProductVariantConfig>;
-            productQuantityConfig?: IProductQuantityConfig;
+            chosenVariants?: Array<IProductVariantConfig>;
+            quantityInStock?: number;
         };
     };
 }

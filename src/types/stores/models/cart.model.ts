@@ -1,5 +1,5 @@
 import { IBase, IBazeEvent, ICloudinaryImage } from "../../generic";
-import { IProductQuantityConfig, IProductVariantConfig, IWebstoreProductQuantityConfig } from "./product.model";
+import { IProductVariantConfig, IWebstoreProductQuantityConfig } from "./product.model";
 import { IStoreFee, IStoreShippingFee } from "./store.model";
 
 export enum CartStatus {
@@ -44,8 +44,8 @@ export interface ICartItem extends IBase {
     metadata: {
         snapshots: {
             price?: number;
-            productVariant?: Array<IProductVariantConfig>;
-            productQuantityConfig?: IProductQuantityConfig;
+            chosenVariants?: Array<IProductVariantConfig>;
+            quantityInStock?: number;
         }
     }
 }
