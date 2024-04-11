@@ -280,11 +280,11 @@ interface IProductQuantityConfig extends IBase {
     price: number;
     uuid: string;
 }
-interface IWebstoreProductQuantityConfig extends Omit<IProductQuantityConfig, 'options'> {
+interface IWebstoreProductQuantityConfig extends Omit<IProductQuantityConfig, 'options' | 'uuid'> {
     options: Array<IWebstoreProductQuantityOption>;
     quantity: number;
     price: number;
-    uuid: string;
+    uuid?: string;
 }
 interface IProductVariantConfig extends IBase {
     uuid: string;
