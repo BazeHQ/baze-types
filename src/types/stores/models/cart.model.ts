@@ -21,15 +21,28 @@ export interface IWebstoreCartItem extends IBase {
     metadata?: {
         name?: string;
         isVariantProduct?: boolean;
-        price?: number;
         productImages?: ICloudinaryImage
     }
 }
 
 export interface IWebstoreCart extends IBase {
     store?: string;
-    customer?: string;
-    items: Array<IWebstoreCartItem>
+    items: Array<IWebstoreCartItem> //Add error object in each cart item; add error if it's low in stock/out of stock
+    customer: {
+        firstName: string
+        lastName: string
+        email: string
+        phone: string,
+        deliveryAddress: string,
+        orderNote?: string
+    };
+    shippingFee?: IStoreShippingFee;
+    fees?: Array<IStoreFee>;
+    status: CartStatus;
+    metadata: {
+        totalAmount: number;
+        itemTotalWithoutCharges: number;
+    }
 }
 
 export interface IVariantAndOption {

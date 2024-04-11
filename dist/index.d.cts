@@ -326,14 +326,27 @@ interface IWebstoreCartItem extends IBase {
     metadata?: {
         name?: string;
         isVariantProduct?: boolean;
-        price?: number;
         productImages?: ICloudinaryImage;
     };
 }
 interface IWebstoreCart extends IBase {
     store?: string;
-    customer?: string;
     items: Array<IWebstoreCartItem>;
+    customer: {
+        firstName: string;
+        lastName: string;
+        email: string;
+        phone: string;
+        deliveryAddress: string;
+        orderNote?: string;
+    };
+    shippingFee?: IStoreShippingFee;
+    fees?: Array<IStoreFee>;
+    status: CartStatus;
+    metadata: {
+        totalAmount: number;
+        itemTotalWithoutCharges: number;
+    };
 }
 interface IVariantAndOption {
     variant: string;
