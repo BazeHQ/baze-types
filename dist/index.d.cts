@@ -344,11 +344,11 @@ interface IVariantAndOption {
 interface ICartItem extends IBase {
     product: string;
     quantity: number;
-    variants: Array<IVariantAndOption>;
+    variants?: Array<IVariantAndOption>;
     metadata: {
         snapshots: {
             price?: number;
-            productVariant?: IProductVariantConfig;
+            productVariant?: Array<IProductVariantConfig>;
             productQuantityConfig?: IProductQuantityConfig;
         };
     };
