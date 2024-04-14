@@ -654,6 +654,7 @@ interface IEditCartItemQuantityPayload {
 interface IAddDeliveryToCartPayload {
     address: string;
     shippingFee: string;
+    note?: string;
 }
 
 interface IFetchProfileResponse {

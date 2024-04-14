@@ -23,4 +23,5 @@ export interface IEditCartItemQuantityPayload {
 export interface IAddDeliveryToCartPayload {
   address: string;
   shippingFee: string;
+  note?: string;
 }
