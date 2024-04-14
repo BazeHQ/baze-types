@@ -280,7 +280,7 @@ interface IProductQuantityConfig extends IBase {
     price: number;
     uuid: string;
 }
-interface IWebstoreProductQuantityConfig extends IProductQuantityConfig {
+interface IWebstoreProductQuantityConfig extends Partial<IProductQuantityConfig> {
     options: Array<IWebstoreProductQuantityOption>;
 }
 interface IProductVariantConfig extends IBase {
@@ -323,6 +323,7 @@ interface IWebstoreCartItem extends IBase {
     price: number;
     quantityInStock: number;
     variantOption?: IWebstoreProductQuantityConfig;
+    errors?: Array<string>;
     metadata?: {
         name?: string;
         isVariantProduct?: boolean;
@@ -332,7 +333,8 @@ interface IWebstoreCartItem extends IBase {
 interface IWebstoreCart extends IBase {
     store?: string;
     items: Array<IWebstoreCartItem>;
-    customer: {
+    errors?: Array<string>;
+    customer?: {
         firstName: string;
         lastName: string;
         email: string;

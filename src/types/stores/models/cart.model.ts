@@ -17,6 +17,7 @@ export interface IWebstoreCartItem extends IBase {
     price: number;
     quantityInStock: number;
     variantOption?: IWebstoreProductQuantityConfig;
+    errors?: Array<string>
 
     metadata?: {
         name?: string;
@@ -27,8 +28,9 @@ export interface IWebstoreCartItem extends IBase {
 
 export interface IWebstoreCart extends IBase {
     store?: string;
-    items: Array<IWebstoreCartItem> //Add error object in each cart item; add error if it's low in stock/out of stock
-    customer: {
+    items: Array<IWebstoreCartItem>
+    errors?: Array<string>;
+    customer?: {
         firstName: string
         lastName: string
         email: string
