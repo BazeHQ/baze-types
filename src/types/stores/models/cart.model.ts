@@ -60,6 +60,7 @@ export interface ICartItem extends IBase {
         snapshots: {
             price?: number;
             chosenVariants?: Array<IProductVariantConfig>;
+            qnpUUID?: string;
             quantityInStock?: number;
             productName?: string;
             productImages?: Array<ICloudinaryImage>;
