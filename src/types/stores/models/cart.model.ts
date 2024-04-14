@@ -61,6 +61,7 @@ export interface ICartItem extends IBase {
             price?: number;
             chosenVariants?: Array<IProductVariantConfig>;
             quantityInStock?: number;
+            productName?: string;
         }
     }
 }
