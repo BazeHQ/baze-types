@@ -29,8 +29,16 @@ export interface ICreateShippingFeePayload {
 	description: string;
 }
 
+export interface IEditShippingFeePayload extends Partial<ICreateShippingFeePayload> {
+	fee: string;
+}
+
 export interface ICreateStoreFeePayload {
 	name: string;
 	type: FeeType;
 	amount: number;
+}
+
+export interface IEditStoreFeePayload extends Partial<ICreateStoreFeePayload> {
+	fee: string;
 }
