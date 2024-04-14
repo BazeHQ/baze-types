@@ -19,3 +19,8 @@ export interface IEditCartItemQuantityPayload {
   item: string;
   quantity: number;
 }
+
+export interface IAddDeliveryToCartPayload {
+  address: string;
+  shippingFee: string;
+}
