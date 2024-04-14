@@ -1,7 +1,8 @@
 import { FeeType, IBase } from "../../generic";
 
 export enum RevenueSource {
-    order = 'order'
+    order = 'order',
+    subscription = 'subscription'
 }
 
 export enum Partner {

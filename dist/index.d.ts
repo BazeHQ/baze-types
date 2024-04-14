@@ -385,12 +385,6 @@ interface ICart extends IBase {
     };
 }
 
-interface ITransaction {
-    store: string;
-    merchant: string;
-    cart: string;
-}
-
 interface ICollection extends IBase {
     store: string | IStore;
     name: string;
@@ -428,9 +422,6 @@ declare enum PaymentMethod {
     bazeWebstore = "baze-webstore",
     paymentLink = "payment-link"
 }
-declare enum PaymentGateway {
-    paystack = "paystack"
-}
 declare enum SalesChannel {
     baze = "baze",
     whatsapp = "whatsapp",
@@ -450,15 +441,10 @@ interface IOrder extends IBase {
         option: SalesChannel;
         description?: string;
     };
-    events: Array<IBazeEvent>;
-    payment: {
-        reference: string;
-        gateway: PaymentGateway;
-        amountPaid: number;
-        processingFee: number;
-    };
     metadata: {
-        revenue: string;
+        revenue?: string;
+        transaction: string;
+        events: Array<IBazeEvent>;
     };
 }
 
@@ -757,8 +743,26 @@ interface IJob<T = unknown> extends IBase {
     metadata: T;
 }
 
+interface ICreateSystemPreferencePayload<T> {
+    name: string;
+    slug: string;
+    value: T;
+}
+type IEditSystemPreferencePayload<T> = Partial<ICreateSystemPreferencePayload<T>>;
+interface ISystemPreferenceResponse<T> {
+    preference: ISystemPreference<T>;
+}
+
+interface IViewJobPayload {
+    jobId: string;
+}
+interface IJobResponse {
+    job: IJob;
+}
+
 declare enum RevenueSource {
-    order = "order"
+    order = "order",
+    subscription = "subscription"
 }
 declare enum Partner {
     paystack = "paystack"
@@ -783,21 +787,41 @@ interface IRevenue extends IBase {
     inflow: number;
 }
 
-interface ICreateSystemPreferencePayload<T> {
-    name: string;
-    slug: string;
-    value: T;
+declare enum TransactionStatus {
+    initiated = "initiated",
+    abandoned = "abandoned",
+    successful = "successful",
+    failed = "failed",
+    pendingConfirmation = "pending-confirmation"
 }
-type IEditSystemPreferencePayload<T> = Partial<ICreateSystemPreferencePayload<T>>;
-interface ISystemPreferenceResponse<T> {
-    preference: ISystemPreference<T>;
+declare enum TransactionChannel {
+    online = "online",
+    offline = "offline"
+}
+declare enum PaymentGateway {
+    paystack = "paystack"
+}
+declare enum TransactionEntity {
+    customer = "customer",
+    merchant = "merchant",
+    baze = "baze"
+}
+interface ITransaction<T = unknown> extends IBase {
+    initiator: {
+        entity: TransactionEntity;
+        id?: string;
+    };
+    amount: number;
+    reference: number;
+    gateway: PaymentGateway;
+    status: TransactionStatus;
+    channel: TransactionChannel;
+    recipient: {
+        entity: TransactionEntity;
+        id?: string;
+    };
+    revenue?: string;
+    metadata?: T;
 }
 
-interface IViewJobPayload {
-    jobId: string;
-}
-interface IJobResponse {
-    job: IJob;
-}
-
-export { AddOrRemove, type ApiResponse, type BazeError, BazeEventSource, type BazeSuccessResponse, CartStatus, ChangeCollectionProductsEndpoint, CreateCollectionEndpoint, CreateProductEndpoint, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, DeleteCollectionEndpoint, EditCollectionEndpoint, type Endpoint, FeeType, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IAddCustomerNotePayload, type IAddDeliveryToCartPayload, type IBank, type IBankAccount, type IBase, type IBazeEvent, type ICart, type ICartItem, type IChangeCollectionProductsPayload, type IChangeCollectionsForProductPayload, type ICloudinaryImage, type ICollection, type ICollectionResponse, type ICreateCollectionPayload, type ICreateCollectionWithProductsPayload, type ICreateCustomerPayload, type ICreateCustomerResponse, type ICreateProductPayload, type ICreateProductResponse, type ICreateShippingFeePayload, type ICreateStoreFeePayload, type ICreateStorePayload, type ICreateStoreResponse, type ICreateSystemPreferencePayload, type ICustomer, type ICustomerNote, type ICustomerResponse, type IEditCartItemQuantityPayload, type IEditCollectionPayload, type IEditCustomerPayload, type IEditShippingFeePayload, type IEditStoreFeePayload, type IEditSystemPreferencePayload, type IFetchProfileResponse, type IFetchStoreSubdomainSuggestionPayload, type IFetchStoreSubdomainSuggestionRes, type IHasQueryPayload, type IJob, type IJobResponse, type IListCollectionsResponse, type IListCustomersResponse, type IListProductsResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IManageCollectionProductsPayload, type IMerchant, type IOrder, type IPagination, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariant, type IProductVariantConfig, type IProductVariantOption, type IPublishStorePayload, type IPublishStoreRes, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IResolveBankAccountPayload, type IResolvedBankAccountResponse, type IRevenue, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IStoreFee, type IStoreShippingFee, type ISystemPreference, type ISystemPreferenceResponse, type ITransaction, type IUpdateProductPayload, type IUpdateProductResponse, type IUploadCustomerCsvPayload, type IUploadProductCsvPayload, type IValidateMerchantDto, type IVariantAndOption, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, type IViewJobPayload, type IViewOneProductResponse, type IWebStore, type IWebstoreCart, type IWebstoreCartItem, type IWebstoreConfig, type IWebstoreProduct, type IWebstoreProductQuantityConfig, type IWebstoreProductQuantityOption, type IWebstoreProducts, JobClientType, JobStatus, JobTask, ListCollectionsEndpoint, ListProductsForStoreEndpoint, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, ManageCollectionEndpoint, MerchantAccountStatus, OrderStatus, OtpContext, OtpVerificationErrors, Partner, PaymentGateway, PaymentMethod, type PhoneOrEmail, ProductStatus, ProfileEndpoint, PublishStoreEndpoint, PublishStoreErrors, ResendOtpForEmailVerificationEndpoint, ResendOtpForPasswordResetEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, RevenueSource, SalesChannel, StoreStatus, SuggestStoreSubdomainsEndpoint, type ThirdPartyFee, UpdateProductEndpoint, UpdateProductErrors, UpdateStoreEndpoint, UpdateStoreErrors, type Verification, VerificationProvider, VerificationStatus, VerifyOtpEndpoint, ViewOneCollectionEndpoint, ViewOneProductEndpoint };
+export { AddOrRemove, type ApiResponse, type BazeError, BazeEventSource, type BazeSuccessResponse, CartStatus, ChangeCollectionProductsEndpoint, CreateCollectionEndpoint, CreateProductEndpoint, CreateProductErrors, CreateStoreEndpoint, CreateStoreErrors, DeleteCollectionEndpoint, EditCollectionEndpoint, type Endpoint, FeeType, FetchProfileErrors, ForgotPasswordEndpoint, GetAccessTokenEndpoint, HttpMethods, type IAddCustomerNotePayload, type IAddDeliveryToCartPayload, type IBank, type IBankAccount, type IBase, type IBazeEvent, type ICart, type ICartItem, type IChangeCollectionProductsPayload, type IChangeCollectionsForProductPayload, type ICloudinaryImage, type ICollection, type ICollectionResponse, type ICreateCollectionPayload, type ICreateCollectionWithProductsPayload, type ICreateCustomerPayload, type ICreateCustomerResponse, type ICreateProductPayload, type ICreateProductResponse, type ICreateShippingFeePayload, type ICreateStoreFeePayload, type ICreateStorePayload, type ICreateStoreResponse, type ICreateSystemPreferencePayload, type ICustomer, type ICustomerNote, type ICustomerResponse, type IEditCartItemQuantityPayload, type IEditCollectionPayload, type IEditCustomerPayload, type IEditShippingFeePayload, type IEditStoreFeePayload, type IEditSystemPreferencePayload, type IFetchProfileResponse, type IFetchStoreSubdomainSuggestionPayload, type IFetchStoreSubdomainSuggestionRes, type IHasQueryPayload, type IJob, type IJobResponse, type IListCollectionsResponse, type IListCustomersResponse, type IListProductsResponse, type IListStoreAttributesResponse, type ILoginPayload, type ILoginResponse, type IManageCollectionProductsPayload, type IMerchant, type IOrder, type IPagination, type IPassword, type IProduct, type IProductQuantityConfig, type IProductQuantityOption, type IProductVariant, type IProductVariantConfig, type IProductVariantOption, type IPublishStorePayload, type IPublishStoreRes, type IRawStoreConfig, type IRequestPasswordResetPayload, type IReserveEmailPayload, type IReserveEmailResponse, type IResetPasswordPayload, type IResolveBankAccountPayload, type IResolvedBankAccountResponse, type IRevenue, type IStore, type IStoreAttribute, type IStoreAttributeOption, type IStoreConfig, type IStoreFee, type IStoreShippingFee, type ISystemPreference, type ISystemPreferenceResponse, type ITransaction, type IUpdateProductPayload, type IUpdateProductResponse, type IUploadCustomerCsvPayload, type IUploadProductCsvPayload, type IValidateMerchantDto, type IVariantAndOption, type IVerifyOtpPayload, type IVerifyOtpResponse, type IVerifyOtpWithoutAuthPayload, type IViewJobPayload, type IViewOneProductResponse, type IWebStore, type IWebstoreCart, type IWebstoreCartItem, type IWebstoreConfig, type IWebstoreProduct, type IWebstoreProductQuantityConfig, type IWebstoreProductQuantityOption, type IWebstoreProducts, JobClientType, JobStatus, JobTask, ListCollectionsEndpoint, ListProductsForStoreEndpoint, ListStoreAttributesEndpoint, LoginEndpoint, LoginErrors, ManageCollectionEndpoint, MerchantAccountStatus, OrderStatus, OtpContext, OtpVerificationErrors, Partner, PaymentGateway, PaymentMethod, type PhoneOrEmail, ProductStatus, ProfileEndpoint, PublishStoreEndpoint, PublishStoreErrors, ResendOtpForEmailVerificationEndpoint, ResendOtpForPasswordResetEndpoint, ReserveEmailEndpoint, ReserveEmailErrors, ResetPasswordEndpoint, ResetPasswordErrors, RevenueSource, SalesChannel, StoreStatus, SuggestStoreSubdomainsEndpoint, type ThirdPartyFee, TransactionChannel, TransactionEntity, TransactionStatus, UpdateProductEndpoint, UpdateProductErrors, UpdateStoreEndpoint, UpdateStoreErrors, type Verification, VerificationProvider, VerificationStatus, VerifyOtpEndpoint, ViewOneCollectionEndpoint, ViewOneProductEndpoint };

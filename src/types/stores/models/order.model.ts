@@ -15,10 +15,6 @@ export enum PaymentMethod {
     paymentLink = 'payment-link'
 }
 
-export enum PaymentGateway {
-    paystack = 'paystack'
-}
-
 export enum SalesChannel {
     baze = 'baze',
     whatsapp = 'whatsapp',
@@ -39,14 +35,9 @@ export interface IOrder extends IBase {
         option: SalesChannel;
         description?: string;
     };
-    events: Array<IBazeEvent>;
-    payment: {
-        reference: string;
-        gateway: PaymentGateway;
-        amountPaid: number;
-        processingFee: number;
-    }
     metadata: {
-        revenue: string;
+        revenue?: string;
+        transaction: string;
+        events: Array<IBazeEvent>;
     }
 }

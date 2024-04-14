@@ -465,10 +465,6 @@ var PaymentMethod = /* @__PURE__ */ ((PaymentMethod2) => {
   PaymentMethod2["paymentLink"] = "payment-link";
   return PaymentMethod2;
 })(PaymentMethod || {});
-var PaymentGateway = /* @__PURE__ */ ((PaymentGateway2) => {
-  PaymentGateway2["paystack"] = "paystack";
-  return PaymentGateway2;
-})(PaymentGateway || {});
 var SalesChannel = /* @__PURE__ */ ((SalesChannel2) => {
   SalesChannel2["baze"] = "baze";
   SalesChannel2["whatsapp"] = "whatsapp";
@@ -502,15 +498,41 @@ var JobClientType = /* @__PURE__ */ ((JobClientType2) => {
   return JobClientType2;
 })(JobClientType || {});
 
-// src/types/utils/models/revenue.model.ts
+// src/types/transactions/models/revenue.model.ts
 var RevenueSource = /* @__PURE__ */ ((RevenueSource2) => {
   RevenueSource2["order"] = "order";
+  RevenueSource2["subscription"] = "subscription";
   return RevenueSource2;
 })(RevenueSource || {});
 var Partner = /* @__PURE__ */ ((Partner2) => {
   Partner2["paystack"] = "paystack";
   return Partner2;
 })(Partner || {});
+
+// src/types/transactions/models/transaction.model.ts
+var TransactionStatus = /* @__PURE__ */ ((TransactionStatus2) => {
+  TransactionStatus2["initiated"] = "initiated";
+  TransactionStatus2["abandoned"] = "abandoned";
+  TransactionStatus2["successful"] = "successful";
+  TransactionStatus2["failed"] = "failed";
+  TransactionStatus2["pendingConfirmation"] = "pending-confirmation";
+  return TransactionStatus2;
+})(TransactionStatus || {});
+var TransactionChannel = /* @__PURE__ */ ((TransactionChannel2) => {
+  TransactionChannel2["online"] = "online";
+  TransactionChannel2["offline"] = "offline";
+  return TransactionChannel2;
+})(TransactionChannel || {});
+var PaymentGateway = /* @__PURE__ */ ((PaymentGateway2) => {
+  PaymentGateway2["paystack"] = "paystack";
+  return PaymentGateway2;
+})(PaymentGateway || {});
+var TransactionEntity = /* @__PURE__ */ ((TransactionEntity2) => {
+  TransactionEntity2["customer"] = "customer";
+  TransactionEntity2["merchant"] = "merchant";
+  TransactionEntity2["baze"] = "baze";
+  return TransactionEntity2;
+})(TransactionEntity || {});
 export {
   AddOrRemove,
   BazeEventSource,
@@ -558,6 +580,9 @@ export {
   SalesChannel,
   StoreStatus,
   SuggestStoreSubdomainsEndpoint,
+  TransactionChannel,
+  TransactionEntity,
+  TransactionStatus,
   UpdateProductEndpoint,
   UpdateProductErrors,
   UpdateStoreEndpoint,
