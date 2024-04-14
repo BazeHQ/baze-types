@@ -312,6 +312,7 @@ interface IProduct extends IBase {
 declare enum CartStatus {
     shopping = "shopping",
     addedCustomer = "added-customer",
+    clearedForCheckout = "cleared-for-checkout",
     addedDeliveryDetails = "added-delivery-details",
     initiatedPayment = "initiated-payment",
     abandoned = "abandoned",

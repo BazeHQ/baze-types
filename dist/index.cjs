@@ -518,6 +518,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
 var CartStatus = /* @__PURE__ */ ((CartStatus2) => {
   CartStatus2["shopping"] = "shopping";
   CartStatus2["addedCustomer"] = "added-customer";
+  CartStatus2["clearedForCheckout"] = "cleared-for-checkout";
   CartStatus2["addedDeliveryDetails"] = "added-delivery-details";
   CartStatus2["initiatedPayment"] = "initiated-payment";
   CartStatus2["abandoned"] = "abandoned";
