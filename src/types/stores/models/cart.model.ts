@@ -73,6 +73,7 @@ export interface ICart extends IBase {
     items: Array<ICartItem>;
     shippingFee?: IStoreShippingFee;
     note?: string;
+    deliveryAddress?: string;
     fees?: Array<IStoreFee>;
     status: CartStatus;
     metadata: {
