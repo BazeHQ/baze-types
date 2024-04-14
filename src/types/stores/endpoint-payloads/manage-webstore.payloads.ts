@@ -16,6 +16,6 @@ export interface IWebstoreProducts {
 }
 
 export interface IEditCartItemQuantityPayload {
-  cart: string;
   item: string;
+  quantity: number;
 }

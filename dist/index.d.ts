@@ -632,8 +632,8 @@ interface IWebstoreProducts {
     pagination: IPagination;
 }
 interface IEditCartItemQuantityPayload {
-    cart: string;
     item: string;
+    quantity: number;
 }
 
 interface IFetchProfileResponse {
