@@ -22,7 +22,7 @@ export interface IWebstoreCartItem extends IBase {
     metadata?: {
         name?: string;
         isVariantProduct?: boolean;
-        productImages?: ICloudinaryImage
+        productImages?: Array<ICloudinaryImage>
     }
 }
 
