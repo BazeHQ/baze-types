@@ -530,6 +530,7 @@ var PaymentGateway = /* @__PURE__ */ ((PaymentGateway2) => {
 var TransactionEntity = /* @__PURE__ */ ((TransactionEntity2) => {
   TransactionEntity2["customer"] = "customer";
   TransactionEntity2["merchant"] = "merchant";
+  TransactionEntity2["store"] = "store";
   TransactionEntity2["baze"] = "baze";
   return TransactionEntity2;
 })(TransactionEntity || {});

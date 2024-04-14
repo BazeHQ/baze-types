@@ -804,6 +804,7 @@ declare enum PaymentGateway {
 declare enum TransactionEntity {
     customer = "customer",
     merchant = "merchant",
+    store = "store",
     baze = "baze"
 }
 interface ITransaction<T = unknown> extends IBase {
@@ -812,7 +813,7 @@ interface ITransaction<T = unknown> extends IBase {
         id?: string;
     };
     amount: number;
-    reference: number;
+    reference: string;
     gateway: PaymentGateway;
     status: TransactionStatus;
     channel: TransactionChannel;

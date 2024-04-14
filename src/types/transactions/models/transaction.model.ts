@@ -20,6 +20,7 @@ export enum PaymentGateway {
 export enum TransactionEntity {
     customer = 'customer',
     merchant = 'merchant',
+    store = 'store',
     baze = 'baze',
 
 }
@@ -30,7 +31,7 @@ export interface ITransaction<T = unknown> extends IBase {
         id?: string;
     }
     amount: number;
-    reference: number;
+    reference: string;
     gateway: PaymentGateway;
     status: TransactionStatus;
     channel: TransactionChannel;
