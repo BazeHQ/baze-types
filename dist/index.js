@@ -534,6 +534,11 @@ var TransactionEntity = /* @__PURE__ */ ((TransactionEntity2) => {
   TransactionEntity2["baze"] = "baze";
   return TransactionEntity2;
 })(TransactionEntity || {});
+var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
+  TransactionSubject2["order"] = "order";
+  TransactionSubject2["subscription"] = "subscription";
+  return TransactionSubject2;
+})(TransactionSubject || {});
 export {
   AddOrRemove,
   BazeEventSource,
@@ -584,6 +589,7 @@ export {
   TransactionChannel,
   TransactionEntity,
   TransactionStatus,
+  TransactionSubject,
   UpdateProductEndpoint,
   UpdateProductErrors,
   UpdateStoreEndpoint,

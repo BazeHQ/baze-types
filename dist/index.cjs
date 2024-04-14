@@ -86,6 +86,7 @@ __export(src_exports, {
   TransactionChannel: () => TransactionChannel,
   TransactionEntity: () => TransactionEntity,
   TransactionStatus: () => TransactionStatus,
+  TransactionSubject: () => TransactionSubject,
   UpdateProductEndpoint: () => UpdateProductEndpoint,
   UpdateProductErrors: () => UpdateProductErrors,
   UpdateStoreEndpoint: () => UpdateStoreEndpoint,
@@ -614,6 +615,11 @@ var TransactionEntity = /* @__PURE__ */ ((TransactionEntity2) => {
   TransactionEntity2["baze"] = "baze";
   return TransactionEntity2;
 })(TransactionEntity || {});
+var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
+  TransactionSubject2["order"] = "order";
+  TransactionSubject2["subscription"] = "subscription";
+  return TransactionSubject2;
+})(TransactionSubject || {});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AddOrRemove,
@@ -665,6 +671,7 @@ var TransactionEntity = /* @__PURE__ */ ((TransactionEntity2) => {
   TransactionChannel,
   TransactionEntity,
   TransactionStatus,
+  TransactionSubject,
   UpdateProductEndpoint,
   UpdateProductErrors,
   UpdateStoreEndpoint,
