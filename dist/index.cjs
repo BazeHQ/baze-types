@@ -329,14 +329,6 @@ var ForgotPasswordEndpoint = {
   method: "POST" /* Post */
 };
 
-// src/types/stores/endpoint-payloads/list-store-attributes.payloads.ts
-var ListStoreAttributesEndpoint = {
-  path: "/active-attributes",
-  fullPath: "/store-mgt/active-attributes",
-  parentModule: "/stores",
-  method: "GET" /* Get */
-};
-
 // src/types/stores/endpoint-payloads/create-store.payloads.ts
 var import_axios6 = require("axios");
 var CreateStoreErrors = {
@@ -366,6 +358,14 @@ var CreateStoreEndpoint = {
   fullPath: "/stores",
   parentModule: "/stores",
   method: "POST" /* Post */
+};
+
+// src/types/stores/endpoint-payloads/list-store-attributes.payloads.ts
+var ListStoreAttributesEndpoint = {
+  path: "/active-attributes",
+  fullPath: "/store-mgt/active-attributes",
+  parentModule: "/stores",
+  method: "GET" /* Get */
 };
 
 // src/types/stores/endpoint-payloads/manage-product.payloads.ts
