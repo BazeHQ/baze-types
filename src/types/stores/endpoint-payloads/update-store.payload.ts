@@ -1,5 +1,5 @@
 import { HttpStatusCode } from "axios";
-import { BazeError, Endpoint, HttpMethods } from "../../generic";
+import { BazeError, Endpoint, FeeType, HttpMethods } from "../../generic";
 import { CreateStoreErrors } from "./create-store.payloads";
 
 export const UpdateStoreErrors: {
@@ -22,3 +22,15 @@ export const UpdateStoreEndpoint: Endpoint = {
 	parentModule: '/stores',
 	method: HttpMethods.Patch
 };
+
+export interface ICreateShippingFeePayload {
+	name: string;
+	amount: number;
+	description: string;
+}
+
+export interface ICreateStoreFeePayload {
+	name: string;
+	type: FeeType;
+	amount: number;
+}

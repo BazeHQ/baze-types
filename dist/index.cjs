@@ -109,10 +109,10 @@ var BazeEventSource = /* @__PURE__ */ ((BazeEventSource2) => {
 })(BazeEventSource || {});
 
 // src/types/generic/models/fee.enum.ts
-var FeeType = /* @__PURE__ */ ((FeeType2) => {
-  FeeType2["fixed"] = "fixed";
-  FeeType2["percentage"] = "percentage";
-  return FeeType2;
+var FeeType = /* @__PURE__ */ ((FeeType3) => {
+  FeeType3["fixed"] = "fixed";
+  FeeType3["percentage"] = "percentage";
+  return FeeType3;
 })(FeeType || {});
 
 // src/types/generic/endpoints/endpoint.interface.ts
