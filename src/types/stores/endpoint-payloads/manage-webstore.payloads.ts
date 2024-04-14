@@ -14,3 +14,8 @@ export interface IWebstoreProducts {
   products: Array<IWebstoreProduct>;
   pagination: IPagination;
 }
+
+export interface IEditCartItemQuantityPayload {
+  cart: string;
+  item: string;
+}
