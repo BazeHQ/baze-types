@@ -62,6 +62,7 @@ export interface ICartItem extends IBase {
             chosenVariants?: Array<IProductVariantConfig>;
             quantityInStock?: number;
             productName?: string;
+            productImages?: Array<ICloudinaryImage>;
         }
     }
 }
