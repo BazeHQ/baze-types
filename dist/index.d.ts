@@ -148,6 +148,7 @@ interface IMerchant extends IBase {
     emailVerified: boolean;
     identityVerified: boolean;
     hasCreatedStore: boolean;
+    hasAttemptedIdentityVerification: boolean;
     hasAddedBankAccount: boolean;
     thirdPartyIds: {
         paystackCustomerCode: string;
