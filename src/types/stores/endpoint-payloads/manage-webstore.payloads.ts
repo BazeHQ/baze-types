@@ -25,3 +25,11 @@ export interface IAddDeliveryToCartPayload {
   shippingFee: string;
   note?: string;
 }
+
+export interface ICheckoutResponse {
+  transaction: {
+    reference: string;
+    url: string;
+    transaction: string;
+  }
+}
