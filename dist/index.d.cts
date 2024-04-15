@@ -815,6 +815,7 @@ interface ITransaction<T = unknown> extends IBase {
     initiator: {
         entity: TransactionEntity;
         id?: string;
+        amountPaid?: number;
     };
     subject: {
         entity: TransactionSubject;
