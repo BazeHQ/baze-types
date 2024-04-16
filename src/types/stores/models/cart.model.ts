@@ -81,5 +81,10 @@ export interface ICart extends IBase {
     metadata: {
         totalAmount: number;
         events: Array<IBazeEvent>;
+        customer?: {
+          name: string;
+          email: string;
+          phoneNumber: string;
+        }
     }
 }
