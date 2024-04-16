@@ -32,6 +32,7 @@ export interface IWebstoreCart extends IBase {
     items: Array<IWebstoreCartItem>
     errors?: Array<string>;
     customer?: {
+        _id: string
         firstName: string
         lastName: string
         email: string
