@@ -10,6 +10,11 @@ export interface ICreateCustomerPayload {
     };
 }
 
+export interface IMailListCustomerPayload {
+  name: string;
+  email: string;
+}
+
 export interface IUploadCustomerCsvPayload {
     url: string;
 }

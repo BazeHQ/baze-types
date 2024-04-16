@@ -5,6 +5,17 @@ export interface ICustomerNote extends IBase {
     creator: string;
 }
 
+export enum CustomerStatus {
+  engaged = 'engaged',
+  dormant = 'dormant'
+}
+
+export enum CustomerSource {
+  internal = 'internal',
+  webstoreOrder = 'webstore-order',
+  webstoreEmailSubscription = 'webstore-email-subscription'
+}
+
 export interface ICustomer extends IBase {
     store: string;
     name: string;
@@ -16,4 +27,8 @@ export interface ICustomer extends IBase {
     };
     notes: Array<ICustomerNote>;
     otherContacts?: Array<string>;
+    metadata?: {
+      status?: CustomerStatus;
+      source?: CustomerSource;
+    }
 }

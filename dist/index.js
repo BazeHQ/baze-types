@@ -449,6 +449,19 @@ var CartStatus = /* @__PURE__ */ ((CartStatus2) => {
   return CartStatus2;
 })(CartStatus || {});
 
+// src/types/stores/models/customer.model.ts
+var CustomerStatus = /* @__PURE__ */ ((CustomerStatus2) => {
+  CustomerStatus2["engaged"] = "engaged";
+  CustomerStatus2["dormant"] = "dormant";
+  return CustomerStatus2;
+})(CustomerStatus || {});
+var CustomerSource = /* @__PURE__ */ ((CustomerSource2) => {
+  CustomerSource2["internal"] = "internal";
+  CustomerSource2["webstoreOrder"] = "webstore-order";
+  CustomerSource2["webstoreEmailSubscription"] = "webstore-email-subscription";
+  return CustomerSource2;
+})(CustomerSource || {});
+
 // src/types/stores/models/order.model.ts
 var OrderStatus = /* @__PURE__ */ ((OrderStatus2) => {
   OrderStatus2["awaitingPayment"] = "awaiting-payment";
@@ -549,6 +562,8 @@ export {
   CreateProductErrors,
   CreateStoreEndpoint,
   CreateStoreErrors,
+  CustomerSource,
+  CustomerStatus,
   DeleteCollectionEndpoint,
   EditCollectionEndpoint,
   FeeType,
