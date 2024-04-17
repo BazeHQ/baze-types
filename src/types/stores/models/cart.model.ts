@@ -18,7 +18,8 @@ export interface IWebstoreCartItem extends IBase {
     price: number;
     quantityInStock: number;
     variantOption?: IWebstoreProductQuantityConfig;
-    errors?: Array<string>
+    hasErrors: boolean;
+    errors: Array<string>
 
     metadata?: {
         name?: string;
@@ -30,7 +31,6 @@ export interface IWebstoreCartItem extends IBase {
 export interface IWebstoreCart extends IBase {
     store?: string;
     items: Array<IWebstoreCartItem>
-    errors?: Array<string>;
     customer?: {
         _id: string
         firstName: string
@@ -43,6 +43,8 @@ export interface IWebstoreCart extends IBase {
     shippingFee?: IStoreShippingFee;
     fees?: Array<IStoreFee>;
     status: CartStatus;
+    hasErrors: boolean;
+    errors: Array<string>;
     metadata: {
         totalAmount: number;
         itemTotalWithoutCharges: number;
@@ -82,6 +84,7 @@ export interface ICart extends IBase {
     status: CartStatus;
     metadata: {
         totalAmount: number;
+        errors?: Array<string>;
         events: Array<IBazeEvent>;
         customer?: {
           name: string;
