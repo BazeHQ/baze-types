@@ -22,6 +22,7 @@ export type CartVariantAndOptionMetadata = {
 }
 
 export type CartProductQuantityAndPrice = {
+    name: string;
 	qnpConfigId?: string;
 	variants?: Array<CartVariantAndOptionMetadata>;
 	hasVariants: boolean;
@@ -44,14 +45,14 @@ export interface ICartItem extends IBase {
 }
 
 export interface ICart extends IBase {
-    store: string; //covered
-    customer?: string; //covered
+    store: string;
+    customer?: string;
     items: Array<ICartItem>;
-    shippingFee?: IStoreShippingFee; //covered
-    note?: string; //covered
-    deliveryAddress?: string; //covered
-    fees?: Array<IStoreFee>; //covered
-    status: CartStatus; //covered
+    shippingFee?: IStoreShippingFee;
+    note?: string;
+    deliveryAddress?: string;
+    fees?: Array<IStoreFee>;
+    status: CartStatus;
     metadata: {
         totalAmount: number;
         totalItems: number;

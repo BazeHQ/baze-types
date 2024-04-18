@@ -320,6 +320,7 @@ type CartVariantAndOptionMetadata = {
     };
 };
 type CartProductQuantityAndPrice = {
+    name: string;
     qnpConfigId?: string;
     variants?: Array<CartVariantAndOptionMetadata>;
     hasVariants: boolean;
