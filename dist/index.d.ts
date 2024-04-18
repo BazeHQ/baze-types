@@ -350,6 +350,8 @@ interface ICart extends IBase {
     status: CartStatus;
     metadata: {
         totalAmount: number;
+        totalItems: number;
+        totalCharges: number;
         errors?: Array<string>;
         events: Array<IBazeEvent>;
         customer?: {

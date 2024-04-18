@@ -44,16 +44,18 @@ export interface ICartItem extends IBase {
 }
 
 export interface ICart extends IBase {
-    store: string;
-    customer?: string;
+    store: string; //covered
+    customer?: string; //covered
     items: Array<ICartItem>;
-    shippingFee?: IStoreShippingFee;
-    note?: string;
-    deliveryAddress?: string;
-    fees?: Array<IStoreFee>;
-    status: CartStatus;
+    shippingFee?: IStoreShippingFee; //covered
+    note?: string; //covered
+    deliveryAddress?: string; //covered
+    fees?: Array<IStoreFee>; //covered
+    status: CartStatus; //covered
     metadata: {
         totalAmount: number;
+        totalItems: number;
+        totalCharges: number;
         errors?: Array<string>;
         events: Array<IBazeEvent>;
         customer?: {
