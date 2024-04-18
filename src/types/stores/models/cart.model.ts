@@ -1,4 +1,5 @@
 import { IBase, IBazeEvent, ICloudinaryImage } from "../../generic";
+import { IProductQuantityOption } from "./product.model";
 import { IStoreFee, IStoreShippingFee } from "./store.model";
 
 export enum CartStatus {
@@ -9,11 +10,6 @@ export enum CartStatus {
     initiatedPayment = 'initiated-payment',
     abandoned = 'abandoned',
     checkedOut = 'checked-out'
-}
-
-export interface IVariantAndOption {
-    variant: string;
-    option: string;
 }
 
 export type CartVariantAndOptionMetadata = {
@@ -38,7 +34,7 @@ export type CartProductQuantityAndPrice = {
 export interface ICartItem extends IBase {
     product: string;
     quantity: number;
-    variants?: Array<IVariantAndOption>;
+    variants?: Array<IProductQuantityOption>;
     metadata?: {
         snapshots: {
             qnp: CartProductQuantityAndPrice
