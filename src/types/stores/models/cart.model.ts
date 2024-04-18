@@ -1,5 +1,4 @@
 import { IBase, IBazeEvent, ICloudinaryImage } from "../../generic";
-import { IProductVariantConfig, IWebstoreProductQuantityConfig } from "./product.model";
 import { IStoreFee, IStoreShippingFee } from "./store.model";
 
 export enum CartStatus {
@@ -12,48 +11,28 @@ export enum CartStatus {
     checkedOut = 'checked-out'
 }
 
-export interface IWebstoreCartItem extends IBase {
-    product: string;
-    quantity: number;
-    price: number;
-    quantityInStock: number;
-    variantOption?: IWebstoreProductQuantityConfig;
-    hasErrors: boolean;
-    errors: Array<string>
-
-    metadata?: {
-        name?: string;
-        isVariantProduct?: boolean;
-        productImages?: Array<ICloudinaryImage>
-    }
-}
-
-export interface IWebstoreCart extends IBase {
-    store?: string;
-    items: Array<IWebstoreCartItem>
-    customer?: {
-        _id: string
-        firstName: string
-        lastName: string
-        email: string
-        phone: string,
-        deliveryAddress: string,
-        orderNote?: string
-    };
-    shippingFee?: IStoreShippingFee;
-    fees?: Array<IStoreFee>;
-    status: CartStatus;
-    hasErrors: boolean;
-    errors: Array<string>;
-    metadata: {
-        totalAmount: number;
-        itemTotalWithoutCharges: number;
-    }
-}
-
 export interface IVariantAndOption {
     variant: string;
     option: string;
+}
+
+export type CartVariantAndOptionMetadata = {
+	uuid: string;
+	name: string;
+	option: {
+		uuid: string;
+		name: string;
+	};
+}
+
+export type CartProductQuantityAndPrice = {
+	qnpConfigId?: string;
+	variants?: Array<CartVariantAndOptionMetadata>;
+	hasVariants: boolean;
+    images: Array<ICloudinaryImage>;
+    slug: string;
+	qis: number;
+	price: number;
 }
 
 export interface ICartItem extends IBase {
@@ -62,13 +41,7 @@ export interface ICartItem extends IBase {
     variants?: Array<IVariantAndOption>;
     metadata: {
         snapshots: {
-            price?: number;
-            chosenVariants?: Array<IProductVariantConfig>;
-            qnpUUID?: string;
-            quantityInStock?: number;
-            productName?: string;
-            productImages?: Array<ICloudinaryImage>;
-            errors?: Array<string>;
+            qnp: CartProductQuantityAndPrice
         }
     }
 }
