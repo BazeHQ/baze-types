@@ -36,6 +36,7 @@ export interface ICartItem extends IBase {
     quantity: number;
     variants?: Array<IProductQuantityOption>;
     metadata?: {
+        errors?: Array<string>;
         snapshots: {
             qnp: CartProductQuantityAndPrice
         }
