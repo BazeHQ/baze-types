@@ -54,6 +54,7 @@ export interface ICart extends IBase {
     fees?: Array<IStoreFee>;
     status: CartStatus;
     metadata: {
+        slackThreadTs: string;
         totalAmount: number;
         totalItems: number;
         totalCharges: number;
