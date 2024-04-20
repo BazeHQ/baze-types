@@ -37,6 +37,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  ActivateOrDeactivate: () => ActivateOrDeactivate,
+  ActiveOrInactive: () => ActiveOrInactive,
   AddOrRemove: () => AddOrRemove,
   BazeEventSource: () => BazeEventSource,
   CartStatus: () => CartStatus,
@@ -114,12 +116,17 @@ var BazeEventSource = /* @__PURE__ */ ((BazeEventSource2) => {
   return BazeEventSource2;
 })(BazeEventSource || {});
 
-// src/types/generic/models/fee.enum.ts
+// src/types/generic/models/enums.ts
 var FeeType = /* @__PURE__ */ ((FeeType3) => {
   FeeType3["fixed"] = "fixed";
   FeeType3["percentage"] = "percentage";
   return FeeType3;
 })(FeeType || {});
+var ActiveOrInactive = /* @__PURE__ */ ((ActiveOrInactive2) => {
+  ActiveOrInactive2["active"] = "active";
+  ActiveOrInactive2["inactive"] = "inactive";
+  return ActiveOrInactive2;
+})(ActiveOrInactive || {});
 
 // src/types/generic/endpoints/endpoint.interface.ts
 var HttpMethods = /* @__PURE__ */ ((HttpMethods2) => {
@@ -130,6 +137,13 @@ var HttpMethods = /* @__PURE__ */ ((HttpMethods2) => {
   HttpMethods2["Delete"] = "DELETE";
   return HttpMethods2;
 })(HttpMethods || {});
+
+// src/types/generic/payloads/activate-deactivate.payload.ts
+var ActivateOrDeactivate = /* @__PURE__ */ ((ActivateOrDeactivate2) => {
+  ActivateOrDeactivate2["activate"] = "activate";
+  ActivateOrDeactivate2["deactivate"] = "deactivate";
+  return ActivateOrDeactivate2;
+})(ActivateOrDeactivate || {});
 
 // src/types/communications/endpoint-payloads/verify-otp.payloads.ts
 var OtpContext = /* @__PURE__ */ ((OtpContext2) => {
@@ -223,7 +237,7 @@ var LoginEndpoint = {
   method: "PATCH" /* Patch */
 };
 
-// src/types/merchants/endpoint-payloads/fetch-profile.payloads.ts
+// src/types/merchants/endpoint-payloads/profile.payloads.ts
 var import_axios3 = require("axios");
 var FetchProfileErrors = {
   invalidMerchant: {
@@ -637,6 +651,8 @@ var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
 })(TransactionSubject || {});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  ActivateOrDeactivate,
+  ActiveOrInactive,
   AddOrRemove,
   BazeEventSource,
   CartStatus,

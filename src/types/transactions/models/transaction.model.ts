@@ -41,6 +41,7 @@ export interface ITransaction<T = unknown> extends IBase {
     }
     amount: number;
     reference: string;
+    transferCode?: string;
     gateway: PaymentGateway;
     status: TransactionStatus;
     channel: TransactionChannel;

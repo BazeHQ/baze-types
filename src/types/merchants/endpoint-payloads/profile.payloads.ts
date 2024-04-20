@@ -1,11 +1,16 @@
 import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
 import { IMerchant } from "../models";
-import {IStore} from "../../stores";
+import { IStore } from "../../stores";
 
 export interface IFetchProfileResponse {
   merchant: IMerchant,
 	stores: Array<IStore>
+}
+
+export interface IUpdateProfilePayload {
+	fullName?: string;
+	phoneNumber?: string;
 }
 
 export const FetchProfileErrors: {

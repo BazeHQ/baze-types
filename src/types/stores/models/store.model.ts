@@ -1,4 +1,4 @@
-import {FeeType, IBase, ICloudinaryImage} from "../../generic";
+import {ActiveOrInactive, FeeType, IBase, ICloudinaryImage} from "../../generic";
 
 export interface IStoreAttribute extends IBase {
     name: string;
@@ -29,12 +29,14 @@ export interface IWebstoreConfig extends IBase {
 export interface IStoreShippingFee extends IBase {
     name: string;
     description: string;
+    status: ActiveOrInactive;
     amount: number;
 }
 
 export interface IStoreFee extends IBase {
     name: string;
     type: FeeType;
+    status: ActiveOrInactive;
     amount: number;
 }
 
@@ -71,6 +73,11 @@ export interface IStore extends IBase {
     config: Array<IStoreConfig>;
     shippingFees: Array<IStoreShippingFee>;
     fees: Array<IStoreFee>;
+    socials: {
+        whatsapp?: string;
+        instagram?: string;
+        x?: string;
+    }
 }
 
 export interface IWebStore extends Omit<IStore, 'config'> {
