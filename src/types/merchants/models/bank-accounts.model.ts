@@ -1,5 +1,4 @@
-import { ActiveOrInactive } from "../../../../dist";
-import { IBase } from "../../generic";
+import { ActiveOrInactive, IBase } from "../../generic";
 
 export interface IBankAccount extends IBase {
     codes: {
