@@ -1,5 +1,10 @@
 import {ActiveOrInactive, FeeType, IBase, ICloudinaryImage} from "../../generic";
 
+export interface IStoreSocials {
+    whatsapp?: string;
+    instagram?: string;
+    x?: string;
+}
 export interface IStoreAttribute extends IBase {
     name: string;
     slug: string;
@@ -73,11 +78,7 @@ export interface IStore extends IBase {
     config: Array<IStoreConfig>;
     shippingFees: Array<IStoreShippingFee>;
     fees: Array<IStoreFee>;
-    socials: {
-        whatsapp?: string;
-        instagram?: string;
-        x?: string;
-    }
+    socials: IStoreSocials;
 }
 
 export interface IWebStore extends Omit<IStore, 'config'> {

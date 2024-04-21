@@ -1,6 +1,6 @@
 import {BazeError, Endpoint, HttpMethods, ICloudinaryImage} from "../../generic";
 import {HttpStatusCode} from "axios";
-import { IStore, IStoreConfig } from "../models";
+import { IStore, IStoreConfig, IStoreSocials } from "../models";
 
 export type IRawStoreConfig = Omit<IStoreConfig, "createdAt" | "_id" | "updatedAt" | "_deletedAt">
 
@@ -15,6 +15,7 @@ export interface ICreateStorePayload {
     shippingAndRefundPolicy: string;
     address: string;
     config: Array<IRawStoreConfig>;
+	socials: IStoreSocials;
 }
 
 export interface ICreateStoreResponse {
