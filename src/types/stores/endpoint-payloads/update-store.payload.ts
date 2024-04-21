@@ -1,5 +1,5 @@
 import { HttpStatusCode } from "axios";
-import { BazeError, Endpoint, FeeType, HttpMethods } from "../../generic";
+import { ActiveOrInactive, BazeError, Endpoint, FeeType, HttpMethods } from "../../generic";
 import { CreateStoreErrors } from "./create-store.payloads";
 
 export const UpdateStoreErrors: {
@@ -30,7 +30,8 @@ export interface ICreateShippingFeePayload {
 }
 
 export interface IEditShippingFeePayload extends Partial<ICreateShippingFeePayload> {
-	fee: string;
+	fee?: string;
+	status?: ActiveOrInactive;
 }
 
 export interface ICreateStoreFeePayload {
@@ -40,5 +41,6 @@ export interface ICreateStoreFeePayload {
 }
 
 export interface IEditStoreFeePayload extends Partial<ICreateStoreFeePayload> {
-	fee: string;
+	fee?: string;
+	status?: ActiveOrInactive;
 }

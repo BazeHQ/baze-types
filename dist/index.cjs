@@ -122,10 +122,10 @@ var FeeType = /* @__PURE__ */ ((FeeType3) => {
   FeeType3["percentage"] = "percentage";
   return FeeType3;
 })(FeeType || {});
-var ActiveOrInactive = /* @__PURE__ */ ((ActiveOrInactive2) => {
-  ActiveOrInactive2["active"] = "active";
-  ActiveOrInactive2["inactive"] = "inactive";
-  return ActiveOrInactive2;
+var ActiveOrInactive = /* @__PURE__ */ ((ActiveOrInactive3) => {
+  ActiveOrInactive3["active"] = "active";
+  ActiveOrInactive3["inactive"] = "inactive";
+  return ActiveOrInactive3;
 })(ActiveOrInactive || {});
 
 // src/types/generic/endpoints/endpoint.interface.ts
