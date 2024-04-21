@@ -1,3 +1,4 @@
+import { ActiveOrInactive } from "../../../../dist";
 import { IBase } from "../../generic";
 
 export interface IBankAccount extends IBase {
@@ -6,6 +7,7 @@ export interface IBankAccount extends IBase {
     }
     merchant: string;
     number: string;
+    status: ActiveOrInactive;
     metadata?: {
         bankName: string;
         accountName: string;
