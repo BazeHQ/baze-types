@@ -102,7 +102,8 @@ interface IActivateOrDeactivatePayload {
 declare enum OtpContext {
     VerifyPhoneNumber = "verify-phone-number",
     VerifyEmail = "verify-email",
-    ResetPassword = "reset-password"
+    ResetPassword = "reset-password",
+    ChangePassword = "change-password"
 }
 interface IVerifyOtpPayload {
     context: OtpContext;

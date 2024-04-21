@@ -65,6 +65,7 @@ var OtpContext = /* @__PURE__ */ ((OtpContext2) => {
   OtpContext2["VerifyPhoneNumber"] = "verify-phone-number";
   OtpContext2["VerifyEmail"] = "verify-email";
   OtpContext2["ResetPassword"] = "reset-password";
+  OtpContext2["ChangePassword"] = "change-password";
   return OtpContext2;
 })(OtpContext || {});
 var OtpVerificationErrors = {
