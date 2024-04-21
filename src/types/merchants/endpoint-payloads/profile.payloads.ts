@@ -8,6 +8,11 @@ export interface IFetchProfileResponse {
 	stores: Array<IStore>
 }
 
+export interface IChangePasswordPayload {
+    password: string;
+    confirmPassword: string;
+}
+
 export interface IUpdateProfilePayload {
 	fullName?: string;
 	phoneNumber?: string;
