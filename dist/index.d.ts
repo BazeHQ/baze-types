@@ -547,7 +547,7 @@ interface ICreateShippingFeePayload {
     description: string;
 }
 interface IEditShippingFeePayload extends Partial<ICreateShippingFeePayload> {
-    fee?: string;
+    fee: string;
     status?: ActiveOrInactive;
 }
 interface ICreateStoreFeePayload {
@@ -556,7 +556,7 @@ interface ICreateStoreFeePayload {
     amount: number;
 }
 interface IEditStoreFeePayload extends Partial<ICreateStoreFeePayload> {
-    fee?: string;
+    fee: string;
     status?: ActiveOrInactive;
 }
 

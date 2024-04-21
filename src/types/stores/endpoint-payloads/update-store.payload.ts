@@ -30,7 +30,7 @@ export interface ICreateShippingFeePayload {
 }
 
 export interface IEditShippingFeePayload extends Partial<ICreateShippingFeePayload> {
-	fee?: string;
+	fee: string;
 	status?: ActiveOrInactive;
 }
 
@@ -41,6 +41,6 @@ export interface ICreateStoreFeePayload {
 }
 
 export interface IEditStoreFeePayload extends Partial<ICreateStoreFeePayload> {
-	fee?: string;
+	fee: string;
 	status?: ActiveOrInactive;
 }
