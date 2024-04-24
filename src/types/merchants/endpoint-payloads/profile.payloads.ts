@@ -18,6 +18,12 @@ export interface IUpdateProfilePayload {
 	phoneNumber?: string;
 }
 
+export interface IDeleteAccountPayload {
+	reasons: Array<string>;
+	otherFeedback?: string;
+	password: string;
+}
+
 export const FetchProfileErrors: {
     invalidMerchant: BazeError
 } = {
