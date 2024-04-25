@@ -50,5 +50,9 @@ export interface IMerchant extends IBase {
     time: Date;
   },
   verificationAttempts: Array<Verification>;
-  bankAccounts: Array<string>
+  bankAccounts: Array<string>;
+  deletion: {
+    reasons: Array<string>;
+    otherFeedback: string;
+  }
 }

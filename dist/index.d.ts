@@ -173,6 +173,10 @@ interface IMerchant extends IBase {
     };
     verificationAttempts: Array<Verification>;
     bankAccounts: Array<string>;
+    deletion: {
+        reasons: Array<string>;
+        otherFeedback: string;
+    };
 }
 
 interface IBankAccount extends IBase {
