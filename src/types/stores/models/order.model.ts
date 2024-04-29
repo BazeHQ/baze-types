@@ -30,6 +30,7 @@ export interface IOrder extends IBase {
     customer: string;
     cart: string;
     status: OrderStatus;
+    ref: string;
     note?: string;
     channel: {
         option: SalesChannel;
