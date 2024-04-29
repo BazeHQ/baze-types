@@ -10,6 +10,7 @@ interface IBase {
 interface ICloudinaryImage {
     assetId: string;
     publicId: string;
+    url?: string;
 }
 
 declare enum BazeEventSource {
