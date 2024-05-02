@@ -1,3 +1,4 @@
+import { ActiveOrInactive } from "../../../../dist";
 import { IBase } from "../../generic";
 
 export interface IMerchantDevice extends IBase {
@@ -6,5 +7,6 @@ export interface IMerchantDevice extends IBase {
     modelName?: string;
     os: string;
     pushNotificationToken?: string;
+    pushNotificationStatus: ActiveOrInactive;
     merchant?: string;
 }
