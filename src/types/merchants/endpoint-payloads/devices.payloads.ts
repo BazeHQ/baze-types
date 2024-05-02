@@ -1,4 +1,4 @@
-export interface RegisterDevicePayload {
+export interface IRegisterDevicePayload {
     uniqueId: string;
     manufacturer: string;
     modelName?: string;
@@ -6,6 +6,6 @@ export interface RegisterDevicePayload {
     pushNotificationToken?: string;
 }
 
-export interface RegisterPushNotificationTokenPayload {
+export interface IRegisterPushNotificationTokenPayload {
     token: string;
 }
