@@ -751,6 +751,7 @@ interface IFilterOrders {
 interface IFetchProfileResponse {
     merchant: IMerchant;
     stores: Array<IStore>;
+    device?: IMerchantDevice;
 }
 interface IChangePasswordPayload {
     password: string;
