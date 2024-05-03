@@ -24,8 +24,8 @@ export interface IMerchantCreateOrderPayload {
   salesChannel: SalesChannel;
   paymentMethod: PaymentMethod;
   cart: Array<IMerchantCreateOrderProductPayload>;
-  otherFees: Array<string>;
-  shipping: string;
+  otherFees?: Array<string>;
+  shipping?: string;
 }
 
 export interface IUpdateOrderStatusPayload {

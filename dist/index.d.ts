@@ -898,8 +898,8 @@ interface IMerchantCreateOrderPayload {
     salesChannel: SalesChannel;
     paymentMethod: PaymentMethod;
     cart: Array<IMerchantCreateOrderProductPayload>;
-    otherFees: Array<string>;
-    shipping: string;
+    otherFees?: Array<string>;
+    shipping?: string;
 }
 interface IUpdateOrderStatusPayload {
     status: OrderStatus;
