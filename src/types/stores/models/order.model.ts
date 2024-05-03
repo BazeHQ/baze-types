@@ -1,4 +1,5 @@
 import { IBase, IBazeEvent } from "../../generic";
+import { SettlementStatus } from "../../transactions";
 
 export enum OrderStatus {
     awaitingPayment = 'awaiting-payment',
@@ -31,6 +32,7 @@ export interface IOrder extends IBase {
     cart: string;
     status: OrderStatus;
     ref: string;
+    settlementStatus: SettlementStatus;
     note?: string;
     channel: {
         option: SalesChannel;

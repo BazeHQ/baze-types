@@ -85,6 +85,7 @@ __export(src_exports, {
   ResetPasswordErrors: () => ResetPasswordErrors,
   RevenueSource: () => RevenueSource,
   SalesChannel: () => SalesChannel,
+  SettlementStatus: () => SettlementStatus,
   StoreStatus: () => StoreStatus,
   SuggestStoreSubdomainsEndpoint: () => SuggestStoreSubdomainsEndpoint,
   TransactionChannel: () => TransactionChannel,
@@ -650,6 +651,17 @@ var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
   TransactionSubject2["subscription"] = "subscription";
   return TransactionSubject2;
 })(TransactionSubject || {});
+
+// src/types/transactions/models/settlement.model.ts
+var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
+  SettlementStatus2["pending"] = "pending";
+  SettlementStatus2["inProgress"] = "in-progress";
+  SettlementStatus2["willRetry"] = "will-retry";
+  SettlementStatus2["retrying"] = "retrying";
+  SettlementStatus2["settled"] = "settled";
+  SettlementStatus2["failed"] = "failed";
+  return SettlementStatus2;
+})(SettlementStatus || {});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   ActivateOrDeactivate,
@@ -700,6 +712,7 @@ var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
   ResetPasswordErrors,
   RevenueSource,
   SalesChannel,
+  SettlementStatus,
   StoreStatus,
   SuggestStoreSubdomainsEndpoint,
   TransactionChannel,
