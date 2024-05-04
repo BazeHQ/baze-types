@@ -6,7 +6,8 @@ export enum OrderStatus {
     pendingDispatch = 'pending-dispatch',
     dispatched = 'dispatched',
     cancelled = 'cancelled',
-    cancelledWithRefund = 'cancelled-with-refund'
+    cancelledWithRefund = 'cancelled-with-refund',
+    fulfilled = "fulfilled"
 }
 
 export enum PaymentMethod {

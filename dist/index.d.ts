@@ -582,7 +582,8 @@ declare enum OrderStatus {
     pendingDispatch = "pending-dispatch",
     dispatched = "dispatched",
     cancelled = "cancelled",
-    cancelledWithRefund = "cancelled-with-refund"
+    cancelledWithRefund = "cancelled-with-refund",
+    fulfilled = "fulfilled"
 }
 declare enum PaymentMethod {
     offlineTransfer = "offline-transfer",

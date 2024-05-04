@@ -569,6 +569,7 @@ var OrderStatus = /* @__PURE__ */ ((OrderStatus2) => {
   OrderStatus2["dispatched"] = "dispatched";
   OrderStatus2["cancelled"] = "cancelled";
   OrderStatus2["cancelledWithRefund"] = "cancelled-with-refund";
+  OrderStatus2["fulfilled"] = "fulfilled";
   return OrderStatus2;
 })(OrderStatus || {});
 var PaymentMethod = /* @__PURE__ */ ((PaymentMethod2) => {
