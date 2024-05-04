@@ -28,6 +28,18 @@ export interface IMerchantCreateOrderPayload {
   shipping?: string;
 }
 
+export interface IMerchantUpdateOrderPayload {
+  order: string;
+  customer: string;
+  deliveryAddress?: string;
+  note?: string;
+  salesChannel: SalesChannel;
+  paymentMethod: PaymentMethod;
+  cart: Array<IMerchantCreateOrderProductPayload>;
+  otherFees?: Array<string>;
+  shipping?: string;
+}
+
 export interface IUpdateOrderStatusPayload {
   status: OrderStatus;
   note?: string;
