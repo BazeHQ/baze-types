@@ -607,6 +607,7 @@ interface IOrder extends IBase {
     status: OrderStatus;
     ref: string;
     settlementStatus: SettlementStatus;
+    paymentMethod: PaymentMethod;
     note?: string;
     channel: {
         option: SalesChannel;
