@@ -459,6 +459,7 @@ var CartStatus = /* @__PURE__ */ ((CartStatus2) => {
   CartStatus2["initiatedPayment"] = "initiated-payment";
   CartStatus2["abandoned"] = "abandoned";
   CartStatus2["checkedOut"] = "checked-out";
+  CartStatus2["createdByMerchant"] = "created-by-merchant";
   return CartStatus2;
 })(CartStatus || {});
 

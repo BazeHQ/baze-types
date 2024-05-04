@@ -9,7 +9,8 @@ export enum CartStatus {
     addedDeliveryDetails = 'added-delivery-details',
     initiatedPayment = 'initiated-payment',
     abandoned = 'abandoned',
-    checkedOut = 'checked-out'
+    checkedOut = 'checked-out',
+    createdByMerchant = 'created-by-merchant'
 }
 
 export type CartVariantAndOptionMetadata = {
