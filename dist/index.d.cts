@@ -915,6 +915,7 @@ interface IMerchantUpdateOrderPayload {
     shipping?: string;
 }
 interface IUpdateOrderStatusPayload {
+    order: string;
     status: OrderStatus;
     note?: string;
 }

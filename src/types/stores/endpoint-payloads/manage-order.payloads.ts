@@ -41,6 +41,7 @@ export interface IMerchantUpdateOrderPayload {
 }
 
 export interface IUpdateOrderStatusPayload {
+  order: string;
   status: OrderStatus;
   note?: string;
 }
