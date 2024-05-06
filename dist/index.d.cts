@@ -289,6 +289,18 @@ interface IStore extends IBase {
     shippingFees: Array<IStoreShippingFee>;
     fees: Array<IStoreFee>;
     socials: IStoreSocials;
+    seo?: {
+        socialImage: ICloudinaryImage;
+        text: {
+            title: string;
+            description: string;
+        };
+        analytics?: {
+            google?: {
+                id: string;
+            };
+        };
+    };
 }
 interface IWebStore extends Omit<IStore, 'config'> {
     config: Array<IWebstoreConfig>;
