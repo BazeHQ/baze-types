@@ -888,7 +888,7 @@ interface IFilterOrders {
     salesChannel?: Array<SalesChannel>;
     shipping?: Array<string>;
     paymentMethod?: Array<PaymentMethod>;
-    id?: string;
+    ref?: string;
 }
 interface IMerchantCreateOrderProductPayload {
     id: string;

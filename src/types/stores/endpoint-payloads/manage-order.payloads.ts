@@ -9,7 +9,7 @@ export interface IFilterOrders {
   salesChannel?: Array<SalesChannel>;
   shipping?: Array<string>;
   paymentMethod?: Array<PaymentMethod>;
-  id?: string;
+  ref?: string;
 }
 
 export interface IMerchantCreateOrderProductPayload {
