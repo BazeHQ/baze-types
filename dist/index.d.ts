@@ -880,14 +880,15 @@ interface IWebstoreCart extends IBase {
 }
 
 interface IFilterOrders {
-    date: {
-        start: Date;
-        end: Date;
+    date?: {
+        start?: Date;
+        end?: Date;
     };
-    status: Array<OrderStatus>;
-    salesChannel: Array<SalesChannel>;
-    shipping: Array<string>;
-    paymentMethod: Array<PaymentMethod>;
+    status?: Array<OrderStatus>;
+    salesChannel?: Array<SalesChannel>;
+    shipping?: Array<string>;
+    paymentMethod?: Array<PaymentMethod>;
+    id?: string;
 }
 interface IMerchantCreateOrderProductPayload {
     id: string;
