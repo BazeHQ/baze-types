@@ -46,3 +46,10 @@ export interface IOrder extends IBase {
         events: Array<IBazeEvent>;
     }
 }
+
+
+export interface IListOrdersResponse {
+    orders: Array<IOrder>;
+    records: number;
+}
+
