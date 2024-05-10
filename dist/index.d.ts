@@ -615,7 +615,7 @@ declare enum SalesChannel {
 interface IOrder extends IBase {
     store: string;
     customer: string;
-    cart: string;
+    cart: ICart | string;
     status: OrderStatus;
     ref: string;
     settlementStatus: SettlementStatus;

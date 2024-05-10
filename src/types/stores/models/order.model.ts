@@ -1,5 +1,6 @@
 import { IBase, IBazeEvent } from "../../generic";
 import { SettlementStatus } from "../../transactions";
+import { ICart } from "./cart.model";
 
 export enum OrderStatus {
     awaitingPayment = 'awaiting-payment',
@@ -30,7 +31,7 @@ export enum SalesChannel {
 export interface IOrder extends IBase {
     store: string;
     customer: string;
-    cart: string;
+    cart: ICart | string;
     status: OrderStatus;
     ref: string;
     settlementStatus: SettlementStatus;
