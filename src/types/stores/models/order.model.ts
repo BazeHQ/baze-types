@@ -45,6 +45,12 @@ export interface IOrder extends IBase {
         revenue?: string;
         transaction: string;
         events: Array<IBazeEvent>;
+        snapshots?: {
+            dates?: Array<{
+                status: OrderStatus,
+                time: Date;
+            }>
+        }
     }
 }
 
