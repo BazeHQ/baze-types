@@ -9,6 +9,7 @@ export interface IFilterOrders {
   salesChannel?: Array<SalesChannel>;
   shipping?: Array<string>;
   paymentMethod?: Array<PaymentMethod>;
+  customer?: string;
   ref?: string;
 }
 

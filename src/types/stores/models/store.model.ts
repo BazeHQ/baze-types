@@ -50,6 +50,19 @@ export enum StoreStatus {
     maintenance = 'maintenance'
 }
 
+export interface IStoreSeo {
+    socialImage: ICloudinaryImage;
+    text: {
+        title: string;
+        description: string;
+    },
+    analytics?: {
+        google?: {
+            id: string;
+        }
+    }
+}
+
 export interface IStore extends IBase {
     merchantId: string;
     name: string;
@@ -79,18 +92,7 @@ export interface IStore extends IBase {
     shippingFees: Array<IStoreShippingFee>;
     fees: Array<IStoreFee>;
     socials: IStoreSocials;
-    seo?: {
-        socialImage: ICloudinaryImage;
-        text: {
-            title: string;
-            description: string;
-        },
-        analytics?: {
-            google?: {
-                id: string;
-            }
-        }
-    }
+    seo?: IStoreSeo;
 }
 
 export interface IWebStore extends Omit<IStore, 'config'> {
