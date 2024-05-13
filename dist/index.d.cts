@@ -261,10 +261,10 @@ declare enum StoreStatus {
     maintenance = "maintenance"
 }
 interface IStoreSeo {
-    socialImage: ICloudinaryImage;
-    text: {
-        title: string;
-        description: string;
+    socialImage?: ICloudinaryImage;
+    text?: {
+        title?: string;
+        description?: string;
     };
     analytics?: {
         google?: {
@@ -656,6 +656,7 @@ interface ICreateStorePayload {
     address: string;
     config: Array<IRawStoreConfig>;
     socials: IStoreSocials;
+    status: StoreStatus;
     seo?: IStoreSeo;
 }
 interface ICreateStoreResponse {
