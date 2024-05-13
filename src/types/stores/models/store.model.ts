@@ -51,10 +51,10 @@ export enum StoreStatus {
 }
 
 export interface IStoreSeo {
-    socialImage: ICloudinaryImage;
-    text: {
-        title: string;
-        description: string;
+    socialImage?: ICloudinaryImage;
+    text?: {
+        title?: string;
+        description?: string;
     },
     analytics?: {
         google?: {
