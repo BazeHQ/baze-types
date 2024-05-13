@@ -50,6 +50,7 @@ __export(src_exports, {
   CreateStoreErrors: () => CreateStoreErrors,
   CustomerSource: () => CustomerSource,
   CustomerStatus: () => CustomerStatus,
+  DashboardFilter: () => DashboardFilter,
   DeleteCollectionEndpoint: () => DeleteCollectionEndpoint,
   EditCollectionEndpoint: () => EditCollectionEndpoint,
   FeeType: () => FeeType,
@@ -521,6 +522,15 @@ var ChangeCollectionProductsEndpoint = {
   method: "PATCH" /* Patch */
 };
 
+// src/types/stores/endpoint-payloads/dashboard.payloads.ts
+var DashboardFilter = /* @__PURE__ */ ((DashboardFilter2) => {
+  DashboardFilter2["today"] = "today";
+  DashboardFilter2["thisWeek"] = "this-week";
+  DashboardFilter2["thisMonth"] = "this-month";
+  DashboardFilter2["allTime"] = "all-time";
+  return DashboardFilter2;
+})(DashboardFilter || {});
+
 // src/types/stores/models/store.model.ts
 var StoreStatus = /* @__PURE__ */ ((StoreStatus2) => {
   StoreStatus2["live"] = "live";
@@ -679,6 +689,7 @@ var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
   CreateStoreErrors,
   CustomerSource,
   CustomerStatus,
+  DashboardFilter,
   DeleteCollectionEndpoint,
   EditCollectionEndpoint,
   FeeType,
