@@ -1,12 +1,13 @@
 import { HttpStatusCode } from "axios";
 import { BazeError, Endpoint, HttpMethods } from "../../generic";
-import { IMerchant, IMerchantDevice } from "../models";
+import { IBankAccount, IMerchant, IMerchantDevice } from "../models";
 import { IStore } from "../../stores";
 
 export interface IFetchProfileResponse {
 	merchant: IMerchant;
 	stores: Array<IStore>;
 	device?: IMerchantDevice;
+	bankAccounts?: Array<IBankAccount>;
 }
 
 export interface IChangePasswordPayload {
