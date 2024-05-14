@@ -965,6 +965,7 @@ interface IFetchProfileResponse {
     merchant: IMerchant;
     stores: Array<IStore>;
     device?: IMerchantDevice;
+    bankAccounts?: Array<IBankAccount>;
 }
 interface IChangePasswordPayload {
     password: string;
