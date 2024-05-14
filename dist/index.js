@@ -576,6 +576,12 @@ var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
   TransactionSubject2["subscription"] = "subscription";
   return TransactionSubject2;
 })(TransactionSubject || {});
+var TransactionType = /* @__PURE__ */ ((TransactionType2) => {
+  TransactionType2["webstoreSale"] = "webstore-sale";
+  TransactionType2["paymentLinkConsumation"] = "payment-link-consumation";
+  TransactionType2["settlement"] = "settlement";
+  return TransactionType2;
+})(TransactionType || {});
 
 // src/types/transactions/models/settlement.model.ts
 var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
@@ -644,6 +650,7 @@ export {
   TransactionEntity,
   TransactionStatus,
   TransactionSubject,
+  TransactionType,
   UpdateProductEndpoint,
   UpdateProductErrors,
   UpdateStoreEndpoint,

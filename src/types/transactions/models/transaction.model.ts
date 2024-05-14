@@ -29,6 +29,12 @@ export enum TransactionSubject {
     subscription = 'subscription'
 }
 
+export enum TransactionType {
+    webstoreSale = 'webstore-sale',
+    paymentLinkConsumation = 'payment-link-consumation',
+    settlement = 'settlement'
+}
+
 export interface ITransaction<T = unknown> extends IBase {
     initiator: {
         entity: TransactionEntity;
@@ -49,6 +55,7 @@ export interface ITransaction<T = unknown> extends IBase {
         entity: TransactionEntity;
         id?: string;
     };
+    type: TransactionType;
     revenue?:string;
     metadata?: T
 }
