@@ -10,5 +10,8 @@ export interface IBankAccount extends IBase {
     metadata?: {
         bankName: string;
         accountName: string;
+        thirdParty?: {
+            paystackRecepientCode?: string;
+        }
     }
 }
