@@ -7,7 +7,8 @@ export enum SettlementStatus {
     willRetry = 'will-retry',
     retrying = 'retrying',
     settled = 'settled',
-    failed = 'failed'
+    failed = 'failed',
+    willNotSettle = 'will-not-settle'
 }
 
 export interface IBazeTxFee {

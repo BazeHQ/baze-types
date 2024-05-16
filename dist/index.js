@@ -591,6 +591,7 @@ var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
   SettlementStatus2["retrying"] = "retrying";
   SettlementStatus2["settled"] = "settled";
   SettlementStatus2["failed"] = "failed";
+  SettlementStatus2["willNotSettle"] = "will-not-settle";
   return SettlementStatus2;
 })(SettlementStatus || {});
 export {
