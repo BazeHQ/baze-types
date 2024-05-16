@@ -10,6 +10,11 @@ export enum SettlementStatus {
     failed = 'failed'
 }
 
+export interface IBazeTxFee {
+    model?: string;
+    amount?: number;
+}
+
 export interface ISettlementOrderMeta {
     order: string;
     meta: {
@@ -37,10 +42,7 @@ export interface IMerchantSettlement extends IBase {
             bankAccount: IBankAccount
         },
         totalAmount: number;
-        bazeTransactionFee?: {
-            model?: string;
-            amount?: number;
-        };
+        bazeTransactionFee?: IBazeTxFee;
     }
 }
 
@@ -51,10 +53,7 @@ export interface ISystemSettlement extends IBase {
         stores: number;
         orders: number;
         totalAmount: number;
-        bazeTransactionFee: {
-            model?: string;
-            amount: number;
-        };
+        bazeTransactionFee: IBazeTxFee;
         completedAt?: Date;
     }
 }
