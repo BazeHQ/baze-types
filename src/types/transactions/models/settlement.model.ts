@@ -18,11 +18,15 @@ export interface IBazeTxFee {
 
 export interface ISettlementOrderMeta {
     order: string;
+    ref: string;
     meta: {
         customerName: string;
         amount: number;
+        bazeTransactionFee?: IBazeTxFee;
+        settledAt?: Date;
+        orderdAt?: Date;
         due?: Date;
-        status?: SettlementStatus
+        status?: SettlementStatus;
     }
 }
 
