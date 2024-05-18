@@ -9,3 +9,4 @@ export * from './manage-webstore.payloads';
 export * from './manage-order.payloads';
 export * from './dashboard.payloads';
 export * from './settlement-stats.payloads';
+export * from './manage-settlement.payloads';
