@@ -8,3 +8,4 @@ export * from './manage-customer.payloads';
 export * from './manage-webstore.payloads';
 export * from './manage-order.payloads';
 export * from './dashboard.payloads';
+export * from './settlement-stats.payloads';
