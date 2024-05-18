@@ -5,3 +5,6 @@ export interface IPendingSettlementRes {
   orders: Array<ISettlementOrderMeta>
 } 
 
+export interface IFilterSettlementsPayload {
+  id: string;
+}
