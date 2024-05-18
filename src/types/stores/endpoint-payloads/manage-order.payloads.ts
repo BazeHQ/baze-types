@@ -1,3 +1,4 @@
+import { SettlementStatus } from "../../transactions";
 import {OrderStatus, PaymentMethod, SalesChannel} from "../models";
 
 export interface IFilterOrders {
@@ -7,6 +8,7 @@ export interface IFilterOrders {
   };
   status?: Array<OrderStatus>;
   salesChannel?: Array<SalesChannel>;
+  settlementStatus?: Array<SettlementStatus>;
   shipping?: Array<string>;
   paymentMethod?: Array<PaymentMethod>;
   customer?: string;

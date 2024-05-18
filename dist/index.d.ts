@@ -919,6 +919,7 @@ interface IFilterOrders {
     };
     status?: Array<OrderStatus>;
     salesChannel?: Array<SalesChannel>;
+    settlementStatus?: Array<SettlementStatus>;
     shipping?: Array<string>;
     paymentMethod?: Array<PaymentMethod>;
     customer?: string;
