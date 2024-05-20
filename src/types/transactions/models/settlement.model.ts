@@ -32,6 +32,7 @@ export interface ISettlementOrderMeta {
 
 export interface IMerchantSettlement extends IBase {
     merchant: string;
+    ref: string;
     store: string;
     bankAccount: string;
     status: SettlementStatus;
