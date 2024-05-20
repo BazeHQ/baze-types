@@ -1,4 +1,4 @@
-import { ISettlementOrderMeta } from "../../transactions";
+import { IMerchantSettlement, ISettlementOrderMeta } from "../../transactions";
 
 export interface IPendingSettlementRes {
   amount: number;
@@ -7,4 +7,9 @@ export interface IPendingSettlementRes {
 
 export interface IFilterSettlementsPayload {
   id: string;
+}
+
+export interface IFetchSettlementsRes {
+  total: number
+	settlements: Array<IMerchantSettlement>
 }
