@@ -1,8 +1,9 @@
-import { IMerchantSettlement, ISettlementOrderMeta } from "../../transactions";
+import { IMerchantSettlement } from "../../transactions";
+import { ICart, IOrder } from "../models";
 
 export interface IPendingSettlementRes {
-  amount: number;
-  orders: Array<ISettlementOrderMeta>
+  total: number;
+  orders: Array<IOrder & { cart: ICart }>
 } 
 
 export interface IFilterSettlementsPayload {

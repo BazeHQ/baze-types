@@ -980,8 +980,10 @@ interface ISettlementStats {
 }
 
 interface IPendingSettlementRes {
-    amount: number;
-    orders: Array<ISettlementOrderMeta>;
+    total: number;
+    orders: Array<IOrder & {
+        cart: ICart;
+    }>;
 }
 interface IFilterSettlementsPayload {
     id: string;
