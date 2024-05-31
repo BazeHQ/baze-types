@@ -182,7 +182,10 @@ interface IMerchant extends IBase {
 
 interface IBankAccount extends IBase {
     codes: {
-        paystack: string;
+        paystack: {
+            code: string;
+            domain: string;
+        };
     };
     merchant: string;
     number: string;
