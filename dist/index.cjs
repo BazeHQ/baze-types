@@ -662,6 +662,7 @@ var TransactionEntity = /* @__PURE__ */ ((TransactionEntity2) => {
 var TransactionSubject = /* @__PURE__ */ ((TransactionSubject2) => {
   TransactionSubject2["order"] = "order";
   TransactionSubject2["subscription"] = "subscription";
+  TransactionSubject2["settlement"] = "settlement";
   return TransactionSubject2;
 })(TransactionSubject || {});
 var TransactionType = /* @__PURE__ */ ((TransactionType2) => {

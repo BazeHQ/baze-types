@@ -26,7 +26,8 @@ export enum TransactionEntity {
 
 export enum TransactionSubject {
     order = 'order',
-    subscription = 'subscription'
+    subscription = 'subscription',
+    settlement = 'settlement'
 }
 
 export enum TransactionType {

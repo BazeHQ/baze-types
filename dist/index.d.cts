@@ -507,7 +507,8 @@ declare enum TransactionEntity {
 }
 declare enum TransactionSubject {
     order = "order",
-    subscription = "subscription"
+    subscription = "subscription",
+    settlement = "settlement"
 }
 declare enum TransactionType {
     webstoreSale = "webstore-sale",
