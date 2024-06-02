@@ -573,6 +573,7 @@ interface IMerchantSettlement extends IBase {
     bankAccount: string;
     status: SettlementStatus;
     orders: Array<ISettlementOrderMeta>;
+    transaction?: string;
     thirdPartyRefs?: {
         paystack?: {
             reference?: string;
