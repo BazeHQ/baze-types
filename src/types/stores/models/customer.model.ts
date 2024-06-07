@@ -13,7 +13,8 @@ export enum CustomerStatus {
 export enum CustomerSource {
   internal = 'internal',
   webstoreOrder = 'webstore-order',
-  webstoreEmailSubscription = 'webstore-email-subscription'
+  webstoreEmailSubscription = 'webstore-email-subscription',
+  bulkUpload = 'bulk-upload'
 }
 
 export interface ICustomer extends IBase {
@@ -30,5 +31,6 @@ export interface ICustomer extends IBase {
     metadata?: {
       status?: CustomerStatus;
       source?: CustomerSource;
+      job?: string;
     }
 }

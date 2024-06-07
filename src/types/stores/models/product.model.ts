@@ -6,6 +6,11 @@ export enum ProductStatus {
     shelved = 'shelved'
 }
 
+export enum ProductSource {
+    internal = 'internal',
+    bulkUpload = 'bulk-upload'
+}
+
 export type IProductQuantityOption = IBase & {
     variant: string;
     option: string;
@@ -48,6 +53,10 @@ export interface IProduct extends IBase {
     variantConfig: {
         quantityAndPrice: Array<IProductQuantityConfig>;
         variants: IProductVariant
+    },
+    metadata: {
+        source: ProductSource,
+        job?: string;
     }
 }
 

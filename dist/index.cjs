@@ -74,6 +74,7 @@ __export(src_exports, {
   Partner: () => Partner,
   PaymentGateway: () => PaymentGateway,
   PaymentMethod: () => PaymentMethod,
+  ProductSource: () => ProductSource,
   ProductStatus: () => ProductStatus,
   ProfileEndpoint: () => ProfileEndpoint,
   PublishStoreEndpoint: () => PublishStoreEndpoint,
@@ -546,6 +547,11 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["shelved"] = "shelved";
   return ProductStatus2;
 })(ProductStatus || {});
+var ProductSource = /* @__PURE__ */ ((ProductSource2) => {
+  ProductSource2["internal"] = "internal";
+  ProductSource2["bulkUpload"] = "bulk-upload";
+  return ProductSource2;
+})(ProductSource || {});
 
 // src/types/stores/models/cart.model.ts
 var CartStatus = /* @__PURE__ */ ((CartStatus2) => {
@@ -570,6 +576,7 @@ var CustomerSource = /* @__PURE__ */ ((CustomerSource2) => {
   CustomerSource2["internal"] = "internal";
   CustomerSource2["webstoreOrder"] = "webstore-order";
   CustomerSource2["webstoreEmailSubscription"] = "webstore-email-subscription";
+  CustomerSource2["bulkUpload"] = "bulk-upload";
   return CustomerSource2;
 })(CustomerSource || {});
 
@@ -722,6 +729,7 @@ var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
   Partner,
   PaymentGateway,
   PaymentMethod,
+  ProductSource,
   ProductStatus,
   ProfileEndpoint,
   PublishStoreEndpoint,
