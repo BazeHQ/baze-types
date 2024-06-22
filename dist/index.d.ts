@@ -1135,6 +1135,7 @@ interface ICreateSystemPreferencePayload<T> {
     name: string;
     slug: string;
     value: T;
+    addOns: Array<T>;
 }
 type IEditSystemPreferencePayload<T> = Partial<ICreateSystemPreferencePayload<T>>;
 interface ISystemPreferenceResponse<T> {
