@@ -1095,9 +1095,10 @@ interface IRegisterPushNotificationTokenPayload {
     token: string;
 }
 
-interface ISystemPreference<T> extends IBase {
+interface ISystemPreference<T, AddOnType = T> extends IBase {
     name: string;
     slug: string;
+    addOns: Array<AddOnType>;
     value: T;
 }
 

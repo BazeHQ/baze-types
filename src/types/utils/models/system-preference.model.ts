@@ -1,7 +1,8 @@
 import { IBase } from "../../generic";
 
-export interface ISystemPreference<T> extends IBase {
+export interface ISystemPreference<T, AddOnType = T> extends IBase {
     name: string;
     slug: string;
-    value: T
+    addOns: Array<AddOnType>;
+    value: T;
 }
