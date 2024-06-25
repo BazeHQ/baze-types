@@ -50,6 +50,7 @@ export interface IMerchantSettlement extends IBase {
         },
         totalAmount: number;
         bazeTransactionFee?: IBazeTxFee;
+        providerFee?: number
     }
 }
 

@@ -596,6 +596,7 @@ interface IMerchantSettlement extends IBase {
         };
         totalAmount: number;
         bazeTransactionFee?: IBazeTxFee;
+        providerFee?: number;
     };
 }
 interface ISystemSettlement extends IBase {
