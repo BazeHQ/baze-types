@@ -178,6 +178,14 @@ interface IMerchant extends IBase {
         reasons: Array<string>;
         otherFeedback: string;
     };
+    canUseBusinessAccount?: boolean;
+    metadata?: {
+        identityDoc?: string;
+        cacRegistrationCertificate?: string;
+        cacConfirmationScreenshot?: string;
+        confirmedBusinessName?: string;
+        validatedBy?: string;
+    };
 }
 
 interface IBankAccount extends IBase {
