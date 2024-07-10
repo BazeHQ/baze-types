@@ -750,6 +750,7 @@ interface IChangeCollectionsForProductPayload {
     collections: Array<string>;
 }
 interface IBulkEditProductStatus {
+    store: string;
     products: Array<string>;
 }
 interface IUploadProductCsvPayload {
