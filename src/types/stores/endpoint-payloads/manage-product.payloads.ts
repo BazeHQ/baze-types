@@ -58,7 +58,6 @@ export interface IChangeCollectionsForProductPayload {
 }
 
 export interface IBulkEditProductStatus {
-	store: string;
 	products: Array<string>
 }
 
