@@ -3,7 +3,8 @@ import {IBase, ICloudinaryImage} from "../../generic";
 export enum ProductStatus {
     published = 'published',
     drafted = 'drafted',
-    shelved = 'shelved'
+    shelved = 'shelved',
+    archived = 'archived'
 }
 
 export enum ProductSource {

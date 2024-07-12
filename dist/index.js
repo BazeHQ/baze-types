@@ -456,6 +456,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ProductStatus2["published"] = "published";
   ProductStatus2["drafted"] = "drafted";
   ProductStatus2["shelved"] = "shelved";
+  ProductStatus2["archived"] = "archived";
   return ProductStatus2;
 })(ProductStatus || {});
 var ProductSource = /* @__PURE__ */ ((ProductSource2) => {

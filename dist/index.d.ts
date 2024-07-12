@@ -324,7 +324,8 @@ interface IWebStore extends Omit<IStore, 'config'> {
 declare enum ProductStatus {
     published = "published",
     drafted = "drafted",
-    shelved = "shelved"
+    shelved = "shelved",
+    archived = "archived"
 }
 declare enum ProductSource {
     internal = "internal",
