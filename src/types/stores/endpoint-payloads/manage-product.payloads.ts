@@ -59,6 +59,7 @@ export interface IChangeCollectionsForProductPayload {
 
 export interface IBulkEditProductStatus {
 	products: Array<string>
+	status: ProductStatus
 }
 
 export interface IUploadProductCsvPayload {

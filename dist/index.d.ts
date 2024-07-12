@@ -751,6 +751,7 @@ interface IChangeCollectionsForProductPayload {
 }
 interface IBulkEditProductStatus {
     products: Array<string>;
+    status: ProductStatus;
 }
 interface IUploadProductCsvPayload {
     url: string;
