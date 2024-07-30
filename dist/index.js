@@ -204,7 +204,7 @@ var ReserveEmailErrors = {
       recommendedActions: [
         `Try using a totally different password`
       ],
-      description: `This happens when a admin tries to use a password they already changed for some reason in the past`
+      description: `This happens when a merchant tries to use a password they already changed for some reason in the past`
     };
   },
   couldNotSendOtp: {

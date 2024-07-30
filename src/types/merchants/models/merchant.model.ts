@@ -44,6 +44,7 @@ export interface IMerchant extends IBase {
   hasAddedBankAccount: boolean;
   thirdPartyIds: {
     paystackCustomerCode: string;
+    sendgrid?: string;
   }
   lastOtpVerification: {
     context: OtpContext;
