@@ -11,11 +11,21 @@ export enum OrderStatus {
     fulfilled = "fulfilled"
 }
 
+export enum PaymentStatus {
+    paid = 'paid',
+    notPaid = 'not-paid'
+}
+
 export enum PaymentMethod {
     offlineTransfer = 'offline-transfer',
     physicalCash = 'physical-cash',
     bazeWebstore = 'baze-webstore',
     paymentLink = 'payment-link'
+}
+
+export enum OrderSource {
+    customer = 'customer',
+    merchant = 'merchant'
 }
 
 export enum SalesChannel {
@@ -35,7 +45,9 @@ export interface IOrder extends IBase {
     status: OrderStatus;
     ref: string;
     settlementStatus: SettlementStatus;
+    paymentStatus: PaymentStatus;
     paymentMethod: PaymentMethod;
+    source: OrderSource;
     note?: string;
     channel: {
         option: SalesChannel;

@@ -68,12 +68,14 @@ __export(src_exports, {
   LoginErrors: () => LoginErrors,
   ManageCollectionEndpoint: () => ManageCollectionEndpoint,
   MerchantAccountStatus: () => MerchantAccountStatus,
+  OrderSource: () => OrderSource,
   OrderStatus: () => OrderStatus,
   OtpContext: () => OtpContext,
   OtpVerificationErrors: () => OtpVerificationErrors,
   Partner: () => Partner,
   PaymentGateway: () => PaymentGateway,
   PaymentMethod: () => PaymentMethod,
+  PaymentStatus: () => PaymentStatus,
   ProductSource: () => ProductSource,
   ProductStatus: () => ProductStatus,
   ProfileEndpoint: () => ProfileEndpoint,
@@ -591,6 +593,11 @@ var OrderStatus = /* @__PURE__ */ ((OrderStatus2) => {
   OrderStatus2["fulfilled"] = "fulfilled";
   return OrderStatus2;
 })(OrderStatus || {});
+var PaymentStatus = /* @__PURE__ */ ((PaymentStatus2) => {
+  PaymentStatus2["paid"] = "paid";
+  PaymentStatus2["notPaid"] = "not-paid";
+  return PaymentStatus2;
+})(PaymentStatus || {});
 var PaymentMethod = /* @__PURE__ */ ((PaymentMethod2) => {
   PaymentMethod2["offlineTransfer"] = "offline-transfer";
   PaymentMethod2["physicalCash"] = "physical-cash";
@@ -598,6 +605,11 @@ var PaymentMethod = /* @__PURE__ */ ((PaymentMethod2) => {
   PaymentMethod2["paymentLink"] = "payment-link";
   return PaymentMethod2;
 })(PaymentMethod || {});
+var OrderSource = /* @__PURE__ */ ((OrderSource2) => {
+  OrderSource2["customer"] = "customer";
+  OrderSource2["merchant"] = "merchant";
+  return OrderSource2;
+})(OrderSource || {});
 var SalesChannel = /* @__PURE__ */ ((SalesChannel2) => {
   SalesChannel2["baze"] = "baze";
   SalesChannel2["whatsapp"] = "whatsapp";
@@ -724,12 +736,14 @@ var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
   LoginErrors,
   ManageCollectionEndpoint,
   MerchantAccountStatus,
+  OrderSource,
   OrderStatus,
   OtpContext,
   OtpVerificationErrors,
   Partner,
   PaymentGateway,
   PaymentMethod,
+  PaymentStatus,
   ProductSource,
   ProductStatus,
   ProfileEndpoint,
