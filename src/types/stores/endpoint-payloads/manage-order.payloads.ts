@@ -51,3 +51,10 @@ export interface IUpdateOrderStatusPayload {
   status: OrderStatus;
   note?: string;
 }
+
+export interface IFetchOrderSummaryRes {
+  subTotal: number;
+  shipping: number;
+  otherCharges: number;
+  total: number;
+}
