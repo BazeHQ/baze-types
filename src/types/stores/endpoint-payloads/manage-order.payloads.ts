@@ -1,5 +1,5 @@
 import { SettlementStatus } from "../../transactions";
-import {OrderStatus, PaymentMethod, SalesChannel} from "../models";
+import {OrderStatus, PaymentMethod, PaymentStatus, SalesChannel} from "../models";
 
 export interface IFilterOrders {
   date?: {
@@ -27,6 +27,7 @@ export interface IMerchantCreateOrderPayload {
   note?: string;
   salesChannel: SalesChannel;
   paymentMethod: PaymentMethod;
+  paymentStatus: PaymentStatus;
   cart: Array<IMerchantCreateOrderProductPayload>;
   otherFees?: Array<string>;
   shipping?: string;

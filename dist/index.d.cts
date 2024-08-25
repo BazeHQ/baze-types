@@ -981,6 +981,7 @@ interface IMerchantCreateOrderPayload {
     note?: string;
     salesChannel: SalesChannel;
     paymentMethod: PaymentMethod;
+    paymentStatus: PaymentStatus;
     cart: Array<IMerchantCreateOrderProductPayload>;
     otherFees?: Array<string>;
     shipping?: string;
