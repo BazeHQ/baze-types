@@ -2,6 +2,11 @@ import { IBase, IBazeEvent } from "../../generic";
 import { SettlementStatus } from "../../transactions";
 import { ICart } from "./cart.model";
 
+export enum ChargeBearer {
+	store = "store",
+	customer = "customer",
+}
+
 export enum OrderStatus {
     awaitingPayment = 'awaiting-payment',
     pendingDispatch = 'pending-dispatch',
@@ -57,6 +62,7 @@ export interface IOrder extends IBase {
         revenue?: string;
         transaction: string;
         events: Array<IBazeEvent>;
+        chargeBearer: ChargeBearer;
         snapshots?: {
             dates?: Array<{
                 status: OrderStatus,

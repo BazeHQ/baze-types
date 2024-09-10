@@ -43,6 +43,7 @@ __export(src_exports, {
   BazeEventSource: () => BazeEventSource,
   CartStatus: () => CartStatus,
   ChangeCollectionProductsEndpoint: () => ChangeCollectionProductsEndpoint,
+  ChargeBearer: () => ChargeBearer,
   CreateCollectionEndpoint: () => CreateCollectionEndpoint,
   CreateProductEndpoint: () => CreateProductEndpoint,
   CreateProductErrors: () => CreateProductErrors,
@@ -584,6 +585,11 @@ var CustomerSource = /* @__PURE__ */ ((CustomerSource2) => {
 })(CustomerSource || {});
 
 // src/types/stores/models/order.model.ts
+var ChargeBearer = /* @__PURE__ */ ((ChargeBearer2) => {
+  ChargeBearer2["store"] = "store";
+  ChargeBearer2["customer"] = "customer";
+  return ChargeBearer2;
+})(ChargeBearer || {});
 var OrderStatus = /* @__PURE__ */ ((OrderStatus2) => {
   OrderStatus2["awaitingPayment"] = "awaiting-payment";
   OrderStatus2["pendingDispatch"] = "pending-dispatch";
@@ -711,6 +717,7 @@ var SettlementStatus = /* @__PURE__ */ ((SettlementStatus2) => {
   BazeEventSource,
   CartStatus,
   ChangeCollectionProductsEndpoint,
+  ChargeBearer,
   CreateCollectionEndpoint,
   CreateProductEndpoint,
   CreateProductErrors,
