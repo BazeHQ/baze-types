@@ -67,7 +67,8 @@ export interface IOrder extends IBase {
             dates?: Array<{
                 status: OrderStatus,
                 time: Date;
-            }>
+            }>;
+            amountPaid?: number;
         }
     }
 }

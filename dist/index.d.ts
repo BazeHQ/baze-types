@@ -689,6 +689,7 @@ interface IOrder extends IBase {
                 status: OrderStatus;
                 time: Date;
             }>;
+            amountPaid?: number;
         };
     };
 }
